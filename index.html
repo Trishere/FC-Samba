@@ -8,7 +8,7 @@
 <body>
 <nav>
     <a href="#">Trang chủ</a>
-    <a href="#" onclick="toggleDoiHinh()">Đội hình</a>
+    <a href="#" onclick="toggleDoiHinhTong()">Đội hình</a>
     <a href="#">Liên hệ</a> 
 </nav>
 
@@ -72,6 +72,16 @@
 
 <!-- 👇 JavaScript -->
 <script>
+function toggleDoiHinhTong() {
+    const box = document.getElementById("doiHinh");
+
+    if (box.style.display === "none") {
+        box.style.display = "block";
+    } else {
+        box.style.display = "none";
+    }
+}
+
 function toggleDoiHinh(match) {
     const details = match.querySelector(".detail");
 
