@@ -157,3 +157,15 @@ nav a:hover {
 .detail {
     display: none;
 }
+.detail strong {
+  background: linear-gradient(90deg, rgba(0,180,255,0.25), rgba(0,120,255,0.15));
+  color: #a5f3ff;
+
+  padding: 3px 10px;
+  border-radius: 8px;
+
+  font-weight: 700;
+  border: 1px solid rgba(165, 243, 255, 0.4);
+
+  box-shadow: 0 0 10px rgba(0,180,255,0.25);
+}
