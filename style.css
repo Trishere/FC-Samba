@@ -144,3 +144,16 @@ nav a:hover {
     background: #00ff88;
     color: black;
 }
+.details {
+    display: none;
+    margin-top: 10px;
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+}
+
+.match {
+    cursor: pointer;
+}
+.detail {
+    display: none;
+}

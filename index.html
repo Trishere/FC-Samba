@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html> 
 <head>
-    <title>FC SAMBA</title>
+    <title>FC SAMBA Vietnam</title>
     <link rel="icon" type="image/png" href="logo.png">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -38,37 +38,50 @@
 </div>
 
 <h2 class="banner">Kết quả gần đây</h2>
-<div class="match">
+
+<div class="match" onclick="toggleDoiHinh(this)">
     <h3>03/06/2026</h3>
     <p>Samba 0 - 4 FC Lạ</p>
+    <div class="detail">
+        <p><strong>Cầu thủ:</strong> Thuận (GK), Đức Lee, Ronaldat, Anh Đạt, Bé Trí, Hiếu Saka, Quân Burger King</p>
+    </div>
 </div>
-
-<div class="match">
+<div class="match" onclick="toggleDoiHinh(this)">
     <h3>06/06/2026</h3>
     <p>Samba 1 - 0 QHuy's brothers</p>
+    <div class="detail">
+        <p><strong>Cầu thủ:</strong> Thuận (GK), Đức Lee, QHuy, Bé Trí, Hiếu Saka, Quân Burger King, LuGiaHuy, Nam Silun</p>
+    </div>
 </div>
 
-<div class="match">
+<div class="match" onclick="toggleDoiHinh(this)">
     <h3>13/06/2026</h3>
     <p>Samba 0 - 4 Phong Lâm FC</p>
+    <div class="detail">
+        <p><strong>Cầu thủ:</strong> Anh Đạt (GK), Nam Silun, Đức Lee, Ronaldat, Anh Đạt, Hiếu Saka, QHuy</p>
+    </div>
 </div>
 
-<div class="match">
+<div class="match" onclick="toggleDoiHinh(this)">
     <h3>13/06/2026</h3>
     <p>Samba 0 - 2 Hậu Brothers FC</p>
+    <div class="detail">
+        <p><strong>Cầu thủ:</strong> Thuận (GK), Đức Lee, QHuy, Bé Trí, Hiếu Saka, Quân Burger King, LuGiaHuy, Nam Silun</p>
+    </div>
 </div>
 
 <!-- 👇 JavaScript -->
 <script>
-function toggleDoiHinh() {
-    const box = document.getElementById("doiHinh");
+function toggleDoiHinh(match) {
+    const details = match.querySelector(".detail");
 
-    if (box.style.display === "none") {
-        box.style.display = "block";
+    if (details.style.display === "block") {
+        details.style.display = "none";
     } else {
-        box.style.display = "none";
+        details.style.display = "block";
     }
 }
 </script>
+
 </body>
 </html>
