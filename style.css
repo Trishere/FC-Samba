@@ -1,0 +1,146 @@
+body {
+    background-color: rgb(18, 131, 18);
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+h1 {
+    color: gold;
+    font-size: 50px;
+}
+
+h2 {
+    color: rgb(0, 3, 3);
+}
+
+p {
+    font-size: 20px;
+}
+
+img {
+    width: 80px;
+    margin-top: 20px;
+}
+
+nav {
+    margin-top: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 20px;
+    font-size: 20px;
+}
+
+.match {
+    background-color: #222;
+    padding: 15px;
+    margin: 20px auto;
+    width: 400px;
+    border-radius: 10px;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+}
+
+.match {
+    background: #1e1e1e;
+    padding: 15px;
+    margin: 15px auto;
+    width: 420px;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.match:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 15px rgba(255,255,255,0.2);
+}
+
+main {
+    max-width: 800px;
+    margin: auto;
+}
+
+p {
+    line-height: 1.6;
+}
+/* ===== ĐỘI HÌNH ===== */
+#doiHinh {
+    background: #111;
+    color: white;
+    padding: 20px;
+    margin: 20px auto;
+    width: 320px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+/* tiêu đề */
+#doiHinh h2 {
+    color: #00ff88;
+    margin-bottom: 10px;
+}
+
+/* bỏ chấm list */
+#doiHinh ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* từng cầu thủ */
+#doiHinh li {
+    background: #222;
+    margin: 8px 0;
+    padding: 10px;
+    border-radius: 8px;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+/* hover cầu thủ */
+#doiHinh li:hover {
+    background: #00ff88;
+    color: black;
+    transform: scale(1.05);
+}
+
+/* BANNER TIÊU ĐỀ */
+.banner {
+    background: linear-gradient(90deg, #00ff88, #0066ff);
+    color: white;
+    display: inline-block;
+    padding: 10px 25px;
+    border-radius: 20px;
+    margin: 25px auto;
+    font-size: 22px;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+nav {
+    position: sticky;
+    top: 0;
+    background: rgba(0,0,0,0.3);
+    padding: 15px;
+    backdrop-filter: blur(10px);
+}
+
+nav a {
+    padding: 8px 15px;
+    border-radius: 8px;
+    transition: 0.2s;
+}
+
+nav a:hover {
+    background: #00ff88;
+    color: black;
+}

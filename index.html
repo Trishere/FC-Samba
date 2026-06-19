@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html> 
+<head>
+    <title>FC SAMBA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav>
+    <a href="#">Trang chủ</a>
+    <a href="#" onclick="toggleDoiHinh()">Đội hình</a>
+    <a href="#">Liên hệ</a> 
+</nav>
+
+<img src="logo.png" alt="FC Samba Logo">
+<h1>FC SAMBA</h1>
+<h2 class="banner">Giới thiệu đội bóng</h2>
+<p>
+    Chào mừng đến với website chính thức của FC Samba!
+</p>
+
+<!-- 👇 ĐỘI HÌNH (ẩn mặc định) -->
+<div id="doiHinh" style="display:none; margin-top:15px;">
+    <h2>Đội hình</h2>
+    <ul>
+        <li>Quốc Huy</li>
+        <li>Ronaldat (C)</li>
+        <li>Đức Lee</li>
+        <li>Bé Trí</li>
+        <li>Hiếu Saka</li>
+        <li>Nam Silun</li>
+        <li>LuGiaHuy</li>
+        <li>OnaThuan (GK)</li>
+        <li>Quốc Vũ</li>
+        <li>Tài Suy</li>
+    </ul>
+</div>
+
+<h2 class="banner">Kết quả gần đây</h2>
+<div class="match">
+    <h3>03/06/2026</h3>
+    <p>Samba 0 - 4 FC Lạ</p>
+</div>
+
+<div class="match">
+    <h3>06/06/2026</h3>
+    <p>Samba 1 - 0 QHuy's brothers</p>
+</div>
+
+<div class="match">
+    <h3>13/06/2026</h3>
+    <p>Samba 0 - 4 Phong Lâm FC</p>
+</div>
+
+<div class="match">
+    <h3>13/06/2026</h3>
+    <p>Samba 0 - 2 Hậu Brothers FC</p>
+</div>
+
+<!-- 👇 JavaScript -->
+<script>
+function toggleDoiHinh() {
+    const box = document.getElementById("doiHinh");
+
+    if (box.style.display === "none") {
+        box.style.display = "block";
+    } else {
+        box.style.display = "none";
+    }
+}
+</script>
+</body>
+</html>
