@@ -111,6 +111,9 @@ p {
 }
 
 /* BANNER TIÊU ĐỀ */
+.banner-wrapper {
+    justify-content: center;
+}
 .banner {
     background: linear-gradient(90deg, #00ff88, #0066ff);
     color: white;
