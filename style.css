@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(18, 131, 18);
+    background-color: rgb(6, 131, 62);
     color: white;
     font-family: Arial, sans-serif;
     text-align: center;
@@ -7,7 +7,7 @@ body {
 
 h1 {
     color: gold;
-    font-size: 50px;
+    font-size: 80px;
 }
 
 h2 {
@@ -19,7 +19,7 @@ p {
 }
 
 img {
-    width: 80px;
+    width: 100px;
     margin-top: 20px;
 }
 
@@ -145,7 +145,7 @@ nav a {
 }
 
 nav a:hover {
-    background: #00ff88;
+    background: #19c956;
     color: black;
 }
 .details {
