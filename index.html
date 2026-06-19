@@ -38,8 +38,11 @@
 </div>
 
 <div class="banner-wrapper">
-<h2 class="banner">Kết quả gần đây</h2>   
+<h2 class="banner" onclick="toggleMatches()">
+Kết quả gần đây
+</h2> 
 </div>
+<div id="match-list" class="hidden">
 <div class="match" onclick="toggleDoiHinh(this)">
     <h3>03/06/2026</h3>
     <p>Samba 0 - 4 FC Lạ</p>
@@ -77,6 +80,7 @@
         <p><strong>Cầu thủ:</strong> Việt (GK), MesssDa, QHuy, Lil' Trí, Tài Suy (C), Nam Silun, Quân Burger King, Vũ Lông Thủ</p>
     </div>
 </div>
+</div>
 
 <!-- 👇 JavaScript -->
 <script>
@@ -98,6 +102,10 @@ function toggleDoiHinh(match) {
     } else {
         details.style.display = "block";
     }
+}
+function toggleMatches() {
+    document.getElementById("match-list")
+            .classList.toggle("hidden");
 }
 </script>
 
