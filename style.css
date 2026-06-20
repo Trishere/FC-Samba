@@ -38,16 +38,24 @@ nav {
 nav a {
     color: white;
     text-decoration: none;
-    margin: 20px;
-    font-size: 20px;
-    padding: 8px 15px;
-    border-radius: 8px;
-    transition: 0.2s;
+
+    padding: 10px 18px;
+    margin: 0 8px;
+
+    border-radius: 12px;
+
+    background: rgba(255,255,255,0.08);
+
+    transition: all 0.25s ease;
+
+    font-size: 18px;
+    font-weight: 600;
 }
 
 nav a:hover {
-    background: #19c956;
+    background: gold;
     color: black;
+    transform: translateY(-2px);
 }
 
 /* ===== BANNER ===== */
@@ -135,38 +143,103 @@ nav a:hover {
 
 /* ===== KẾT QUẢ TRẬN ĐẤU ===== */
 .match {
-    background: #1e1e1e;
-    padding: 15px;
-    margin: 15px auto;
-    width: 420px;
-    border-radius: 12px;
-    transition: 0.3s;
+    background: linear-gradient(
+        135deg,
+        rgba(20,20,20,0.95),
+        rgba(40,40,40,0.95)
+    );
+
+    width: 650px;
+    max-width: 90%;
+
+    margin: 20px auto;
+    padding: 18px;
+
+    border-radius: 18px;
+
+    border-left: 6px solid gold;
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,0.4),
+        0 0 12px rgba(255,215,0,0.15);
+
+    transition: all 0.25s ease;
     cursor: pointer;
 }
 
 .match:hover {
-    transform: scale(1.03);
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 12px 25px rgba(0,0,0,0.5),
+        0 0 20px rgba(255,215,0,0.35);
+
+    border-left: 6px solid #00ff88;
+}
+.match h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+
+    margin: 0 0 12px 0;
+    color: gold;
 }
 
+.match > p {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px 0;
+    color: white;
+}
 .detail {
     display: none;
 }
-
+.detail p {
+    text-align: center;
+    line-height: 1.8;
+}
 .detail strong {
-    background: linear-gradient(
-        90deg,
-        rgba(0, 180, 255, 0.25),
-        rgba(0, 120, 255, 0.15)
-    );
-    color: #a5f3ff;
-    padding: 3px 10px;
-    border-radius: 8px;
-    font-weight: 700;
-    border: 1px solid rgba(165, 243, 255, 0.4);
-    box-shadow: 0 0 10px rgba(0, 180, 255, 0.25);
+    display: inline-block;
+
+    background: rgba(255,215,0,0.12);
+    color: gold;
+
+    padding: 4px 10px;
+
+    border-radius: 20px;
+
+    border: 1px solid rgba(255,215,0,0.35);
+
+    box-shadow: 0 0 8px rgba(255,215,0,0.15);
+}
+/* ===== KẾT QUẢ TRẬN ĐẤU ===== */
+
+.result {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    margin-left: 10px;
 }
 
+.win {
+    background: #00c853;
+    color: white;
+}
+
+.loss {
+    background: #d50000;
+    color: white;
+}
+
+.draw {
+    background: #ffd600;
+    color: black;
+}
 /* ===== KHÁC ===== */
 main {
     max-width: 800px;
