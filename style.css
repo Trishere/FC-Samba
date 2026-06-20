@@ -5,6 +5,7 @@ body {
     text-align: center;
 }
 
+/* ===== TIÊU ĐỀ ===== */
 h1 {
     color: gold;
     font-size: 80px;
@@ -16,6 +17,7 @@ h2 {
 
 p {
     font-size: 20px;
+    line-height: 1.6;
 }
 
 img {
@@ -23,8 +25,14 @@ img {
     margin-top: 20px;
 }
 
+/* ===== THANH MENU ===== */
 nav {
     margin-top: 20px;
+    position: sticky;
+    top: 0;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 15px;
+    backdrop-filter: blur(10px);
 }
 
 nav a {
@@ -32,113 +40,6 @@ nav a {
     text-decoration: none;
     margin: 20px;
     font-size: 20px;
-}
-
-.match {
-    background-color: #222;
-    padding: 15px;
-    margin: 20px auto;
-    width: 400px;
-    border-radius: 10px;
-}
-
-header {
-    text-align: center;
-    padding: 20px;
-}
-
-.match {
-    background: #1e1e1e;
-    padding: 15px;
-    margin: 15px auto;
-    width: 420px;
-    border-radius: 12px;
-    transition: 0.3s;
-}
-
-.match:hover {
-    transform: scale(1.03);
-    box-shadow: 0 0 15px rgba(255,255,255,0.2);
-}
-
-main {
-    max-width: 800px;
-    margin: auto;
-}
-
-p {
-    line-height: 1.6;
-}
-/* ===== ĐỘI HÌNH ===== */
-#doiHinh {
-    background: #111;
-    color: white;
-    padding: 20px;
-    margin: 20px auto;
-    width: 320px;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-}
-
-/* tiêu đề */
-#doiHinh h2 {
-    color: #00ff88;
-    margin-bottom: 10px;
-}
-
-/* bỏ chấm list */
-#doiHinh ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-/* từng cầu thủ */
-#doiHinh li {
-    background: #222;
-    margin: 8px 0;
-    padding: 10px;
-    border-radius: 8px;
-    transition: 0.2s;
-    cursor: pointer;
-}
-
-/* hover cầu thủ */
-#doiHinh li:hover {
-    background: #00ff88;
-    color: black;
-    transform: scale(1.05);
-}
-
-/* BANNER TIÊU ĐỀ */
-.banner-wrapper {
-    justify-content: center;
-}
-.banner {
-    background: linear-gradient(90deg, #d6da1c, #e3e8f0);
-    color: rgb(12, 11, 11);
-    display: inline-block;
-    padding: 10px 25px;
-    border-radius: 20px;
-    margin: 25px auto;
-    font-size: 22px;
-    font-weight: bold;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    cursor: pointer;
-}
-
-
-nav {
-    position: sticky;
-    top: 0;
-    background: rgba(0,0,0,0.3);
-    padding: 15px;
-    backdrop-filter: blur(10px);
-}
-
-nav a {
     padding: 8px 15px;
     border-radius: 8px;
     transition: 0.2s;
@@ -148,31 +49,127 @@ nav a:hover {
     background: #19c956;
     color: black;
 }
-.details {
-    display: none;
-    margin-top: 10px;
-    border-top: 1px solid #ccc;
-    padding-top: 10px;
+
+/* ===== BANNER ===== */
+.banner-wrapper {
+    justify-content: center;
 }
 
-.match {
+.banner {
+    background: linear-gradient(90deg, #d6da1c, #e3e8f0);
+    color: rgb(12, 11, 11);
+    display: inline-block;
+    padding: 10px 25px;
+    border-radius: 20px;
+    margin: 25px auto;
+    font-size: 22px;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
     cursor: pointer;
 }
+
+/* ===== ĐỘI HÌNH & THÀNH TÍCH ===== */
+#doiHinh,
+#thanhTich {
+    background: #111;
+    color: white;
+    padding: 20px;
+    margin: 20px auto;
+    width: 320px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+#doiHinh h2 {
+    color: #00ff88;
+    margin-bottom: 10px;
+}
+
+#thanhTich {
+    text-align: center;
+}
+
+#thanhTich h2 {
+    color: gold;
+    margin-bottom: 10px;
+}
+
+.record {
+    font-size: 40px;
+    font-weight: bold;
+    color: #00ff88;
+    margin: 0;
+}
+
+/* ===== DANH SÁCH CẦU THỦ ===== */
+#doiHinh ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#doiHinh li {
+    background: #222;
+    margin: 8px 0;
+    padding: 10px;
+    border-radius: 8px;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+#doiHinh li:hover {
+    background: #00ff88;
+    color: black;
+    transform: scale(1.05);
+}
+
+/* ===== KẾT QUẢ TRẬN ĐẤU ===== */
+.match {
+    background: #1e1e1e;
+    padding: 15px;
+    margin: 15px auto;
+    width: 420px;
+    border-radius: 12px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.match:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
 .detail {
     display: none;
 }
+
 .detail strong {
-  background: linear-gradient(90deg, rgba(0,180,255,0.25), rgba(0,120,255,0.15));
-  color: #a5f3ff;
-
-  padding: 3px 10px;
-  border-radius: 8px;
-
-  font-weight: 700;
-  border: 1px solid rgba(165, 243, 255, 0.4);
-
-  box-shadow: 0 0 10px rgba(0,180,255,0.25);
+    background: linear-gradient(
+        90deg,
+        rgba(0, 180, 255, 0.25),
+        rgba(0, 120, 255, 0.15)
+    );
+    color: #a5f3ff;
+    padding: 3px 10px;
+    border-radius: 8px;
+    font-weight: 700;
+    border: 1px solid rgba(165, 243, 255, 0.4);
+    box-shadow: 0 0 10px rgba(0, 180, 255, 0.25);
 }
+
+/* ===== KHÁC ===== */
+main {
+    max-width: 800px;
+    margin: auto;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+}
+
 .hidden {
     display: none;
 }

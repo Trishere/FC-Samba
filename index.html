@@ -9,7 +9,8 @@
 <nav>
     <a href="#">Trang chủ</a>
     <a href="#" onclick="toggleDoiHinhTong()">Đội hình</a>
-    <a href="#">Liên hệ</a> 
+    <a href="#" onclick="toggleThanhTich()">Thành tích</a>
+    <a href="#">Liên hệ</a> 
 </nav>
 
 <p>
@@ -35,6 +36,11 @@
         <li>Tài Suy (C)</li>
         <li>Quân Burger King </li>
     </ul>
+</div>
+<!-- 👇 THÀNH TÍCH -->
+<div id="thanhTich" style="display:none; margin-top:15px;">
+    <h2>W - L - D</h2>
+    <p class="record">2 - 3 - 0</p>
 </div>
 
 <div class="banner-wrapper">
@@ -116,6 +122,15 @@ function toggleDoiHinh(match) {
 function toggleMatches() {
     document.getElementById("match-list")
             .classList.toggle("hidden");
+}
+function toggleThanhTich() {
+    let x = document.getElementById("thanhTich");
+
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
 }
 </script>
 
