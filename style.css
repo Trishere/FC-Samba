@@ -57,7 +57,38 @@ nav a:hover {
     color: black;
     transform: translateY(-2px);
 }
+.player-list {
+    list-style: none;
+    padding: 0;
+}
 
+.player-list li {
+    background: #0b7d3b;
+    color: white;
+    margin: 8px 0;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.player-list li:hover {
+    background: #0fa34c;
+}
+
+.player-detail {
+    display: none;
+    padding: 10px;
+    background: #f5f5f5;
+    border-left: 4px solid green;
+    margin-bottom: 10px;
+}
+
+.player-detail img {
+    width: 150px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
 /* ===== BANNER ===== */
 .banner-wrapper {
     justify-content: center;
