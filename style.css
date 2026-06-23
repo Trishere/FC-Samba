@@ -4,11 +4,34 @@ body {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
 }
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background-image: url("images/cr7.png");
+    background-repeat: no-repeat;
+
+    background-position: center 120px;
+
+    background-size: 850px;
+
+    opacity: 0.22;
+    pointer-events: none;
+    z-index: 0;
+}
+
+body > * {
+    position: relative;
+    z-index: 1;
+}
 
 /* ===== TIÊU ĐỀ ===== */
 h1 {
     color: gold;
     font-size: 80px;
+    margin-top: -50px;
+    margin-bottom: 10px;
 }
 
 h2 {
@@ -30,9 +53,9 @@ p {
          1px  1px 0 #000;
 }
 
-img {
-    width: 140px;
-    margin-top: 20px;
+.logo {
+    width: 300px;
+    margin-top: -50px;
 }
 
 /* ===== THANH MENU ===== */
