@@ -12,7 +12,7 @@ body::before {
 
     background-image: url("images/cr7.png"), url("images/messi.png");
     background-repeat: no-repeat, no-repeat;
-    background-position: left -40px top 155px, right -100px top 280px;
+    background-position: left -40px top 155px, right -100px top 295px;
     background-size: 850px, 1100px;
 
     opacity: 1;
