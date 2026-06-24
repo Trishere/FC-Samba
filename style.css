@@ -1,6 +1,6 @@
 body {
     position: relative;
-    background: linear-gradient(135deg, #056b33, #0a8d45, #12b35a);
+    background: linear-gradient(135deg, #bbdb2b, #0a8d45, #a113b4);
     color: rgb(245, 238, 238);
     font-family: "Times New Roman", serif;
     text-align: center;
@@ -352,24 +352,37 @@ header {
 
 
 /* =========================================================
-   RESPONSIVE CHO F.C SAMBA
+   RESPONSIVE FINAL – F.C SAMBA
 
-/* ===== Laptop vừa / màn hình nhỏ hơn desktop lớn ===== */
+/* ===== 1) Desktop vừa / laptop lớn ===== */
 @media (max-width: 1400px) {
     body::before {
-        background-position: left -120px top 190px, right -180px top 260px;
-        background-size: 720px, 900px;
+        background-position: left -140px top 180px, right -170px top 255px;
+        background-size: 700px, 860px;
         opacity: 1;
+    }
+
+    .welcome,
+    .logo,
+    h1,
+    .banner-wrapper,
+    .banner,
+    #doiHinh,
+    #thanhTich,
+    #match-list,
+    .match {
+        position: relative;
+        z-index: 1;
     }
 
     h1 {
         font-size: 68px;
-        margin-top: -40px;
+        margin-top: -45px;
     }
 
     .logo {
-        width: 260px;
-        margin-top: -55px;
+        width: 250px;
+        margin-top: -50px;
     }
 
     .welcome {
@@ -383,17 +396,30 @@ header {
     }
 
     .match {
-        width: 600px;
+        width: min(88%, 650px);
     }
 }
 
 
-/* ===== Laptop nhỏ / tablet ngang ===== */
+/* ===== 2) Laptop nhỏ / tablet ngang ===== */
 @media (max-width: 1200px) {
     body::before {
-        background-position: left -150px top 240px, right -230px top 300px;
-        background-size: 580px, 720px;
-        opacity: 1;
+        background-position: left -180px top 220px, right -230px top 300px;
+        background-size: 540px, 680px;
+        opacity: 0.9;
+    }
+
+    .welcome,
+    .logo,
+    h1,
+    .banner-wrapper,
+    .banner,
+    #doiHinh,
+    #thanhTich,
+    #match-list,
+    .match {
+        position: relative;
+        z-index: 1;
     }
 
     nav {
@@ -408,30 +434,32 @@ header {
 
     .welcome {
         font-size: 22px;
-        margin-top: 25px;
-        padding: 0 25px;
+        margin-top: 24px;
+        padding: 0 24px;
+        line-height: 1.5;
     }
 
     .logo {
         width: 220px;
-        margin-top: -35px;
+        margin-top: -25px;
     }
 
     h1 {
         font-size: 56px;
-        margin-top: -15px;
+        margin-top: 0;
         margin-bottom: 16px;
     }
 
     .banner {
         font-size: 19px;
-        padding: 10px 22px;
-        margin: 20px auto;
+        padding: 10px 20px;
+        margin: 18px auto;
     }
 
     #doiHinh,
     #thanhTich {
         width: min(88%, 420px);
+        padding: 18px;
     }
 
     .match {
@@ -444,17 +472,30 @@ header {
     }
 
     .detail p {
-        font-size: 22px;
+        font-size: 20px;
     }
 }
 
 
-/* ===== Tablet dọc / cửa sổ hẹp hơn ===== */
+/* ===== 3) Tablet dọc / màn vừa ===== */
 @media (max-width: 992px) {
     body::before {
-        background-position: left -180px top 260px, right -260px top 320px;
-        background-size: 460px, 560px;
-        opacity: 1;
+        background-position: left -190px top 260px, right -250px top 340px;
+        background-size: 400px, 500px;
+        opacity: 0.45;
+    }
+
+    .welcome,
+    .logo,
+    h1,
+    .banner-wrapper,
+    .banner,
+    #doiHinh,
+    #thanhTich,
+    #match-list,
+    .match {
+        position: relative;
+        z-index: 1;
     }
 
     nav {
@@ -470,26 +511,29 @@ header {
 
     .welcome {
         font-size: 20px;
-        line-height: 1.4;
-        padding: 0 20px;
-        margin-top: 24px;
+        line-height: 1.45;
+        padding: 0 18px;
+        margin-top: 22px;
     }
 
     .logo {
         width: 180px;
-        margin-top: -10px;
+        margin-top: 0;
+        margin-bottom: 6px;
     }
 
     h1 {
         font-size: 46px;
-        margin-top: 8px;
+        margin-top: 6px;
         margin-bottom: 14px;
+        line-height: 1.1;
     }
 
     .banner {
         font-size: 18px;
         padding: 10px 18px;
         border-radius: 16px;
+        margin: 16px auto;
     }
 
     #doiHinh,
@@ -519,11 +563,13 @@ header {
         width: 92%;
         padding: 16px;
         border-radius: 16px;
+        margin: 18px auto;
     }
 
     .match h3 {
         font-size: 22px;
         flex-wrap: wrap;
+        line-height: 1.4;
     }
 
     .match > p {
@@ -531,47 +577,69 @@ header {
     }
 
     .detail p {
-        font-size: 20px;
+        font-size: 18px;
         line-height: 1.7;
     }
 }
 
 
-/* ===== Mobile lớn ===== */
+/* ===== 4) Mobile & tablet nhỏ ===== */
 @media (max-width: 768px) {
+    /* Ẩn ảnh CR7/Messi để mobile sạch bố cục */
     body::before {
-        background-position: left -170px top 260px, right -220px top 340px;
-        background-size: 340px, 420px;
-        opacity: 1;
+        background-image: none;
+    }
+
+    body {
+        padding-bottom: 24px;
     }
 
     nav {
         margin-top: 10px;
         padding: 10px 8px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
     }
 
     nav a {
         font-size: 15px;
         padding: 8px 12px;
-        margin: 4px 3px;
+        margin: 0;
         border-radius: 10px;
+    }
+
+    .welcome,
+    .logo,
+    h1,
+    .banner-wrapper,
+    .banner,
+    #doiHinh,
+    #thanhTich,
+    #match-list,
+    .match {
+        position: relative;
+        z-index: 1;
     }
 
     .welcome {
         font-size: 18px;
         line-height: 1.5;
         padding: 0 14px;
-        margin-top: 20px;
+        margin-top: 18px;
+        margin-bottom: 10px;
     }
 
     .logo {
         width: 150px;
-        margin-top: 5px;
+        margin-top: 4px;
+        margin-bottom: 8px;
     }
 
     h1 {
         font-size: 38px;
-        margin-top: 12px;
+        margin-top: 8px;
         margin-bottom: 12px;
         line-height: 1.1;
     }
@@ -579,15 +647,23 @@ header {
     .banner {
         font-size: 16px;
         padding: 10px 16px;
-        margin: 16px auto;
+        margin: 14px auto;
+        border-radius: 14px;
         letter-spacing: 0.5px;
     }
 
     #doiHinh,
     #thanhTich {
         width: 92%;
+        max-width: 420px;
         padding: 16px;
         border-radius: 14px;
+        margin: 16px auto;
+    }
+
+    #doiHinh h2,
+    #thanhTich h2 {
+        font-size: 24px;
     }
 
     .player-list li {
@@ -611,11 +687,6 @@ header {
         font-size: 18px;
     }
 
-    #thanhTich h2,
-    #doiHinh h2 {
-        font-size: 24px;
-    }
-
     .record-label {
         font-size: 12px;
         letter-spacing: 3px;
@@ -624,6 +695,10 @@ header {
     .record {
         font-size: 34px;
         letter-spacing: 2px;
+    }
+
+    #match-list {
+        width: 100%;
     }
 
     .match {
@@ -636,11 +711,14 @@ header {
     .match h3 {
         font-size: 20px;
         gap: 8px;
+        flex-wrap: wrap;
+        line-height: 1.4;
     }
 
     .match > p {
         font-size: 18px;
         line-height: 1.5;
+        margin: 8px 0;
     }
 
     .detail p {
@@ -651,11 +729,12 @@ header {
     .result {
         font-size: 11px;
         padding: 4px 10px;
+        margin-left: 6px;
     }
 }
 
 
-/* ===== Mobile nhỏ ===== */
+/* ===== 5) Mobile nhỏ ===== */
 @media (max-width: 576px) {
     body::before {
         background-image: none;
@@ -663,17 +742,18 @@ header {
 
     nav {
         padding: 10px 6px;
+        gap: 6px;
     }
 
     nav a {
         font-size: 14px;
         padding: 7px 10px;
-        margin: 4px 2px;
     }
 
     .welcome {
         font-size: 16px;
         padding: 0 12px;
+        margin-top: 16px;
     }
 
     .logo {
@@ -682,13 +762,14 @@ header {
 
     h1 {
         font-size: 32px;
-        margin-top: 10px;
+        margin-top: 6px;
     }
 
     .banner {
         font-size: 15px;
         padding: 9px 14px;
         border-radius: 14px;
+        margin: 12px auto;
     }
 
     #doiHinh,
@@ -697,9 +778,21 @@ header {
         padding: 14px;
     }
 
-    #thanhTich h2,
-    #doiHinh h2 {
+    #doiHinh h2,
+    #thanhTich h2 {
         font-size: 22px;
+    }
+
+    .player-list li {
+        font-size: 15px;
+    }
+
+    .player-detail img {
+        width: 115px;
+    }
+
+    .player-detail p {
+        font-size: 16px;
     }
 
     .record {
@@ -709,6 +802,7 @@ header {
     .match {
         width: 95%;
         padding: 12px;
+        margin: 14px auto;
     }
 
     .match h3 {
@@ -721,5 +815,87 @@ header {
 
     .detail p {
         font-size: 16px;
+    }
+}
+
+
+/* ===== 6) Mobile rất nhỏ ===== */
+@media (max-width: 400px) {
+    nav a {
+        font-size: 13px;
+        padding: 7px 9px;
+    }
+
+    .welcome {
+        font-size: 15px;
+    }
+
+    .logo {
+        width: 115px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .banner {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+
+    #doiHinh,
+    #thanhTich {
+        width: 95%;
+        padding: 12px;
+    }
+
+    #doiHinh h2,
+    #thanhTich h2 {
+        font-size: 20px;
+    }
+
+    .player-list li {
+        font-size: 14px;
+        padding: 9px;
+    }
+
+    .player-detail {
+        padding: 12px;
+    }
+
+    .player-detail img {
+        width: 105px;
+    }
+
+    .player-detail p {
+        font-size: 15px;
+    }
+
+    .record {
+        font-size: 24px;
+    }
+
+    .match {
+        width: 96%;
+        padding: 11px;
+        border-radius: 12px;
+    }
+
+    .match h3 {
+        font-size: 17px;
+    }
+
+    .match > p {
+        font-size: 15px;
+    }
+
+    .detail p {
+        font-size: 15px;
+        line-height: 1.65;
+    }
+
+    .result {
+        font-size: 10px;
+        padding: 3px 8px;
     }
 }
