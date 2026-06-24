@@ -359,7 +359,7 @@ header {
     body::before {
         background-position: left -120px top 190px, right -180px top 260px;
         background-size: 720px, 900px;
-        opacity: 0.95;
+        opacity: 1;
     }
 
     h1 {
@@ -393,7 +393,7 @@ header {
     body::before {
         background-position: left -150px top 240px, right -230px top 300px;
         background-size: 580px, 720px;
-        opacity: 0.75;
+        opacity: 1;
     }
 
     nav {
@@ -454,7 +454,7 @@ header {
     body::before {
         background-position: left -180px top 260px, right -260px top 320px;
         background-size: 460px, 560px;
-        opacity: 0.35;
+        opacity: 1;
     }
 
     nav {
@@ -542,7 +542,7 @@ header {
     body::before {
         background-position: left -170px top 260px, right -220px top 340px;
         background-size: 340px, 420px;
-        opacity: 0.18;
+        opacity: 1;
     }
 
     nav {
