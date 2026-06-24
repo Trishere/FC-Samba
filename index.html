@@ -8,8 +8,8 @@
 <body>
 <nav>
     <a href="#">Trang chủ</a>
-    <a href="#" onclick="toggleDoiHinhTong()">Đội hình</a>
-    <a href="#" onclick="toggleThanhTich()">Thành tích</a>
+<a href="javascript:void(0)" onclick="toggleDoiHinhTong()">Đội hình</a>
+<a href="javascript:void(0)" onclick="toggleThanhTich()">Thành tích</a>
     <a href="#">Liên hệ</a> 
 </nav>
 <p class="welcome">
@@ -18,7 +18,6 @@
 <img class="logo" src="logo.png" alt="F.C Samba Logo">
 <h1>F.C SAMBA</h1>
 <h2 class="banner">Giới thiệu đội bóng</h2>
-</div>
 
 <!-- 👇 ĐỘI HÌNH (ẩn mặc định) -->
 <div id="doiHinh" style="display:none; margin-top:15px;">
@@ -32,9 +31,9 @@
             <p><strong>Vị trí:</strong> Pivot</p>
         </div>
 
-        <li onclick="togglePlayer('messsda')">MesssDa</li>
-        <div id="messsda" class="player-detail">
-            <img src="images/messsda.jpg" alt="MesssDa" width="150">
+        <li onclick="togglePlayer('ronaldat')">Ronaldat</li>
+        <div id="ronaldat" class="player-detail">
+            <img src="images/ronaldat.jpg" alt="Ronaldat" width="150">
             <p><strong>Vị trí:</strong> Fixo</p>
         </div>
 
@@ -94,6 +93,7 @@
 
     </ul>
 </div>
+
 <!-- 👇 THÀNH TÍCH -->
 <div id="thanhTich" style="display:none; margin-top:15px;">
     <h2>THÀNH TÍCH</h2>
@@ -109,16 +109,16 @@ Kết quả gần đây
 </h2> 
 </div>
 <div id="match-list" class="hidden">
-<div class="match" onclick="toggleDoiHinh(this)">
+<div class="match" onclick="toggleMatchDetail(this)">
     <h3>03/06/2026<span class="result loss">LOSS</span>
     </h3>
     <p>Samba 0 - 4 FC Lạ</p>
     <div class="detail">
-        <p><strong>Cầu thủ:</strong> Thuận (GK), Đức Lee, MesssDa, Anh Đạt, Lil' Trí, Hiếu Saka, Quân Burger King</p>
+        <p><strong>Cầu thủ:</strong> Thuận (GK), Đức Lee, Ronaldat, Anh Đạt, Lil' Trí, Hiếu Saka, Quân Burger King</p>
     </div>
 </div>
 
-<div class="match" onclick="toggleDoiHinh(this)">
+<div class="match" onclick="toggleMatchDetail(this)">
     <h3>06/06/2026<span class="result win">WIN</span></h3>
     <p>Samba 1 - 0 QHuy's brothers</p>
     <div class="detail">
@@ -126,87 +126,133 @@ Kết quả gần đây
     </div>
 </div>
 
-<div class="match" onclick="toggleDoiHinh(this)">
+<div class="match" onclick="toggleMatchDetail(this)">
     <h3>13/06/2026<span class="result loss">LOSS</span></h3>
     <p>Samba 0 - 4 Phong Lâm FC</p>
     <div class="detail">
-        <p><strong>Cầu thủ:</strong> Thuận (GK), LuGiaHuy, Vũ Lông Thủ, Tài Suy (C), Quân Burger King, Nam Silun, Đức Lee, MesssDa, Anh Đạt, Hiếu Saka, QHuy</p>
+        <p><strong>Cầu thủ:</strong> Thuận (GK), LuGiaHuy, Vũ Lông Thủ, Tài Suy (C), Quân Burger King, Nam Silun, Đức Lee, Ronaldat, Anh Đạt, Hiếu Saka, QHuy</p>
     </div>
 </div>
 
-<div class="match" onclick="toggleDoiHinh(this)">
+<div class="match" onclick="toggleMatchDetail(this)">
     <h3>14/06/2026<span class="result loss">LOSS</span></h3>
     <p>Samba 0 - 2 Hậu Brothers FC</p>
     <div class="detail">
-        <p><strong>Cầu thủ:</strong> Anh Đạt (GK), MesssDa, Đức Lee, QHuy, Lil' Trí, Hiếu Saka, Nam Silun</p>
+        <p><strong>Cầu thủ:</strong> Anh Đạt (GK), Ronaldat, Đức Lee, QHuy, Lil' Trí, Hiếu Saka, Nam Silun</p>
     </div>
 </div>
 
-<div class="match" onclick="toggleDoiHinh(this)">
+<div class="match" onclick="toggleMatchDetail(this)">
     <h3>19/06/2026<span class="result win">WIN</span></h3>
     <p>Samba 5 - 0 Quý Brothers FC</p>
     <div class="detail">
-        <p><strong>Cầu thủ:</strong> Việt (GK), <span class="MVP">MesssDa⭐</span>, QHuy, Tài Suy (C), Nam Silun, Quân Burger King, Vũ Lông Thủ</p>
+        <p><strong>Cầu thủ:</strong> Việt (GK), <span class="MVP">Ronaldat⭐</span>, QHuy, Tài Suy (C), Nam Silun, Quân Burger King, Vũ Lông Thủ</p>
     </div>
 </div>
 
-<div class="match" onclick="toggleDoiHinh(this)">
+<div class="match" onclick="toggleMatchDetail(this)">
     <h3>20/06/2026<span class="result draw">DRAW</span></h3>
     <p>Samba 3 - 3 Phong Lâm FC</p>
     <div class="detail">
-        <p><strong>Cầu thủ:</strong> <span class="MVP">LuGiaHuy (GK)⭐</span>, MesssDa (C), Hiếu Saka, QHuy, Lil' Trí, Nam Silun, Đức Lee</p>
+        <p><strong>Cầu thủ:</strong> <span class="MVP">LuGiaHuy (GK)⭐</span>, Ronaldat (C), Hiếu Saka, QHuy, Lil' Trí, Nam Silun, Đức Lee</p>
     </div>
 </div>
-<div class="match" onclick="toggleDoiHinh(this)">
-    <h3>26/06/2026<span class="result draw">DRAW</span></h3>
-    <p>Samba x - x Xuân Trường FC</p>
+
+<div class="match" onclick="toggleMatchDetail(this)">
+    <h3>25/06/2026<span class="result draw">DRAW</span></h3>
+    <p>Samba x - x Hiếu's old CTy </p>
+    <div class="detail">
+        <p><strong>Cầu thủ:</strong> Đức Lee, Ronaldat, Hiếu Saka, NTH </p>
+    </div>
+</div>
+
+<div class="match" onclick="toggleMatchDetail(this)">
+    <h3>27/06/2026<span class="result draw">DRAW</span></h3>
+    <p>Samba x - x Xuân Trường FC</p>
     <div class="detail">
         <p><strong>Cầu thủ:</strong> CHƯA CẬP NHẬT</p>
     </div>
 </div>
+
 </div>
 
 <!-- 👇 JavaScript -->
 <script>
+function closeMainSections() {
+    // Đóng 3 mục lớn
+    document.getElementById("doiHinh").style.display = "none";
+    document.getElementById("thanhTich").style.display = "none";
+    document.getElementById("match-list").classList.add("hidden");
+
+    // Đóng tất cả chi tiết cầu thủ
+    document.querySelectorAll(".player-detail").forEach(player => {
+        player.style.display = "none";
+    });
+
+    // Đóng tất cả chi tiết trận đấu
+    document.querySelectorAll(".detail").forEach(detail => {
+        detail.style.display = "none";
+    });
+}
+
 function toggleDoiHinhTong() {
     const box = document.getElementById("doiHinh");
+    const isOpen = box.style.display === "block";
 
-    if (box.style.display === "none") {
+    closeMainSections();
+
+    if (!isOpen) {
         box.style.display = "block";
-    } else {
-        box.style.display = "none";
     }
 }
 
-function toggleDoiHinh(match) {
-    const details = match.querySelector(".detail");
-
-    if (details.style.display === "block") {
-        details.style.display = "none";
-    } else {
-        details.style.display = "block";
-    }
-}
-function toggleMatches() {
-    document.getElementById("match-list")
-            .classList.toggle("hidden");
-}
 function toggleThanhTich() {
-    let x = document.getElementById("thanhTich");
+    const box = document.getElementById("thanhTich");
+    const isOpen = box.style.display === "block";
 
-    if (x.style.display === "none") {
-        x.style.display = "block";
-    } else {
-        x.style.display = "none";
+    closeMainSections();
+
+    if (!isOpen) {
+        box.style.display = "block";
     }
 }
+
+function toggleMatches() {
+    const matchList = document.getElementById("match-list");
+    const isOpen = !matchList.classList.contains("hidden");
+
+    closeMainSections();
+
+    if (!isOpen) {
+        matchList.classList.remove("hidden");
+    }
+}
+
 function togglePlayer(id) {
     const player = document.getElementById(id);
+    const isOpen = player.style.display === "block";
 
-    if (player.style.display === "block") {
-        player.style.display = "none";
-    } else {
+    // Chỉ đóng các player-detail, không đụng tới mục lớn
+    document.querySelectorAll(".player-detail").forEach(p => {
+        p.style.display = "none";
+    });
+
+    if (!isOpen) {
         player.style.display = "block";
+    }
+}
+
+function toggleMatchDetail(match) {
+    const details = match.querySelector(".detail");
+    const isOpen = details.style.display === "block";
+
+    // Chỉ đóng các detail của trận đấu
+    document.querySelectorAll(".detail").forEach(detail => {
+        detail.style.display = "none";
+    });
+
+    if (!isOpen) {
+        details.style.display = "block";
     }
 }
 </script>

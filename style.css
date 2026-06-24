@@ -10,13 +10,12 @@ body::before {
     position: fixed;
     inset: 0;
 
-    background-image: url("images/cr7.png");
-    background-repeat: no-repeat;
-    background-position: center 120px;
-    background-size: 850px;
+    background-image: url("images/cr7.png"), url("images/messi.png");
+    background-repeat: no-repeat, no-repeat;
+    background-position: left -40px top 155px, right -100px top 280px;
+    background-size: 850px, 1100px;
 
-    opacity: 0.12;
-
+    opacity: 1;
     pointer-events: none;
     z-index: -1;
 }
