@@ -8,21 +8,6 @@ body {
     overflow-x: hidden;
 }
 
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-
-    background-image: url("images/cr7.png"), url("images/messi.png");
-    background-repeat: no-repeat, no-repeat;
-    background-position: left -40px top 155px, right -100px top 295px;
-    background-size: 850px, 1100px;
-
-    opacity: 1;
-    pointer-events: none;
-    z-index: 0;
-}
-
 nav,
 .welcome,
 .logo,
