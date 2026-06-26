@@ -1,6 +1,11 @@
 body {
     position: relative;
-    background: linear-gradient(135deg, #3b1c1c, #6b2d2d, #b08d57);
+    background: linear-gradient(
+    135deg,
+    #171411,
+    #433124,
+    #7d6037
+);
     color: rgb(255, 255, 255);
     font-family: "Times New Roman", serif;
     text-align: center;
@@ -97,7 +102,7 @@ p {
 
 .logo {
     width: 350px;
-    margin-top: -80px;
+    margin-top: -130px;
 
     filter:
         drop-shadow(0 0 10px rgba(201,162,39,.25))
@@ -124,13 +129,12 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
     flex-wrap: wrap;
+
     padding: 20px 38px;
     gap: 22px;
-    border-radius: 10px;
 
-    nav {
+    border-radius: 10px;
 
     background: linear-gradient(
         to bottom,
@@ -139,16 +143,11 @@ nav {
     );
 
     border: 2px solid #c9a227;
-    box-shadow:
-        0 6px 14px rgba(0,0,0,.45);
 
-}
-
-    border: 1px solid rgba(255, 215, 0, 0.18);
     box-shadow:
-    inset 0 0 0 1px rgba(255,255,255,.08),
-    0 4px 0 #3d2613,
-    0 10px 24px rgba(0,0,0,.45);
+        inset 0 0 0 1px rgba(255,255,255,.08),
+        0 4px 0 #3d2613,
+        0 10px 24px rgba(0,0,0,.45);
 }
 nav a {
     color: #f2e2b3;
@@ -219,28 +218,56 @@ nav:hover {
 
 .player-detail {
     display: none;
-    background: rgb(240, 240, 240);
-    color: #222;
-    padding: 15px;
-    margin: 10px 0;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+
+    background: linear-gradient(
+        to bottom,
+        #efe2c2,
+        #dcc79c
+    );
+
+    color: #3b2a1b;
+
+    padding: 18px;
+
+    margin: 12px 0;
+
+    border: 2px solid #b08d57;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 6px 16px rgba(0,0,0,.35);
+
+    transition: .3s ease;
 }
 
 .player-detail img {
     width: 180px;
-    border-radius: 12px;
+
+    border-radius: 10px;
+
+    border: 3px solid #b08d57;
+
+    box-shadow:
+        0 5px 12px rgba(0,0,0,.35);
 }
 
 .player-detail p {
-    color: #222;
-    font-weight: bold;
+    color: #3b2a1b;
     font-size: 20px;
+    line-height: 1.6;
+    font-weight: 600;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin: 4px 0
 }
 
 .player-detail strong {
-    color: #0b7d3b;
-    font-size: 22px;
+    font-size: 24px;
+    color: #745c0e;
 }
 
 /* ===== BANNER ===== */
@@ -266,32 +293,47 @@ nav:hover {
 /* ===== ĐỘI HÌNH & THÀNH TÍCH ===== */
 #doiHinh,
 #thanhTich {
-    background: #111;
-    color: rgb(240, 240, 240);
+    background: linear-gradient(
+        to bottom,
+        #5b3b20,
+        #3d2613
+    );
+
+    border: 3px solid #c9a227;
+
+    color: rgb(240,240,240);
     padding: 20px;
     margin: 20px auto;
     width: 320px;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    border-radius: 6px;
+
+    box-shadow:
+        0 6px 18px rgba(0,0,0,.45);
 }
 
-#doiHinh h2 {
-    color: #00ff88;
-    margin-bottom: 10px;
+#doiHinh h2{
+    color:#e8c86a;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
 }
 
 #thanhTich {
-    background: linear-gradient(
-        135deg,
-        rgba(20,20,20,0.95),
-        rgba(40,40,40,0.95)
-    );
     width: 380px;
-    border-radius: 18px;
-    border-top: 5px solid gold;
+
+    background: linear-gradient(
+        to bottom,
+        #5b3b20,
+        #3d2613
+    );
+
+    border: 3px solid #c9a227;
+
+    border-radius: 6px;
+
     box-shadow:
-        0 8px 20px rgba(0,0,0,0.4),
-        0 0 12px rgba(255,215,0,0.15);
+        0 6px 18px rgba(0,0,0,.45);
 }
 
 #thanhTich h2 {
@@ -312,7 +354,8 @@ nav:hover {
     font-weight: 800;
     color: #c9a227;
     letter-spacing: 3px;
-    text-shadow: 0 0 12px rgba(0,255,136,0.3);
+    text-shadow:
+      1px 1px 2px rgba(0,0,0,.7);
     margin: 0;
 }
 
@@ -332,46 +375,84 @@ nav:hover {
 }
 
 #doiHinh li {
-    background: #222;
-    margin: 8px 0;
-    padding: 10px;
+    background: linear-gradient(
+        to bottom,
+        #5b3b20,
+        #3d2613
+    );
+
+    color: #f2e2b3;
+
+    margin: 10px 0;
+
+    padding: 12px;
+
+    border: 2px solid rgba(201,162,39,.35);
+
     border-radius: 8px;
-    transition: 0.2s;
+
+    transition: all .25s ease;
+
     cursor: pointer;
 }
 
 #doiHinh li:hover {
-    background: #00ff88;
-    color: black;
-    transform: scale(1.05);
+    background: linear-gradient(
+        to bottom,
+        #7a542e,
+        #5b3b20
+    );
+
+    border-color: #c9a227;
+
+    color: #fff3d1;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 4px 12px rgba(0,0,0,.35);
 }
 
 /* ===== KẾT QUẢ TRẬN ĐẤU ===== */
 .match {
     background: linear-gradient(
-        135deg,
-        rgba(20,20,20,0.95),
-        rgba(40,40,40,0.95)
+        to bottom,
+        #5b3b20,
+        #3d2613
     );
+
     width: 650px;
     max-width: 90%;
+
     margin: 20px auto;
     padding: 18px;
-    border-radius: 18px;
-    border-left: 6px solid gold;
+
+    border: 3px solid #c9a227;
+
+    border-radius: 6px;
+
     box-shadow:
-        0 8px 20px rgba(0,0,0,0.4),
-        0 0 12px rgba(255,215,0,0.15);
-    transition: all 0.25s ease;
+        0 8px 20px rgba(0,0,0,.4);
+
+    transition: all .25s ease;
+
     cursor: pointer;
 }
 
 .match:hover {
-    transform: translateY(-4px);
+    transform: translateY(-3px);
+
+    background: linear-gradient(
+        to bottom,
+        #6b4423,
+        #4b2f19
+    );
+
+    border-color: #e8c86a;
+
     box-shadow:
-        0 12px 25px rgba(0,0,0,0.5),
-        0 0 20px rgba(255,215,0,0.35);
-    border-left: 6px solid #00ff88;
+        0 4px 0 #3d2613,
+        0 12px 22px rgba(0,0,0,.45);
 }
 
 .match h3 {
@@ -411,26 +492,61 @@ nav:hover {
 
 .result {
     display: inline-block;
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: bold;
+
+    padding: 5px 14px;
+
     margin-left: 10px;
+
+    border-radius: 4px;
+
+    border: 2px solid;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.15);
 }
 
 .win {
-    background: #00c853;
-    color: white;
+    background: linear-gradient(
+        to bottom,
+        #7a542e,
+        #5b3b20
+    );
+
+    border-color: #c9a227;
+
+    color: #f5e6b7;
 }
 
 .loss {
-    background: #d50000;
-    color: white;
+    background: linear-gradient(
+        to bottom,
+        #5a2323,
+        #3d1717
+    );
+
+    border-color: #a13c3c;
+
+    color: #f0d4d4;
 }
 
 .draw {
-    background: #ffd600;
-    color: black;
+    background: linear-gradient(
+        to bottom,
+        #555045,
+        #39342d
+    );
+
+    border-color: #9b8b63;
+
+    color: #f2e2b3;
 }
 
 /* ===== KHÁC ===== */
