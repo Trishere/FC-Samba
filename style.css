@@ -118,7 +118,7 @@ p {
 /* ===== THANH MENU ===== */
 
 nav {
-    position: sticky;
+    position: relative;
     top: 14px;
     z-index: 9999;
 
