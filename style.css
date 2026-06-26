@@ -207,7 +207,7 @@ nav a:hover {
 .record-label {
     color: gold;
     opacity: 0.7;
-    font-size: 14px;
+    font-size: 40px;
     letter-spacing: 4px;
     margin-bottom: 20px;
 }
@@ -285,7 +285,7 @@ nav a:hover {
     align-items: center;
     gap: 12px;
     margin: 0 0 12px 0;
-    color: gold;
+    color: rgb(230, 208, 10);
 }
 
 .match > p {
@@ -379,7 +379,21 @@ header {
     background-color: #ffd700 !important;
     color: black !important;
 }
+.fade-in {
+    animation: fadeIn 0.5s ease;
+}
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 /* =========================================================
    RESPONSIVE FINAL – F.C SAMBA
 

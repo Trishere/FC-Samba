@@ -35,7 +35,6 @@
 
 <!-- 👇 ĐỘI HÌNH (ẩn mặc định) -->
 <div id="doiHinh" style="display:none; margin-top:15px;">
-    <h2>Đội hình</h2>
 
     <ul class="player-list">
 
@@ -110,7 +109,6 @@
 
 <!-- 👇 THÀNH TÍCH -->
 <div id="thanhTich" style="display:none; margin-top:15px;">
-    <h2>THÀNH TÍCH</h2>
 
     <p class="record-label">W - L - D</p>
 
@@ -185,6 +183,7 @@
 
 </div>
 
+
 <!-- 👇 JavaScript -->
 <script>
 function closeMainSections() {
@@ -204,6 +203,10 @@ function closeMainSections() {
     });
 
     resetTabButtons();
+
+    document.getElementById("doiHinh").classList.remove("fade-in");
+    document.getElementById("thanhTich").classList.remove("fade-in");
+    document.getElementById("match-list").classList.remove("fade-in");
 }
 
 function resetTabButtons() {
@@ -220,7 +223,7 @@ function toggleDoiHinhTong() {
 
     if (!isOpen) {
         box.style.display = "block";
-    
+        box.classList.add("fade-in");
         document.getElementById("btn-doihinh").classList.add("active-tab");
 
         document.getElementById("content-area").scrollIntoView({
@@ -237,6 +240,7 @@ function toggleThanhTich() {
 
    if (!isOpen) {
         box.style.display = "block";
+        box.classList.add("fade-in");
 
         document.getElementById("btn-thanhtich").classList.add("active-tab");
 
@@ -254,6 +258,7 @@ function toggleMatches() {
 
     if (!isOpen) {
         matchList.classList.remove("hidden");
+        matchList.classList.add("fade-in");
 
         document.getElementById("btn-match").classList.add("active-tab");
 
