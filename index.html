@@ -9,16 +9,29 @@
 <body>
 <nav>
     <a href="#">Trang chủ</a>
-<a href="javascript:void(0)" onclick="toggleDoiHinhTong()">Đội hình</a>
-<a href="javascript:void(0)" onclick="toggleThanhTich()">Thành tích</a>
     <a href="#">Liên hệ</a> 
 </nav>
+
 <p class="welcome">
     Chào mừng đến với website chính thức của F.C Samba
 </p>
+
 <img class="logo" src="logo.png" alt="F.C Samba Logo">
 <h1>F.C SAMBA</h1>
 <h2 class="banner">Giới thiệu đội bóng</h2>
+<div id="content-area">
+
+    <div class="tab-menu">
+
+      <button id="btn-doihinh" onclick="toggleDoiHinhTong()">Đội hình</button>
+
+      <button id="btn-thanhtich" onclick="toggleThanhTich()">Thành tích</button>
+
+      <button id="btn-match" onclick="toggleMatches()">Kết quả</button>
+
+    </div>
+
+</div>
 
 <!-- 👇 ĐỘI HÌNH (ẩn mặc định) -->
 <div id="doiHinh" style="display:none; margin-top:15px;">
@@ -104,11 +117,6 @@
     <p class="record">3 - 3 - 1</p>
 </div>
 
-<div class="banner-wrapper">
-<h2 class="banner" onclick="toggleMatches()">
-Kết quả gần đây
-</h2> 
-</div>
 <div id="match-list" class="hidden">
 <div class="match" onclick="toggleMatchDetail(this)">
     <h3>03/06/2026<span class="result loss">LOSS</span>
@@ -163,7 +171,7 @@ Kết quả gần đây
     <h3>25/06/2026<span class="result draw">DRAW</span></h3>
     <p>Samba 1 - 0 Hiếu's old CTy </p>
     <div class="detail">
-        <p><strong>Cầu thủ:</strong> Đức Lee, <span class="MVP">Ronaldat⭐</span>, Hiếu Saka, Tài Suy (C) </p>
+        <p><strong>Cầu thủ:</strong> Đức Lee, <span class="MVP">Ronaldat⭐</span>, Hiếu Saka, Tài Suy (C) </p>
     </div>
 </div>
 
@@ -171,7 +179,7 @@ Kết quả gần đây
     <h3>27/06/2026<span class="result draw">DRAW</span></h3>
     <p>Samba x - x Xuân Trường FC</p>
     <div class="detail">
-        <p><strong>Cầu thủ:</strong> CHƯA CẬP NHẬT</p>
+        <p><strong>Cầu thủ:</strong> OnaThuan (GK), Tài Suy (C), Ronaldat, LuGiaHuy, QHuy, Lil' Trí, Nam Silun, Đức Lee</p>
     </div>
 </div>
 
@@ -194,6 +202,14 @@ function closeMainSections() {
     document.querySelectorAll(".detail").forEach(detail => {
         detail.style.display = "none";
     });
+
+    resetTabButtons();
+}
+
+function resetTabButtons() {
+    document.getElementById("btn-doihinh").classList.remove("active-tab");
+    document.getElementById("btn-thanhtich").classList.remove("active-tab");
+    document.getElementById("btn-match").classList.remove("active-tab");
 }
 
 function toggleDoiHinhTong() {
@@ -204,6 +220,12 @@ function toggleDoiHinhTong() {
 
     if (!isOpen) {
         box.style.display = "block";
+    
+        document.getElementById("btn-doihinh").classList.add("active-tab");
+
+        document.getElementById("content-area").scrollIntoView({
+            behavior: "smooth"
+        });
     }
 }
 
@@ -213,8 +235,14 @@ function toggleThanhTich() {
 
     closeMainSections();
 
-    if (!isOpen) {
+   if (!isOpen) {
         box.style.display = "block";
+
+        document.getElementById("btn-thanhtich").classList.add("active-tab");
+
+        document.getElementById("content-area").scrollIntoView({
+            behavior: "smooth"
+        });
     }
 }
 
@@ -226,6 +254,12 @@ function toggleMatches() {
 
     if (!isOpen) {
         matchList.classList.remove("hidden");
+
+        document.getElementById("btn-match").classList.add("active-tab");
+
+        document.getElementById("content-area").scrollIntoView({
+            behavior: "smooth"
+        });
     }
 }
 
