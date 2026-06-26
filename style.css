@@ -252,6 +252,21 @@ nav:hover {
         0 5px 12px rgba(0,0,0,.35);
 }
 
+.player-card-info{
+    width: 240px;
+
+    margin: 18px auto 0;
+
+    padding: 12px 0;
+
+    border-top: 1px solid rgba(201,162,39,.7);
+    border-bottom: 1px solid rgba(201,162,39,.7);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.08),
+        inset 0 -1px 0 rgba(255,255,255,.08);
+}
+
 .player-detail p {
     color: #3b2a1b;
     font-size: 20px;
@@ -262,13 +277,14 @@ nav:hover {
     align-items: center;
     justify-content: center;
     gap: 6px;
-    margin: 4px 0
+    margin: -5px 0
 }
 
 .player-detail strong {
     font-size: 24px;
     color: #745c0e;
 }
+
 
 /* ===== BANNER ===== */
 .banner {
