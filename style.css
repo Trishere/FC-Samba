@@ -214,22 +214,12 @@ nav:hover {
     padding: 0;
 }
 
-.player-list li {
-    background: #4b2f19;
-    color: #f2e2b3;
-    margin: 8px 0;
-    padding: 10px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-.player-list li:hover {
-    background: #6b4423;
-}
-
 .player-detail {
     display: none;
+}
+
+.player-detail.show {
+    display: block;
 
     background: linear-gradient(
         to bottom,
@@ -521,8 +511,8 @@ nav:hover {
     color: rgb(253, 253, 253);
 }
 
-.detail {
-    display: none;
+.detail.show {
+    display: block;
 }
 
 .detail p {
@@ -707,6 +697,20 @@ header {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+.section-hidden {
+    display: none;
+}
+
+.player-detail,
+.detail {
+    display: none;
+}
+
+.player-detail.show,
+.detail.show {
+    display: block;
 }
 
 /* =========================================================

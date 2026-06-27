@@ -13,7 +13,7 @@
 </nav>
 
 <div class="hero">
-    
+
 <p class="welcome">
     Chào mừng đến với website chính thức của F.C Samba
 </p>
@@ -40,122 +40,146 @@
 </div>
 
 <!-- 👇 ĐỘI HÌNH (ẩn mặc định) -->
-<div id="doiHinh" style="display:none; margin-top:15px;">
+<div id="doiHinh" class="section-hidden" style="margin-top:15px;">
 
-    <ul class="player-list">
+  <ul class="player-list">
 
-       <li onclick="togglePlayer('onathuan')">OnaThuan (GK)</li>
-        <div id="onathuan" class="player-detail">
+    <li>
+      <div onclick="event.stopPropagation();togglePlayer('onathuan')">OnaThuan (GK)</div>
+
+      <div id="onathuan" class="player-detail">
         <img src="images/onathuan.jpg" alt="OnaThuan" width="150">
         <div class="player-card-info">
-        <p><strong>⚔</strong> Goalkeeper</p>
-        <p><strong>⚜</strong> House Nguyễn</p>
+          <p><strong>⚔</strong> Goalkeeper</p>
+          <p><strong>⚜</strong> House Nguyễn</p>
         </div>
-</div>
+      </div>
+    </li>
 
-<li onclick="togglePlayer('taisuy')">Tài Suy (C)</li>
-<div id="taisuy" class="player-detail">
-    <img src="images/taisuy.jpg" alt="Tài Suy" width="150">
-    <div class="player-card-info">
-        <p><strong>⚔</strong> Ala / Pivot</p>
-        <p><strong>♕</strong> Captain</p>
-        <p><strong>⚜</strong> House Đoàn</p>
-    </div>
-</div>
+    <li>
+      <div onclick="event.stopPropagation();togglePlayer('taisuy')">Tài Suy (C)</div>
+      <div id="taisuy" class="player-detail">
+        <img src="images/taisuy.jpg" alt="Tài Suy" width="150">
+        <div class="player-card-info">
+          <p><strong>⚔</strong> Ala / Pivot</p>
+          <p><strong>♕</strong> Captain</p>
+          <p><strong>⚜</strong> House Đoàn</p>
+        </div>
+      </div>
+    </li>
 
-<li onclick="togglePlayer('quochuy')">Quốc Huy</li>
-<div id="quochuy" class="player-detail">
-    <img src="images/quochuy.jpg" alt="Quốc Huy" width="150">
-    <div class="player-card-info">
-        <p><strong>⚔</strong> Pivot</p>
-        <p><strong>⚜</strong> House Nguyễn</p>
-    </div>
-</div>
+    <li>
+      <div onclick="event.stopPropagation();togglePlayer('quochuy')">Quốc Huy</div>
+      <div id="quochuy" class="player-detail">
+        <img src="images/quochuy.jpg" alt="Quốc Huy" width="150">
+        <div class="player-card-info">
+          <p><strong>⚔</strong> Pivot</p>
+          <p><strong>⚜</strong> House Nguyễn</p>
+        </div>
+      </div>
+    </li>
 
-<li onclick="togglePlayer('ronaldat')">Ronaldat</li>
-<div id="ronaldat" class="player-detail">
-    <img src="images/ronaldat.jpg" alt="Ronaldat" width="150">
-    <div class="player-card-info">
-        <p><strong>⚔</strong> Fixo</p>
-        <p><strong>⚜</strong> House Nguyễn</p>
-    </div>
-</div>
+    <li>
+      <div onclick="event.stopPropagation();togglePlayer('ronaldat')">Ronaldat</div>
+      <div id="ronaldat" class="player-detail">
+        <img src="images/ronaldat.jpg" alt="Ronaldat" width="150">
+        <div class="player-card-info">
+          <p><strong>⚔</strong> Fixo</p>
+          <p><strong>⚜</strong> House Nguyễn</p>
+        </div>
+      </div>
+    </li>
 
-<li onclick="togglePlayer('duclee')">Đức Lee</li>
-<div id="duclee" class="player-detail">
-    <img src="images/duclee.jpg" alt="Đức Lee" width="150">
-    <div class="player-card-info">
-        <p><strong>⚔</strong> Fixo</p>
-        <p><strong>⚜</strong> House Lê</p>
-    </div>
-</div>
+    <li>
+      <div onclick="event.stopPropagation();togglePlayer('duclee')">Đức Lee</div>
+      <div id="duclee" class="player-detail">
+        <img src="images/duclee.jpg" alt="Đức Lee" width="150">
+        <div class="player-card-info">
+          <p><strong>⚔</strong> Fixo</p>
+          <p><strong>⚜</strong> House Lê</p>
+        </div>
+      </div>
+    </li>
 
-<li onclick="togglePlayer('liltri')">Lil' Trí</li>
-<div id="liltri" class="player-detail">
-    <img src="images/liltri.jpg" alt="Lil Tri" width="150">
-    <div class="player-card-info">
-        <p><strong>⚔</strong> Ala</p>
-        <p><strong>⚜</strong> House Lê</p>
-    </div>
-</div>
+    <li>
+      <div onclick="event.stopPropagation();togglePlayer('liltri')">Lil' Trí</div>
+      <div id="liltri" class="player-detail">
+        <img src="images/liltri.jpg" alt="Lil Tri" width="150">
+        <div class="player-card-info">
+          <p><strong>⚔</strong> Ala</p>
+          <p><strong>⚜</strong> House Lê</p>
+        </div>
+      </div>
+    </li>
 
-<li onclick="togglePlayer('hieusaka')">Hiếu Saka</li>
-<div id="hieusaka" class="player-detail">
-    <img src="images/hieusaka.jpg" alt="Hiếu Saka" width="150">
-    <div class="player-card-info">
-        <p><strong>⚔</strong> Ala</p>
-        <p><strong>⚜</strong> House Mai</p>
-    </div>
-</div>
+    <li>
+      <div onclick="event.stopPropagation();togglePlayer('hieusaka')">Hiếu Saka</div>
+      <div id="hieusaka" class="player-detail">
+        <img src="images/hieusaka.jpg" alt="Hiếu Saka" width="150">
+        <div class="player-card-info">
+          <p><strong>⚔</strong> Ala</p>
+          <p><strong>⚜</strong> House Mai</p>
+        </div>
+      </div>
+    </li>
 
-<li onclick="togglePlayer('namsilun')">Nam Silun</li>
-<div id="namsilun" class="player-detail">
-    <img src="images/namsilun.jpg" alt="Nam Silun" width="150">
-    <div class="player-card-info">
-        <p><strong>⚔</strong> Ala</p>
-        <p><strong>⚜</strong> House Mai</p>
-    </div>
-</div>
+    <li>
+      <div onclick="event.stopPropagation();togglePlayer('namsilun')">Nam Silun</div>
+      <div id="namsilun" class="player-detail">
+        <img src="images/namsilun.jpg" alt="Nam Silun" width="150">
+        <div class="player-card-info">
+          <p><strong>⚔</strong> Ala</p>
+          <p><strong>⚜</strong> House Mai</p>
+        </div>
+      </div>
+    </li>
 
-<li onclick="togglePlayer('lugiahuy')">LuGiaHuy</li>
-<div id="lugiahuy" class="player-detail">
-    <img src="images/lugiahuy.jpg" alt="LuGiaHuy" width="150">
-    <div class="player-card-info">
-        <p><strong>⚔</strong> Pivot</p>
-        <p><strong>⚜</strong> House Nguyễn</p>
-    </div>
-</div>
+    <li>
+      <div onclick="event.stopPropagation();togglePlayer('lugiahuy')">LuGiaHuy</div>
+      <div id="lugiahuy" class="player-detail">
+        <img src="images/lugiahuy.jpg" alt="LuGiaHuy" width="150">
+        <div class="player-card-info">
+          <p><strong>⚔</strong> Pivot</p>
+          <p><strong>⚜</strong> House Nguyễn</p>
+        </div>
+      </div>
+    </li>
 
-<li onclick="togglePlayer('vulongthu')">Vũ Lông Thủ</li>
-<div id="vulongthu" class="player-detail">
-    <img src="images/vulongthu.jpg" alt="Vũ Lông Thủ" width="150">
-    <div class="player-card-info">
-        <p><strong>⚔</strong> Pivot</p>
-        <p><strong>⚜</strong> House Phạm</p>
-    </div>
-</div>
+    <li>
+      <div onclick="event.stopPropagation();togglePlayer('vulongthu')">Vũ Lông Thủ</div>
+      <div id="vulongthu" class="player-detail">
+        <img src="images/vulongthu.jpg" alt="Vũ Lông Thủ" width="150">
+        <div class="player-card-info">
+          <p><strong>⚔</strong> Pivot</p>
+          <p><strong>⚜</strong> House Phạm</p>
+        </div>
+      </div>
+    </li>
 
-<li onclick="togglePlayer('quanburger')">Quân Burger King</li>
-<div id="quanburger" class="player-detail">
-    <img src="images/quanburger.jpg" alt="Quân Burger King" width="150">
-    <div class="player-card-info">
-        <p><strong>⚔</strong> Pivot</p>
-        <p><strong>⚜</strong> House Võ</p>
-    </div>
-</div>
+    <li>
+      <div onclick="event.stopPropagation();togglePlayer('quanburger')">Quân Burger King</div>
+      <div id="quanburger" class="player-detail">
+        <img src="images/quanburger.jpg" alt="Quân Burger King" width="150">
+        <div class="player-card-info">
+          <p><strong>⚔</strong> Pivot</p>
+          <p><strong>⚜</strong> House Võ</p>
+        </div>
+      </div>
+    </li>
 
-    </ul>
+  </ul>
 </div>
 
 <!-- 👇 THÀNH TÍCH -->
-<div id="thanhTich" style="display:none; margin-top:15px;">
+<div id="thanhTich" class="section-hidden" style="margin-top:15px;">
 
     <p class="record-label">W - L - D</p>
 
     <p class="record">3 - 3 - 1</p>
 </div>
 
-<div id="match-list" class="hidden">
+<!-- 👇 KẾT QUẢ -->
+<div id="match-list" class="section-hidden">
 <div class="match" onclick="toggleMatchDetail(this)">
     <h3>03/06/2026<span class="result loss">LOSS</span>
     </h3>
@@ -226,44 +250,55 @@
 
 <!-- 👇 JavaScript -->
 <script>
+/* =========================
+   CLOSE ALL SECTIONS
+========================= */
 function closeMainSections() {
-    // Đóng 3 mục lớn
-    document.getElementById("doiHinh").style.display = "none";
-    document.getElementById("thanhTich").style.display = "none";
-    document.getElementById("match-list").classList.add("hidden");
+    // đóng các section lớn
+    document.getElementById("doiHinh").classList.add("section-hidden");
+    document.getElementById("thanhTich").classList.add("section-hidden");
+    document.getElementById("match-list").classList.add("section-hidden");
 
-    // Đóng tất cả chi tiết cầu thủ
-    document.querySelectorAll(".player-detail").forEach(player => {
-        player.style.display = "none";
-    });
-
-    // Đóng tất cả chi tiết trận đấu
-    document.querySelectorAll(".detail").forEach(detail => {
-        detail.style.display = "none";
-    });
-
-    resetTabButtons();
-
+    // reset fade-in
     document.getElementById("doiHinh").classList.remove("fade-in");
     document.getElementById("thanhTich").classList.remove("fade-in");
     document.getElementById("match-list").classList.remove("fade-in");
+
+    // đóng player + match detail
+    document.querySelectorAll(".player-detail").forEach(p => {
+        p.classList.remove("show");
+    });
+
+    document.querySelectorAll(".detail").forEach(d => {
+        d.classList.remove("show");
+    });
+
+    // reset tab button
+    resetTabButtons();
 }
 
+/* =========================
+   RESET TAB BUTTONS
+========================= */
 function resetTabButtons() {
     document.getElementById("btn-doihinh").classList.remove("active-tab");
     document.getElementById("btn-thanhtich").classList.remove("active-tab");
     document.getElementById("btn-match").classList.remove("active-tab");
 }
 
+/* =========================
+   TAB: ĐỘI HÌNH
+========================= */
 function toggleDoiHinhTong() {
     const box = document.getElementById("doiHinh");
-    const isOpen = box.style.display === "block";
+    const isOpen = !box.classList.contains("section-hidden");
 
     closeMainSections();
 
     if (!isOpen) {
-        box.style.display = "block";
+        box.classList.remove("section-hidden");
         box.classList.add("fade-in");
+
         document.getElementById("btn-doihinh").classList.add("active-tab");
 
         document.getElementById("content-area").scrollIntoView({
@@ -272,14 +307,17 @@ function toggleDoiHinhTong() {
     }
 }
 
+/* =========================
+   TAB: THÀNH TÍCH
+========================= */
 function toggleThanhTich() {
     const box = document.getElementById("thanhTich");
-    const isOpen = box.style.display === "block";
+    const isOpen = !box.classList.contains("section-hidden");
 
     closeMainSections();
 
-   if (!isOpen) {
-        box.style.display = "block";
+    if (!isOpen) {
+        box.classList.remove("section-hidden");
         box.classList.add("fade-in");
 
         document.getElementById("btn-thanhtich").classList.add("active-tab");
@@ -290,14 +328,17 @@ function toggleThanhTich() {
     }
 }
 
+/* =========================
+   TAB: MATCH LIST
+========================= */
 function toggleMatches() {
     const matchList = document.getElementById("match-list");
-    const isOpen = !matchList.classList.contains("hidden");
+    const isOpen = !matchList.classList.contains("section-hidden");
 
     closeMainSections();
 
     if (!isOpen) {
-        matchList.classList.remove("hidden");
+        matchList.classList.remove("section-hidden");
         matchList.classList.add("fade-in");
 
         document.getElementById("btn-match").classList.add("active-tab");
@@ -308,31 +349,39 @@ function toggleMatches() {
     }
 }
 
+/* =========================
+   PLAYER TOGGLE
+========================= */
 function togglePlayer(id) {
     const player = document.getElementById(id);
-    const isOpen = player.style.display === "block";
+    if (!player) return;
 
-    // Chỉ đóng các player-detail, không đụng tới mục lớn
+    const isOpen = player.classList.contains("show");
+
+    // đóng tất cả trước
     document.querySelectorAll(".player-detail").forEach(p => {
-        p.style.display = "none";
+        p.classList.remove("show");
     });
 
+    // mở lại nếu chưa mở
     if (!isOpen) {
-        player.style.display = "block";
+        player.classList.add("show");
     }
 }
 
+/* =========================
+   MATCH DETAIL TOGGLE
+========================= */
 function toggleMatchDetail(match) {
     const details = match.querySelector(".detail");
-    const isOpen = details.style.display === "block";
+    const isOpen = details.classList.contains("show");
 
-    // Chỉ đóng các detail của trận đấu
-    document.querySelectorAll(".detail").forEach(detail => {
-        detail.style.display = "none";
+    document.querySelectorAll(".detail").forEach(d => {
+        d.classList.remove("show");
     });
 
     if (!isOpen) {
-        details.style.display = "block";
+        details.classList.add("show");
     }
 }
 </script>
