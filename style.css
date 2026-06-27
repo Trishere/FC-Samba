@@ -1,3 +1,9 @@
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
 body {
     position: relative;
     background: linear-gradient(
@@ -323,7 +329,7 @@ nav:hover {
     color: rgb(240,240,240);
     padding: 20px;
     margin: 20px auto;
-    width: 320px;
+     width: min(320px, 95%);
     border-radius: 6px;
 
     box-shadow:
@@ -339,7 +345,7 @@ nav:hover {
 }
 
 #thanhTich {
-    width: 380px;
+    width: min(380px, 95%);
 
     background: linear-gradient(
         to bottom,
@@ -699,6 +705,7 @@ header {
         transform: translateY(0);
     }
 }
+
 /* =========================================================
    RESPONSIVE FINAL – F.C SAMBA
 
