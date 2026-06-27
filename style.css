@@ -704,6 +704,10 @@ header {
     box-shadow: 0 8px 18px rgba(0,0,0,.45);
 }
 
+.tab-menu button:active {
+    transform: translateY(2px);
+}
+
 .active-tab {
     background: linear-gradient(
         to bottom,
@@ -716,21 +720,32 @@ header {
     border-color: #f2d46f !important;
 
     box-shadow: 0 0 14px rgba(201,162,39,.5);
+
+    transition: all .3s ease;
 }
 
 .fade-in {
-    animation: fadeIn 0.5s ease;
+    animation: royalReveal .55s cubic-bezier(.22,1,.36,1);
 }
 
-@keyframes fadeIn {
-    from {
+@keyframes royalReveal {
+
+    0% {
         opacity: 0;
-        transform: translateY(8px);
+        transform: translateY(24px) scale(.96);
+        filter: blur(3px);
     }
 
-    to {
+    70% {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(-2px) scale(1.01);
+        filter: blur(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
     }
 }
 
