@@ -514,8 +514,9 @@ nav:hover {
 }
 
 .detail p {
-    text-align: center;
+    font-size: 20px;
     line-height: 1.8;
+    text-align: center;
 }
 
 .detail strong {
@@ -1100,7 +1101,6 @@ header {
     }
 
     .logo {
-        .logo {
     width: 160px;
     margin-bottom: -5px;
 }
@@ -1164,7 +1164,7 @@ header {
     .detail p {
         font-size: 16px;
     }
-}
+
 
 
 /* ===== 6) Mobile rất nhỏ ===== */
