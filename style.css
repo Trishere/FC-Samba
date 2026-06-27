@@ -61,7 +61,7 @@ h1::after {
 
     top: 50%;
 
-    width:min(180px,18vw);
+    width: 180px;;
     height: 3px;
 
     background: linear-gradient( to right, transparent 0%, #8a6a1d 20%, #e8c86a 50%, #8a6a1d 80%,
