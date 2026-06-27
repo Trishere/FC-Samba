@@ -6,12 +6,19 @@
 
 body {
     position: relative;
-    background: linear-gradient(
-    135deg,
-    #171411,
-    #433124,
-    #7d6037
-);
+
+    background:
+        linear-gradient(
+            rgba(20, 15, 10, 0.75),
+            rgba(20, 15, 10, 0.75)
+        ),
+        url("images/rong.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
     color: rgb(255, 255, 255);
     font-family: "Times New Roman", serif;
     text-align: center;
