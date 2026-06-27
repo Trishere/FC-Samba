@@ -219,11 +219,14 @@ nav:hover {
 }
 
 .player-detail.show {
-    display: block;
+    max-height: 600px;
+    opacity: 1;
+    transform: scaleY(1);
+    transform-origin: top;
 
     background: linear-gradient(
         to bottom,
-        #efe2c2,
+        #f3e6c7,
         #dcc79c
     );
 
@@ -234,13 +237,26 @@ nav:hover {
     margin: 12px 0;
 
     border: 2px solid #b08d57;
-
     border-radius: 10px;
 
-    box-shadow:
-        0 6px 16px rgba(0,0,0,.35);
+    overflow: hidden;
 
-    transition: .3s ease;
+    box-shadow: 0 10px 25px rgba(0,0,0,.4);
+
+    animation: scrollUnfold 0.45s ease-out;
+}
+@keyframes scrollUnfold {
+    0% {
+        transform: scaleY(0.2);
+        opacity: 0;
+    }
+    70% {
+        transform: scaleY(1.05);
+        opacity: 1;
+    }
+    100% {
+        transform: scaleY(1);
+    }
 }
 
 .player-detail img {
@@ -683,6 +699,7 @@ header {
 
     box-shadow: 0 0 14px rgba(201,162,39,.5);
 }
+
 .fade-in {
     animation: fadeIn 0.5s ease;
 }
@@ -699,18 +716,29 @@ header {
     }
 }
 
+/* ===== SECTION TOGGLE ===== */
 .section-hidden {
     display: none;
 }
 
-.player-detail,
+/* ===== PLAYER + MATCH TOGGLE STATE ===== */
+.player-detail {
+    display: none;
+}
+
 .detail {
     display: none;
 }
 
-.player-detail.show,
+/* chỉ giữ match detail dạng đơn giản */
 .detail.show {
     display: block;
+}
+
+/* PLAYER dùng animation scroll */
+.player-detail.show {
+    display: block; /* vẫn cần để render */
+    animation: scrollUnfold 0.45s ease-out;
 }
 
 /* =========================================================

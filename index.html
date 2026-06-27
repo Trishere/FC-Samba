@@ -45,7 +45,7 @@
   <ul class="player-list">
 
     <li>
-      <div onclick="event.stopPropagation();togglePlayer('onathuan')">OnaThuan (GK)</div>
+      <div onclick="togglePlayer('onathuan', event)">OnaThuan (GK)</div>
 
       <div id="onathuan" class="player-detail">
         <img src="images/onathuan.jpg" alt="OnaThuan" width="150">
@@ -57,7 +57,7 @@
     </li>
 
     <li>
-      <div onclick="event.stopPropagation();togglePlayer('taisuy')">Tài Suy (C)</div>
+      <div onclick="togglePlayer('taisuy', event)">Tài Suy (C)</div>
       <div id="taisuy" class="player-detail">
         <img src="images/taisuy.jpg" alt="Tài Suy" width="150">
         <div class="player-card-info">
@@ -69,7 +69,7 @@
     </li>
 
     <li>
-      <div onclick="event.stopPropagation();togglePlayer('quochuy')">Quốc Huy</div>
+      <div onclick="togglePlayer('quochuy', event)">Quốc Huy</div>
       <div id="quochuy" class="player-detail">
         <img src="images/quochuy.jpg" alt="Quốc Huy" width="150">
         <div class="player-card-info">
@@ -80,18 +80,18 @@
     </li>
 
     <li>
-      <div onclick="event.stopPropagation();togglePlayer('ronaldat')">Ronaldat</div>
+      <div onclick="togglePlayer('ronaldat', event)">Ronaldat</div>
       <div id="ronaldat" class="player-detail">
         <img src="images/ronaldat.jpg" alt="Ronaldat" width="150">
         <div class="player-card-info">
           <p><strong>⚔</strong> Fixo</p>
-          <p><strong>⚜</strong> House Nguyễn</p>
+          <p><strong>⚜</strong> House Nguyễn</p>
         </div>
       </div>
     </li>
 
     <li>
-      <div onclick="event.stopPropagation();togglePlayer('duclee')">Đức Lee</div>
+      <div onclick="togglePlayer('duclee', event)">Đức Lee</div>
       <div id="duclee" class="player-detail">
         <img src="images/duclee.jpg" alt="Đức Lee" width="150">
         <div class="player-card-info">
@@ -102,7 +102,7 @@
     </li>
 
     <li>
-      <div onclick="event.stopPropagation();togglePlayer('liltri')">Lil' Trí</div>
+      <div onclick="togglePlayer('liltri', event)">Lil' Trí</div>
       <div id="liltri" class="player-detail">
         <img src="images/liltri.jpg" alt="Lil Tri" width="150">
         <div class="player-card-info">
@@ -113,7 +113,7 @@
     </li>
 
     <li>
-      <div onclick="event.stopPropagation();togglePlayer('hieusaka')">Hiếu Saka</div>
+      <div onclick="togglePlayer('hieusaka', event)">Hiếu Saka</div>
       <div id="hieusaka" class="player-detail">
         <img src="images/hieusaka.jpg" alt="Hiếu Saka" width="150">
         <div class="player-card-info">
@@ -124,7 +124,7 @@
     </li>
 
     <li>
-      <div onclick="event.stopPropagation();togglePlayer('namsilun')">Nam Silun</div>
+      <div onclick="togglePlayer('namsilun', event)">Nam Silun</div>
       <div id="namsilun" class="player-detail">
         <img src="images/namsilun.jpg" alt="Nam Silun" width="150">
         <div class="player-card-info">
@@ -135,7 +135,7 @@
     </li>
 
     <li>
-      <div onclick="event.stopPropagation();togglePlayer('lugiahuy')">LuGiaHuy</div>
+      <div onclick="togglePlayer('lugiahuy', event)">LuGiaHuy</div>
       <div id="lugiahuy" class="player-detail">
         <img src="images/lugiahuy.jpg" alt="LuGiaHuy" width="150">
         <div class="player-card-info">
@@ -146,18 +146,18 @@
     </li>
 
     <li>
-      <div onclick="event.stopPropagation();togglePlayer('vulongthu')">Vũ Lông Thủ</div>
+      <div onclick="togglePlayer('vulongthu', event)">Vũ Lông Thủ</div>
       <div id="vulongthu" class="player-detail">
         <img src="images/vulongthu.jpg" alt="Vũ Lông Thủ" width="150">
         <div class="player-card-info">
           <p><strong>⚔</strong> Pivot</p>
-          <p><strong>⚜</strong> House Phạm</p>
+          <p><strong>⚜</strong> House Phạm</p>
         </div>
       </div>
     </li>
 
     <li>
-      <div onclick="event.stopPropagation();togglePlayer('quanburger')">Quân Burger King</div>
+      <div onclick="togglePlayer('quanburger', event)">Quân Burger King</div>
       <div id="quanburger" class="player-detail">
         <img src="images/quanburger.jpg" alt="Quân Burger King" width="150">
         <div class="player-card-info">
@@ -352,20 +352,24 @@ function toggleMatches() {
 /* =========================
    PLAYER TOGGLE
 ========================= */
-function togglePlayer(id) {
-    const player = document.getElementById(id);
-    if (!player) return;
+function togglePlayer(id, event) {
+    if (event) {
+        event.stopPropagation();
+    }
 
-    const isOpen = player.classList.contains("show");
+    const target = document.getElementById(id);
+    if (!target) return;
 
-    // đóng tất cả trước
-    document.querySelectorAll(".player-detail").forEach(p => {
-        p.classList.remove("show");
+    const isOpen = target.classList.contains("show");
+
+    // đóng tất cả
+    document.querySelectorAll(".player-detail").forEach(el => {
+        el.classList.remove("show");
     });
 
-    // mở lại nếu chưa mở
+    // nếu nó chưa mở thì mới mở lại
     if (!isOpen) {
-        player.classList.add("show");
+        target.classList.add("show");
     }
 }
 
