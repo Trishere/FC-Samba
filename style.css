@@ -214,37 +214,39 @@ nav:hover {
     padding: 0;
 }
 
+/* ===== PLAYER DETAIL ===== */
 .player-detail {
-    display: none;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: scaleY(0.95);
+    transform-origin: top;
+    transition: all 0.35s ease;
+
+    /* quan trọng: tránh padding gây “giật khi đóng” */
+    padding: 0 18px;
+    margin: 0;
 }
 
+/* trạng thái mở */
 .player-detail.show {
     max-height: 600px;
     opacity: 1;
     transform: scaleY(1);
-    transform-origin: top;
 
-    background: linear-gradient(
-        to bottom,
-        #f3e6c7,
-        #dcc79c
-    );
-
+    background: linear-gradient(to bottom, #f3e6c7, #dcc79c);
     color: #3b2a1b;
 
     padding: 18px;
-
     margin: 12px 0;
 
     border: 2px solid #b08d57;
     border-radius: 10px;
 
-    overflow: hidden;
-
     box-shadow: 0 10px 25px rgba(0,0,0,.4);
-
-    animation: scrollUnfold 0.45s ease-out;
 }
+
+/* animation mở kiểu “cuộn mở scroll cổ” */
 @keyframes scrollUnfold {
     0% {
         transform: scaleY(0.2);
@@ -723,23 +725,18 @@ header {
 
 /* ===== PLAYER + MATCH TOGGLE STATE ===== */
 .player-detail {
-    display: none;
+    display: block;
 }
 
 .detail {
     display: none;
 }
 
-/* chỉ giữ match detail dạng đơn giản */
+/* match mở */
 .detail.show {
     display: block;
 }
 
-/* PLAYER dùng animation scroll */
-.player-detail.show {
-    display: block; /* vẫn cần để render */
-    animation: scrollUnfold 0.45s ease-out;
-}
 
 /* =========================================================
    RESPONSIVE FINAL – F.C SAMBA
