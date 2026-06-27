@@ -93,20 +93,20 @@ p {
          1px  1px 0 #000;
 }
 
-.hero{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 
-    padding:20px 0 30px;
-    gap:10px;
+    padding: 20px 0 30px;
 }
 
 .logo {
     width: clamp(180px, 20vw, 300px);
 
-    margin-top: -130px;
+    margin-top: -100px;
 
     filter:
         drop-shadow(0 0 10px rgba(201,162,39,.25))
@@ -123,7 +123,6 @@ p {
 
 nav {
     position: relative;
-    margin-top:14px;
     z-index: 9999;
 
     width: fit-content;
@@ -281,7 +280,7 @@ nav:hover {
     align-items: center;
     justify-content: center;
     gap: 6px;
-    margin: -5px 0
+    margin: 4px 0;
 }
 
 .player-detail strong {
@@ -703,3 +702,55 @@ header {
 /* =========================================================
    RESPONSIVE FINAL – F.C SAMBA
 
+/* =========================
+   RESPONSIVE - HERO
+========================= */
+
+@media (max-width: 768px) {
+
+    .welcome {
+        font-size: 18px;
+        padding: 0 16px;
+    }
+
+    .hero {
+        gap: 6px;
+        padding: 12px 0 20px;
+    }
+
+    .logo {
+        width: 180px;
+        margin-top: -40px;
+    }
+
+    h1 {
+        font-size: 42px;
+        margin-top: -40px;
+        margin-bottom: 12px;
+        line-height: 1.1;
+    }
+
+    h1::before,
+    h1::after {
+        display: none;
+    }
+
+}
+
+@media (max-width:480px){
+
+    .welcome{
+        font-size:16px;
+    }
+
+    .logo{
+        width:150px;
+        margin-top:-25px;
+    }
+
+    h1{
+        font-size:34px;
+        margin-top:-25px;
+    }
+
+}
