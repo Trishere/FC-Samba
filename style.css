@@ -534,6 +534,10 @@ nav:hover {
     margin: 20px auto;
     padding: 18px;
 
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
     border: 3px solid #c9a227;
 
     border-radius: 6px;
@@ -545,6 +549,20 @@ nav:hover {
 
     cursor: pointer;
 }
+
+.match-knight{
+    width:90px;
+    height:auto;
+    flex-shrink:0;
+
+    image-rendering:pixelated;
+}
+
+
+.match-body{
+    flex:1;
+}
+
 
 .match:hover {
     transform: translateY(-3px);
