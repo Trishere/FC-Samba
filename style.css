@@ -164,7 +164,7 @@ p {
 
 .logo {
     width: clamp(140px, 18vw, 230px);
-    margin-top: -30px;
+    margin-top: -15px;
 
     filter:
         drop-shadow(0 0 10px rgba(201,162,39,.25))
