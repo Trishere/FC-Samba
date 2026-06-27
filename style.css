@@ -130,8 +130,8 @@ p {
 }
 
 .logo {
-    width: clamp(100px, 13vw, 170px);
-    margin-top: -35px;
+    width: clamp(140px, 18vw, 230px);
+    margin-top: -30px;
 
     filter:
         drop-shadow(0 0 10px rgba(201,162,39,.25))
