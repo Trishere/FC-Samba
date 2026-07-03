@@ -40,49 +40,255 @@
 
 </div>
 
-<h2 class="banner">BIÊN NIÊN SỬ</h2>
+<!-- =========================
+    BIÊN NIÊN SỬ
+========================= -->
 <div id="content-area">
 
-    <div class="tab-menu">
+    <h2 class="banner" onclick="toggleChronicle()">
+        BIÊN NIÊN SỬ
+    </h2>
 
-      <button id="btn-doihinh" onclick="toggleDoiHinhTong()">Đội hình</button>
+    <div id="chronicle-menu" class="section-hidden">
 
-      <button id="btn-thanhtich" onclick="toggleThanhTich()">Thành tích</button>
+        <!-- =========================
+            THÀNH TÍCH
+        ========================== -->
+        <h2 class="banner sub-banner" onclick="toggleThanhTich()">
+            THÀNH TÍCH
+        </h2>
 
-      <button id="btn-match" onclick="toggleMatches()">Kết quả</button>
+        <div id="thanhTich" class="section-hidden">
+            <p class="record-label">W - L - D</p>
+            <p class="record">3 - 5 - 1</p>
+        </div>
+
+        <!-- =========================
+            VIỄN CHINH
+        ========================== -->
+        <h2 class="banner sub-banner" onclick="toggleMatches()">
+            VIỄN CHINH
+        </h2>
+
+        <div id="match-list" class="section-hidden">
+
+            <div class="match" onclick="toggleMatchDetail(this,event)">
+                <img class="match-knight" src="images/lossknight.png" alt="Loss">
+
+                <div class="match-body">
+                    <h3>
+                        03/06/2026 <span class="result loss">LOSS</span>
+                    </h3>
+                    <p>Samba 0 - 4 FC Lạ</p>
+
+                    <div class="detail">
+                        <p><strong>Cầu thủ:</strong> Thuận (GK), Đức Lee, Ronaldat, Anh Đạt, Lil' Trí, Hiếu Saka, Quân Burger King</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="match" onclick="toggleMatchDetail(this,event)">
+                <img class="match-knight" src="images/winknight.png" alt="Win">
+
+                <div class="match-body">
+                    <h3>
+                        06/06/2026 <span class="result win">WIN</span>
+                    </h3>
+                    <p>Samba 1 - 0 QHuy's brothers</p>
+
+                    <div class="detail">
+                        <p><strong>Cầu thủ:</strong> Thuận (GK), Đức Lee, QHuy, Lil' Trí, Hiếu Saka, Tài Suy (C), LuGiaHuy, Nam Silun</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="match" onclick="toggleMatchDetail(this,event)">
+                <img class="match-knight" src="images/lossknight.png" alt="Loss">
+
+                <div class="match-body">
+                    <h3>
+                        13/06/2026 <span class="result loss">LOSS</span>
+                    </h3>
+                    <p>Samba 0 - 4 Phong Lâm FC</p>
+
+                    <div class="detail">
+                        <p><strong>Cầu thủ:</strong> Thuận (GK), LuGiaHuy, Vũ Lông Thủ, Tài Suy (C), Quân Burger King, Nam Silun, Đức Lee, Ronaldat, Anh Đạt, Hiếu Saka, QHuy</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="match" onclick="toggleMatchDetail(this,event)">
+                <img class="match-knight" src="images/lossknight.png" alt="Loss">
+
+                <div class="match-body">
+                    <h3>
+                        14/06/2026 <span class="result loss">LOSS</span>
+                    </h3>
+                    <p>Samba 0 - 2 Hậu Brothers FC</p>
+
+                    <div class="detail">
+                        <p><strong>Cầu thủ:</strong> Anh Đạt (GK), Ronaldat, Đức Lee, QHuy, Lil' Trí, Hiếu Saka, Nam Silun</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="match" onclick="toggleMatchDetail(this,event)">
+                <img class="match-knight" src="images/winknight.png" alt="Win">
+
+                <div class="match-body">
+                    <h3>
+                        19/06/2026 <span class="result win">WIN</span>
+                    </h3>
+                    <p>Samba 5 - 0 Quý Brothers FC</p>
+
+                    <div class="detail">
+                        <p><strong>Cầu thủ:</strong> Việt (GK), <span class="MVP">Ronaldat⭐</span>, QHuy, Tài Suy (C), Nam Silun, Quân Burger King, Vũ Lông Thủ</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="match" onclick="toggleMatchDetail(this,event)">
+                <img class="match-knight" src="images/drawknight.png" alt="Draw">
+
+                <div class="match-body">
+                    <h3>
+                        20/06/2026 <span class="result draw">DRAW</span>
+                    </h3>
+                    <p>Samba 3 - 3 Phong Lâm FC</p>
+
+                    <div class="detail">
+                        <p><strong>Cầu thủ:</strong> <span class="MVP">LuGiaHuy (GK)⭐</span>, Ronaldat (C), Hiếu Saka, QHuy, Lil' Trí, Nam Silun, Đức Lee</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="match" onclick="toggleMatchDetail(this,event)">
+                <img class="match-knight" src="images/winknight.png" alt="Win">
+
+                <div class="match-body">
+                    <h3>
+                        25/06/2026 <span class="result win">WIN</span>
+                    </h3>
+                    <p>Samba 1 - 0 Hiếu's old CTy</p>
+
+                    <div class="detail">
+                        <p><strong>Cầu thủ:</strong> Đức Lee, <span class="MVP">Ronaldat⭐</span>, Hiếu Saka, Tài Suy (C)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="match" onclick="toggleMatchDetail(this,event)">
+                <img class="match-knight" src="images/lossknight.png" alt="Loss">
+
+                <div class="match-body">
+                    <h3>
+                        27/06/2026 <span class="result loss">LOSS</span>
+                    </h3>
+                    <p>Samba 0 - 1 Xuân Trường FC</p>
+
+                    <div class="detail">
+                        <p><strong>Cầu thủ:</strong> <span class="MVP">OnaThuan (GK)⭐</span>, Tài Suy (C), Vũ Lông Thủ, Hiếu Saka, Ronaldat, LuGiaHuy, QHuy, Lil' Trí, Nam Silun, Đức Lee</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="match" onclick="toggleMatchDetail(this,event)">
+                <img class="match-knight" src="images/lossknight.png" alt="Loss">
+
+                <div class="match-body">
+                    <h3>
+                        02/07/2026 <span class="result loss">LOSS</span>
+                    </h3>
+                    <p>Samba 0 - 3 Giặc Lạ FC</p>
+
+                    <div class="detail">
+                        <p><strong>Cầu thủ:</strong> <span class="MVP">Việt (GK)⭐</span>, Quân Burger King, Xuân Trường, Hiếu Saka, Ronaldat, QHuy, Đức Lee</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- =========================
+            NỘI CHIẾN
+        ========================== -->
+        <h2 class="banner sub-banner" onclick="toggleNoiChien()">
+            NỘI CHIẾN
+        </h2>
+
+        <div id="noichien" class="section-hidden">
+
+            <div class="match" onclick="toggleMatchDetail(this,event)">
+                <img class="match-knight" src="images/winknight.png" alt="Win">
+
+                <div class="match-body">
+                    <h3>
+                        24/05/2026 <span class="result win">WIN</span>
+                    </h3>
+                    <p>Samba 10 - 0 Ronaldat</p>
+
+                    <div class="detail">
+                        <p><strong>Lực lượng:</strong> 7 - 6</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="match" onclick="toggleMatchDetail(this,event)">
+                <img class="match-knight" src="images/drawknight.png" alt="Draw">
+
+                <div class="match-body">
+                    <h3>
+                        24/05/2026 <span class="result draw">DRAW</span>
+                    </h3>
+                    <p>Samba x - x Ronaldat</p>
+
+                    <div class="detail">
+                        <p><strong>Lực lượng:</strong> 6 - 6</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
 
     </div>
 
-</div>
 
-<!-- 👇 ĐỘI HÌNH (ẩn mặc định) -->
+ <!-- =========================
+        ĐỘI HÌNH
+    ========================== -->
+<h2 class="banner main-banner" onclick="toggleDoiHinhTong()">
+    ĐỘI HÌNH
+</h2>
+
+<!-- 👇 ĐỘI HÌNH -->
 <div id="doiHinh" class="section-hidden" style="margin-top:15px;">
 
-  <ul class="player-list">
+    <ul class="player-list">
 
-    <li>
-      <div onclick="togglePlayer('onathuan', event)">OnaThuan (GK)</div>
+        <li>
+            <div onclick="togglePlayer('onathuan', event)">OnaThuan (GK)</div>
 
-      <div id="onathuan" class="player-detail">
-        <img src="images/onathuan.jpg" alt="OnaThuan" width="150">
-        <div class="player-card-info">
-          <p><strong>⚔</strong> Goalkeeper</p>
-          <p><strong>⚜</strong> House Nguyễn</p>
-        </div>
-      </div>
-    </li>
+            <div id="onathuan" class="player-detail">
+                <img src="images/onathuan.jpg" alt="OnaThuan" width="150">
+                <div class="player-card-info">
+                    <p><strong>⚔</strong> Goalkeeper</p>
+                    <p><strong>⚜</strong> House Nguyễn</p>
+                </div>
+            </div>
+        </li>
 
-    <li>
-      <div onclick="togglePlayer('taisuy', event)">Tài Suy (C)</div>
-      <div id="taisuy" class="player-detail">
-        <img src="images/taisuy.jpg" alt="Tài Suy" width="150">
-        <div class="player-card-info">
-          <p><strong>⚔</strong> Ala / Pivot</p>
-          <p><strong>♕</strong> Captain</p>
-          <p><strong>⚜</strong> House Đoàn</p>
-        </div>
-      </div>
-    </li>
+        <li>
+            <div onclick="togglePlayer('taisuy', event)">Tài Suy (C)</div>
+
+            <div id="taisuy" class="player-detail">
+                <img src="images/taisuy.jpg" alt="Tài Suy" width="150">
+                <div class="player-card-info">
+                    <p><strong>⚔</strong> Ala / Pivot</p>
+                    <p><strong>♕</strong> Captain</p>
+                    <p><strong>⚜</strong> House Đoàn</p>
+                </div>
+            </div>
+        </li>
 
     <li>
       <div onclick="togglePlayer('quochuy', event)">Quốc Huy</div>
@@ -184,145 +390,6 @@
     </li>
 
   </ul>
-</div>
-
-<!-- 👇 THÀNH TÍCH -->
-<div id="thanhTich" class="section-hidden" style="margin-top:15px;">
-
-    <p class="record-label">W - L - D</p>
-
-    <p class="record">3 - 4 - 1</p>
-</div>
-
-<!-- 👇 KẾT QUẢ -->
-<div id="match-list" class="section-hidden">
-
-<div class="match" onclick="toggleMatchDetail(this)">
-
-      <img class="match-knight" src="images/lossknight.png" alt="Loss">
-
-         <div class="match-body">
-    <h3>
-      03/06/2026<span class="result loss">LOSS</span>
-    </h3>
-    <p>Samba 0 - 4 FC Lạ</p>
-    <div class="detail">
-        <p><strong>Cầu thủ:</strong> Thuận (GK), Đức Lee, Ronaldat, Anh Đạt, Lil' Trí, Hiếu Saka, Quân Burger King</p>
-    </div>
-         </div>
-</div>
-
-<div class="match" onclick="toggleMatchDetail(this)">
-      <img class="match-knight" src="images/winknight.png" alt="Win">
-
-    <div class="match-body">
-    <h3>
-      06/06/2026<span class="result win">WIN</span>
-    </h3>
-    <p>Samba 1 - 0 QHuy's brothers</p>
-    <div class="detail">
-        <p><strong>Cầu thủ:</strong> Thuận (GK), Đức Lee, QHuy, Lil' Trí, Hiếu Saka, Tài Suy (C), LuGiaHuy, Nam Silun</p>
-    </div>
-    </div>
-</div>
-
-<div class="match" onclick="toggleMatchDetail(this)">
-      <img class="match-knight" src="images/lossknight.png" alt="Loss">
-
-    <div class="match-body">
-
-    <h3>
-      13/06/2026<span class="result loss">LOSS</span>
-    </h3>
-    <p>Samba 0 - 4 Phong Lâm FC</p>
-    <div class="detail">
-        <p><strong>Cầu thủ:</strong> Thuận (GK), LuGiaHuy, Vũ Lông Thủ, Tài Suy (C), Quân Burger King, Nam Silun, Đức Lee, Ronaldat, Anh Đạt, Hiếu Saka, QHuy</p>
-    </div>
-    </div>
-</div>
-
-<div class="match" onclick="toggleMatchDetail(this)">
-      <img class="match-knight" src="images/lossknight.png" alt="Loss">
-
-    <div class="match-body">
-    <h3>
-      14/06/2026<span class="result loss">LOSS</span>
-    </h3>
-    <p>Samba 0 - 2 Hậu Brothers FC</p>
-    <div class="detail">
-        <p><strong>Cầu thủ:</strong> Anh Đạt (GK), Ronaldat, Đức Lee, QHuy, Lil' Trí, Hiếu Saka, Nam Silun</p>
-    </div>
-    </div>
-</div>
-
-<div class="match" onclick="toggleMatchDetail(this)">
-    <img class="match-knight" src="images/winknight.png" alt="Win">
-
-    <div class="match-body">
-
-    <h3>
-      19/06/2026<span class="result win">WIN</span>
-    </h3>
-    <p>Samba 5 - 0 Quý Brothers FC</p>
-    <div class="detail">
-        <p><strong>Cầu thủ:</strong> Việt (GK), <span class="MVP">Ronaldat⭐</span>, QHuy, Tài Suy (C), Nam Silun, Quân Burger King, Vũ Lông Thủ</p>
-    </div>
-    </div>
-</div>
-
-<div class="match" onclick="toggleMatchDetail(this)">
-    <img class="match-knight" src="images/drawknight.png" alt="Draw">
-    <div class="match-body">
-    <h3>
-      20/06/2026<span class="result draw">DRAW</span>
-    </h3>
-    <p>Samba 3 - 3 Phong Lâm FC</p>
-    <div class="detail">
-        <p><strong>Cầu thủ:</strong> <span class="MVP">LuGiaHuy (GK)⭐</span>, Ronaldat (C), Hiếu Saka, QHuy, Lil' Trí, Nam Silun, Đức Lee</p>
-    </div>
-    </div>
-</div>
-
-<div class="match" onclick="toggleMatchDetail(this)">
-    <img class="match-knight" src="images/winknight.png" alt="Win">
-    <div class="match-body">
-    <h3>
-      25/06/2026<span class="result win">WIN</span>
-    </h3>
-    <p>Samba 1 - 0 Hiếu's old CTy </p>
-    <div class="detail">
-        <p><strong>Cầu thủ:</strong> Đức Lee, <span class="MVP">Ronaldat⭐</span>, Hiếu Saka, Tài Suy (C) </p>
-    </div>
-    </div>
-</div>
-
-<div class="match" onclick="toggleMatchDetail(this)">
-    <img class="match-knight" src="images/lossknight.png" alt="Loss">
-
-    <div class="match-body">
-    <h3>
-      27/06/2026<span class="result loss">LOSS</span>
-    </h3>
-    <p>Samba 0 - 1 Xuân Trường FC</p>
-    <div class="detail">
-        <p><strong>Cầu thủ:</strong> <span class="MVP">OnaThuan (GK)⭐</span>, Tài Suy (C), Vũ Lông Thủ, Hiếu Saka, Ronaldat, LuGiaHuy, QHuy, Lil' Trí, Nam Silun, Đức Lee</p>
-    </div>
-    </div>
-</div>
-
-<div class="match" onclick="toggleMatchDetail(this)">
-    <img class="match-knight" src="images/drawknight.png" alt="Draw">
-
-    <div class="match-body">
-    <h3>
-      02/07/2026<span class="result draw">DRAW</span>
-    </h3>
-    <p>Samba 0 - 0 Giặc Lạ FC</p>
-    <div class="detail">
-        <p><strong>Cầu thủ:</strong> <span class="MVP">Việt (GK)⭐</span>, Quân Burger King, Xuân Trường, Hiếu Saka, Ronaldat, QHuy, Đức Lee</p>
-    </div>
-    </div>
-</div>
 
 </div>
 
@@ -333,73 +400,120 @@
    CLOSE ALL SECTIONS
 ========================= */
 function closeMainSections() {
-    // đóng các section lớn
+
     document.getElementById("doiHinh").classList.add("section-hidden");
     document.getElementById("thanhTich").classList.add("section-hidden");
     document.getElementById("match-list").classList.add("section-hidden");
+    document.getElementById("noichien").classList.add("section-hidden");
 
-    // reset fade-in
     document.getElementById("doiHinh").classList.remove("fade-in");
     document.getElementById("thanhTich").classList.remove("fade-in");
     document.getElementById("match-list").classList.remove("fade-in");
+    document.getElementById("noichien").classList.remove("fade-in");
 
-    // đóng player + match detail
-    document.querySelectorAll(".player-detail").forEach(p => {
-        p.classList.remove("show");
-    });
-
-    document.querySelectorAll(".detail").forEach(d => {
-        d.classList.remove("show");
-    });
-
-    // reset tab button
-    resetTabButtons();
 }
 
-/* =========================
-   RESET TAB BUTTONS
-========================= */
-function resetTabButtons() {
-    document.getElementById("btn-doihinh").classList.remove("active-tab");
-    document.getElementById("btn-thanhtich").classList.remove("active-tab");
-    document.getElementById("btn-match").classList.remove("active-tab");
+function openSection(id) {
+    closeMainSections();
+    document.getElementById(id).classList.remove("section-hidden");
 }
 
 /* =========================
    TAB: ĐỘI HÌNH
 ========================= */
+function toggleChronicle() {
+
+    const menu = document.getElementById("chronicle-menu");
+
+    const isOpen = !menu.classList.contains("section-hidden");
+
+    // Nếu đang mở thì đóng toàn bộ Biên niên sử
+    if (isOpen) {
+
+        menu.classList.add("section-hidden");
+
+        closeMainSections();
+
+        return;
+    }
+
+    // Nếu đang đóng thì chỉ mở menu
+    menu.classList.remove("section-hidden");
+
+}
+
 function toggleDoiHinhTong() {
+
     const box = document.getElementById("doiHinh");
     const isOpen = !box.classList.contains("section-hidden");
 
     closeMainSections();
 
     if (!isOpen) {
+
         box.classList.remove("section-hidden");
         box.classList.add("fade-in");
 
-        document.getElementById("btn-doihinh").classList.add("active-tab");
+        document.getElementById("content-area")
+                .scrollIntoView({
+                    behavior:"smooth"
+                });
 
-        document.getElementById("content-area").scrollIntoView({
-            behavior: "smooth"
-        });
     }
+
 }
 
 /* =========================
-   TAB: THÀNH TÍCH
+   TAB: VIỄN CHINH
 ========================= */
 function toggleThanhTich() {
+
     const box = document.getElementById("thanhTich");
     const isOpen = !box.classList.contains("section-hidden");
 
     closeMainSections();
 
     if (!isOpen) {
+
+        document.getElementById("chronicle-menu")
+                .classList.remove("section-hidden");
+
         box.classList.remove("section-hidden");
         box.classList.add("fade-in");
 
-        document.getElementById("btn-thanhtich").classList.add("active-tab");
+        document.getElementById("content-area").scrollIntoView({
+            behavior: "smooth"
+        });
+
+    }
+
+}
+
+/* =========================
+   TAB: NỘI CHIẾN
+========================= */
+
+function toggleNoiChien() {
+
+    const box = document.getElementById("noichien");
+    const isOpen = !box.classList.contains("section-hidden");
+
+    closeMainSections();
+
+    if (!isOpen) {
+
+        document.getElementById("chronicle-menu")
+                .classList.remove("section-hidden");
+
+        box.classList.remove("section-hidden");
+        box.classList.add("fade-in");
+
+        // 🔥 FIX QUAN TRỌNG
+        requestAnimationFrame(() => {
+            box.querySelectorAll(".detail").forEach(d => {
+                d.classList.remove("show");
+            });
+        });
 
         document.getElementById("content-area").scrollIntoView({
             behavior: "smooth"
@@ -411,16 +525,28 @@ function toggleThanhTich() {
    TAB: MATCH LIST
 ========================= */
 function toggleMatches() {
-    const matchList = document.getElementById("match-list");
-    const isOpen = !matchList.classList.contains("section-hidden");
+
+    const box = document.getElementById("match-list");
+    const isOpen = !box.classList.contains("section-hidden");
 
     closeMainSections();
 
     if (!isOpen) {
-        matchList.classList.remove("section-hidden");
-        matchList.classList.add("fade-in");
 
-        document.getElementById("btn-match").classList.add("active-tab");
+        document.getElementById("chronicle-menu")
+                .classList.remove("section-hidden");
+
+        box.classList.remove("section-hidden");
+        box.classList.add("fade-in");
+
+        // 🔥 FIX QUAN TRỌNG
+        requestAnimationFrame(() => {
+            const firstDetail = box.querySelector(".detail");
+            if (firstDetail) {
+                firstDetail.classList.remove("show"); 
+                // đảm bảo state sạch để click lần 1 ăn ngay
+            }
+        });
 
         document.getElementById("content-area").scrollIntoView({
             behavior: "smooth"
@@ -455,8 +581,17 @@ function togglePlayer(id, event) {
 /* =========================
    MATCH DETAIL TOGGLE
 ========================= */
-function toggleMatchDetail(match) {
+function toggleMatchDetail(match, event) {
+
+  console.log("CLICK MATCH");
+
+    if (event) {
+        event.stopPropagation();
+    }
+
     const details = match.querySelector(".detail");
+    if (!details) return;
+
     const isOpen = details.classList.contains("show");
 
     document.querySelectorAll(".detail").forEach(d => {

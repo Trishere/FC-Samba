@@ -109,7 +109,7 @@ p {
     justify-content: center;
 
     gap:10px;
-    padding:20px 16px 28px;
+    padding:20px 16px 10px;
 
 }
 
@@ -357,14 +357,15 @@ nav:hover {
 
 /* ===== BANNER ===== */
 .banner {
-    background:linear-gradient(to bottom,#7a542e,#5b3b20,#3d2613);
+    background: linear-gradient(to bottom,#7a542e,#5b3b20,#3d2613);
     color: #f2e2b3;
-    
+
     border: 3px solid #c9a227;
-    display: inline-block;
+    display: block;
+    width: fit-content;
     padding: 16px 34px;
     border-radius: 8px;
-    margin: 8px auto 25px;
+    margin: 10px auto 30px;
     font-size: 22px;
     font-weight: bold;
     box-shadow:
@@ -373,6 +374,96 @@ nav:hover {
     text-transform: uppercase;
     letter-spacing: 1px;
     cursor: pointer;
+
+    /* Thêm 2 dòng này */
+    transition: transform .2s ease, box-shadow .2s ease;
+    user-select: none;
+}
+
+.banner:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 0 #3d2613,
+        0 12px 24px rgba(0,0,0,.45);
+}
+
+.main-banner{
+    margin-top:40px;
+}
+
+.sub-banner{
+
+    background:linear-gradient(
+        to bottom,
+        #f5e8c8,
+        #e7d3a3
+    );
+
+    color:#4b3118;
+
+    border:2px solid #8b6a34;
+
+    border-radius:6px;
+
+    padding:12px 30px;
+
+    font-size:19px;
+    font-weight:bold;
+
+    text-transform:none;
+    letter-spacing:.5px;
+
+    margin:15px auto 18px;
+
+    box-shadow:
+        0 2px 8px rgba(0,0,0,.20);
+
+    position:relative;
+
+    transition:
+        background .2s ease,
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+.sub-banner:hover{
+
+    background:linear-gradient(
+        to bottom,
+        #fbefcf,
+        #eddcb3
+    );
+
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 4px 12px rgba(0,0,0,.28);
+}
+
+.sub-banner::before,
+.sub-banner::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:50%;
+
+    width:10px;
+    height:70%;
+
+    transform:translateY(-50%);
+
+    background:rgba(120,80,35,.12);
+}
+
+.sub-banner::before{
+    left:6px;
+}
+
+.sub-banner::after{
+    right:6px;
 }
 
 /* ===== ĐỘI HÌNH & THÀNH TÍCH ===== */
@@ -589,7 +680,7 @@ nav:hover {
     color: rgb(230, 208, 10);
 }
 
-.match > p {
+.match-body > p {
     font-size: 24px;
     font-weight: bold;
     margin: 10px 0;
@@ -811,12 +902,14 @@ header {
 }
 
 .detail {
-    display: none;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
 }
 
-/* match mở */
 .detail.show {
-    display: block;
+    max-height: 500px;
+    opacity: 1;
 }
 
 
