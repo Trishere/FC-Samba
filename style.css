@@ -26,6 +26,28 @@ body {
     overflow-x: hidden;
 }
 
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+
+    background: linear-gradient(
+        115deg,
+        transparent 35%,
+        rgba(255, 225, 120, 0.08) 45%,
+        rgba(255, 245, 200, 0.14) 50%,
+        rgba(255, 225, 120, 0.08) 55%,
+        transparent 65%
+    );
+
+    filter: blur(60px);
+
+    transform: translateX(-140%);
+    animation: royalLight 25s linear infinite;
+}
+
 nav,
 .welcome,
 .logo,
@@ -872,6 +894,31 @@ header {
     opacity: 1;
 }
 
+@keyframes royalLight {
+
+    0%{
+        transform: translateX(-140%);
+        opacity:0;
+    }
+
+    10%{
+        opacity:.8;
+    }
+
+    50%{
+        opacity:1;
+    }
+
+    90%{
+        opacity:.8;
+    }
+
+    100%{
+        transform: translateX(140%);
+        opacity:0;
+    }
+
+}
 
 /* =========================================================
    RESPONSIVE FINAL – F.C SAMBA
