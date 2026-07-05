@@ -1110,3 +1110,112 @@ header {
     }
 
 }
+
+/* =========================
+   RESPONSIVE - MATCH CARD
+========================= */
+
+@media (max-width:768px){
+
+    .match{
+        padding:18px;
+    }
+
+    .match-knight{
+        width:70px;
+    }
+
+    .score{
+        gap:14px;
+        margin:16px 0 12px;
+    }
+
+    .team{
+        font-size:21px;
+    }
+
+    .score-box{
+        min-width:95px;
+        padding:7px 12px;
+        font-size:22px;
+    }
+
+    .match-info{
+        gap:10px;
+    }
+
+    .info-box{
+        min-width:110px;
+        padding:7px 10px;
+    }
+
+    .info-title{
+        font-size:11px;
+    }
+
+    .info-value{
+        font-size:17px;
+    }
+
+    .detail{
+        font-size:15px;
+    }
+
+}
+
+
+@media (max-width:480px){
+
+    .match{
+        padding:15px;
+    }
+
+    .match-knight{
+        width:58px;
+    }
+
+    .score{
+
+        flex-direction:column;
+
+        gap:10px;
+
+        margin:14px 0;
+    }
+
+    .team{
+
+        font-size:20px;
+
+        width:100%;
+    }
+
+    .score-box{
+
+        min-width:90px;
+
+        padding:7px 14px;
+
+        font-size:21px;
+    }
+
+    .match-info{
+
+        flex-direction:column;
+
+        align-items:center;
+
+        gap:10px;
+    }
+
+    .info-box{
+
+        width:180px;
+    }
+
+    .detail{
+
+        font-size:14px;
+    }
+
+}
