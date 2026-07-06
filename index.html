@@ -341,7 +341,6 @@ const expeditionMatches = [
         homeScore: 0,
         awayScore: 4,
         result: "loss",
-        knight: "images/lossknight.png",
         knights: [
             "Thuận (GK)",
             "Đức Lee",
@@ -359,7 +358,6 @@ const expeditionMatches = [
         homeScore: 1,
         awayScore: 0,
         result: "win",
-        knight: "images/winknight.png",
         knights: [
             "Thuận (GK)",
             "Đức Lee",
@@ -378,7 +376,6 @@ const expeditionMatches = [
         homeScore: 0,
         awayScore: 4,
         result: "loss",
-        knight: "images/lossknight.png",
         knights: [
             "Thuận (GK)",
             "LuGiaHuy",
@@ -400,7 +397,6 @@ const expeditionMatches = [
         homeScore: 0,
         awayScore: 2,
         result: "loss",
-        knight: "images/lossknight.png",
         knights: [
             "Anh Đạt (GK)",
             "Ronaldat",
@@ -418,15 +414,14 @@ const expeditionMatches = [
         homeScore: 5,
         awayScore: 0,
         result: "win",
-        knight: "images/winknight.png",
         knights: [
             "Việt (GK)",
             "<span class='MVP'>Ronaldat⭐</span>",
             "QHuy",
-            "<strong>Tài Suy (C)</strong>",
-            "<strong>Nam Silun</strong>",
-            "<strong>Quân Burger King</strong>",
-            "<strong>Vũ Lông Thủ</strong>"
+            "Tài Suy (C)",
+            "Nam Silun",
+            "Quân Burger King",
+            "Vũ Lông Thủ"
         ]
     },
 
@@ -436,7 +431,6 @@ const expeditionMatches = [
         homeScore: 3,
         awayScore: 3,
         result: "draw",
-        knight: "images/drawknight.png",
         knights: [
             "<span class='MVP'>LuGiaHuy (GK)⭐</span>",
             "Ronaldat (C)",
@@ -454,12 +448,11 @@ const expeditionMatches = [
         homeScore: 1,
         awayScore: 0,
         result: "win",
-        knight: "images/winknight.png",
         knights: [
             "Đức Lee",
             "<span class='MVP'>Ronaldat⭐</span>",
             "Hiếu Saka",
-            "<strong>Tài Suy (C)</strong>"
+            "Tài Suy (C)"
         ]
     },
 
@@ -469,10 +462,9 @@ const expeditionMatches = [
         homeScore: 0,
         awayScore: 1,
         result: "loss",
-        knight: "images/lossknight.png",
         knights: [
             "<span class='MVP'>OnaThuan (GK)⭐</span>",
-            "<strong>Tài Suy (C)</strong>",
+            "Tài Suy (C)",
             "Vũ Lông Thủ",
             "Hiếu Saka",
             "Ronaldat",
@@ -490,25 +482,35 @@ const expeditionMatches = [
         homeScore: 0,
         awayScore: 3,
         result: "loss",
-        knight: "images/lossknight.png",
         knights: [
             "<span class='MVP'>Việt (GK)⭐</span>",
-            "<strong>Quân Burger King</strong>",
-            "<strong>Xuân Trường</strong>",
-            "<strong>Hiếu Saka</strong>",
-            "<strong>Ronaldat</strong>",
-            "<strong>QHuy</strong>",
-            "<strong>Đức Lee</strong>"
+            "Quân Burger King",
+            "Xuân Trường",
+            "Hiếu Saka",
+            "Ronaldat",
+            "QHuy",
+            "Đức Lee"
+        ]
+    },
+
+    {
+        date: "xx/xx/2026",
+        opponent: "xx FC",
+        homeScore: "x",
+        awayScore: "x",
+        result: "draw",
+        knights: [
+            "<span class='MVP'>Việt (GK)⭐</span>",
+            "Quân Burger King",
+            "Xuân Trường",
+            "Hiếu Saka",
+            "Ronaldat",
+            "QHuy",
+            "Đức Lee"
         ]
     }
 
 ];
-
-
-
-
-
-
 
 
 
@@ -731,8 +733,8 @@ function renderMatch(match) {
         <div class="match" onclick="toggleMatchDetail(this,event)">
 
             <img class="match-knight"
-                 src="${match.knight}"
-                 alt="${match.result}">
+            src="images/${match.result}knight.png"
+            alt="${match.result}">
 
             <div class="match-body">
 
@@ -751,7 +753,7 @@ function renderMatch(match) {
                 <div class="detail">
 
                     <p>
-                        <strong>Knights:</strong>
+                        <span class="knights-label">KNIGHTS:</span>
                         ${match.knights.join(", ")}
                     </p>
 
