@@ -531,19 +531,6 @@ nav:hover {
 
 #thanhTich {
     width: min(380px, 95%);
-
-    background: linear-gradient(
-        to bottom,
-        #5b3b20,
-        #3d2613
-    );
-
-    border: 3px solid #c9a227;
-
-    border-radius: 6px;
-
-    box-shadow:
-        0 6px 18px rgba(0,0,0,.45);
 }
 
 #thanhTich h2 {
@@ -551,23 +538,69 @@ nav:hover {
     margin-bottom: 15px;
 }
 
-.record-label {
-    color: gold;
-    opacity: 0.7;
-    font-size: 40px;
-    letter-spacing: 4px;
-    margin-bottom: 20px;
+/* ===== RECORD GRID ===== */
+
+.record-grid{
+    display:flex;
+    justify-content:center;
+    gap:16px;
 }
 
-.record {
-    font-size: 48px;
-    font-weight: 800;
-    color: #c9a227;
-    letter-spacing: 3px;
-    text-shadow:
-      1px 1px 2px rgba(0,0,0,.7);
-    margin: 0;
+.record-box{
+    flex:1;
+
+    background:rgba(255,255,255,.05);
+
+    border:2px solid rgba(201,162,39,.55);
+
+    border-radius:8px;
+
+    padding:14px 8px;
+
+    text-align:center;
+
+    transition:.25s ease;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.08),
+        0 4px 10px rgba(0,0,0,.25);
 }
+
+.record-box:hover{
+
+    transform:translateY(-4px);
+
+    border-color:#e8c86a;
+
+    box-shadow:
+        0 8px 18px rgba(0,0,0,.35);
+}
+
+.record-title{
+
+    font-size:18px;
+
+    font-weight:700;
+
+    color:#e8c86a;
+
+    letter-spacing:2px;
+
+    margin-bottom:10px;
+}
+
+.record-value{
+
+    font-size:38px;
+
+    font-weight:800;
+
+    color:#fff;
+
+    text-shadow:
+        0 2px 6px rgba(0,0,0,.5);
+}
+
 
 /* MVP */
 .MVP {
@@ -1074,4 +1107,17 @@ header {
         max-width:180px;
     }
 
+    /* ===== RECORD ===== */
+
+    .record-grid{
+        gap:8px;
+    }
+
+    .record-title{
+        font-size:16px;
+    }
+
+    .record-value{
+        font-size:30px;
+    }
 }
