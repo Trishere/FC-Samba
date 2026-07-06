@@ -1045,94 +1045,12 @@ header {
    RESPONSIVE FINAL – F.C SAMBA
 ========================================================= */
 
-/* =========================
-   RESPONSIVE - HERO
-========================= */
-
-@media (max-width:768px){
-
-
-    .hero-motto span:nth-child(1){
-        font-size:16px;
-    }
-
-    .hero-motto span:nth-child(2){
-        font-size:12px;
-    }
-
-    .hero-motto span:nth-child(3){
-        font-size:20px;
-    }
-
-
-    h1{
-        font-size:42px;
-        margin-top:-15px;
-        margin-bottom:10px;
-        line-height:1.1;
-    }
-
-}
-
-/* Chỉ dành cho điện thoại rất nhỏ */
-@media (max-width:400px){
-
-
-    .hero-motto span:nth-child(1){
-        font-size:13px;
-    }
-
-    .hero-motto span:nth-child(2){
-        font-size:10px;
-    }
-
-    .hero-motto span:nth-child(3){
-        font-size:16px;
-    }
-
-
-    h1{
-        font-size:34px;
-        margin-top:-10px;
-        margin-bottom:8px;
-        line-height:1.15;
-    }
-
-}
-
 
 /* =========================
    RESPONSIVE - MATCH CARD
 ========================= */
 
-@media (max-width:768px){
-
-    .match{
-        padding:18px;
-    }
-
-    .match-knight{
-        width:70px;
-    }
-
-    .detail{
-        font-size:15px;
-    }
-
-}
-
-
-/* Chỉ dành cho điện thoại rất nhỏ */
 @media (max-width:400px){
-
-    .match{
-        padding:15px;
-        gap:10px;
-    }
-
-    .match-knight{
-        width:60px;
-    }
 
     .score{
         flex-direction:column;
@@ -1151,10 +1069,6 @@ header {
 
     .info-box{
         width:180px;
-    }
-
-    .detail{
-        font-size:14px;
     }
 
 }
