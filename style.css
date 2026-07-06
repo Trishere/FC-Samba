@@ -340,7 +340,7 @@ nav:hover {
 }
 
 .player-detail img {
-    width: 180px;
+    width:clamp(140px,24vw,180px);
 
     border-radius: 10px;
 
@@ -353,9 +353,14 @@ nav:hover {
 .player-card-info{
     width:min(240px,90%);
 
-    margin: 18px auto 0;
+    margin:
+        clamp(14px,2vw,18px)
+        auto
+        0;
 
-    padding: 12px 0;
+    padding:
+        clamp(10px,1.5vw,12px)
+        0;
 
     border-top: 1px solid rgba(201,162,39,.7);
     border-bottom: 1px solid rgba(201,162,39,.7);
@@ -367,7 +372,7 @@ nav:hover {
 
 .player-detail p {
     color: #3b2a1b;
-    font-size: 20px;
+    font-size:clamp(16px,2vw,20px);
     line-height: 1.6;
     font-weight: 600;
 
@@ -379,7 +384,7 @@ nav:hover {
 }
 
 .player-detail strong {
-    font-size: 24px;
+    font-size:clamp(20px,2.5vw,24px);
     color: #745c0e;
 }
 
@@ -648,15 +653,14 @@ nav:hover {
         #3d2613
     );
 
-    width: 650px;
-    max-width: 90%;
+    width: min(650px, 90%);
 
     margin: 20px auto;
-    padding: 18px;
+    padding:clamp(15px,2vw,18px);
 
     display: flex;
     align-items: center;
-    gap: 18px;
+    gap:clamp(10px,2vw,18px);
 
     border: 3px solid #c9a227;
 
@@ -671,7 +675,7 @@ nav:hover {
 }
 
 .match-knight{
-    width:90px;
+    width:clamp(60px,10vw,90px);
     height:auto;
     flex-shrink:0;
 
@@ -723,9 +727,12 @@ nav:hover {
     align-items:center;
     justify-content:center;
 
-    gap:18px;
+    gap:clamp(10px,2vw,18px);
 
-    margin:18px 0 14px;
+    margin:
+    clamp(14px,2vw,18px)
+    0
+    clamp(12px,1.5vw,14px);
 }
 
 .team{
@@ -735,7 +742,7 @@ nav:hover {
 
     text-align:center;
 
-    font-size:24px;
+    font-size:clamp(18px,2.2vw,24px);
     font-weight:700;
 
     color:#f2e2b3;
@@ -749,9 +756,11 @@ nav:hover {
 
     flex-shrink:0;
 
-    min-width:110px;
+    min-width:clamp(82px,16vw,110px);
 
-    padding:8px 16px;
+    padding:
+    clamp(6px,1vw,8px)
+    clamp(10px,2vw,16px);
 
     background:linear-gradient(
         to bottom,
@@ -765,7 +774,7 @@ nav:hover {
 
     color:#ffd84d;
 
-    font-size:26px;
+    font-size:clamp(20px,2.5vw,26px);
     font-weight:700;
 
     text-align:center;
@@ -780,16 +789,18 @@ nav:hover {
 .match-info{
     display:flex;
     justify-content:center;
-    gap:18px;
+    gap:clamp(10px,2vw,18px);
 
-    margin-top:14px;
+    margin-top:clamp(10px,1.5vw,14px);
 }
 
 .info-box{
 
     min-width:110px;
 
-    padding:8px 14px;
+    padding:
+    clamp(7px,1vw,8px)
+    clamp(10px,2vw,14px);
 
     border:1px solid rgba(201,162,39,.35);
 
@@ -807,7 +818,7 @@ nav:hover {
 
     display:block;
 
-    font-size:.72rem;
+    font-size:clamp(.68rem,.9vw,.72rem);
 
     color:#c9a227;
 
@@ -824,7 +835,7 @@ nav:hover {
 
     margin-top:4px;
 
-    font-size:1rem;
+    font-size:clamp(.95rem,1.2vw,1.05rem);
 
     font-weight:700;
 
@@ -837,7 +848,7 @@ nav:hover {
 }
 
 .detail p {
-    font-size: 20px;
+    font-size:clamp(14px,2vw,20px);
     line-height: 1.8;
     text-align: center;
 }
@@ -993,6 +1004,10 @@ header {
     max-height: 0;
     overflow: hidden;
     opacity: 0;
+
+    transition:
+        max-height .35s ease,
+        opacity .25s ease;
 }
 
 .detail.show {
@@ -1100,38 +1115,6 @@ header {
         width:70px;
     }
 
-    .score{
-        gap:14px;
-        margin:16px 0 12px;
-    }
-
-    .team{
-        font-size:21px;
-    }
-
-    .score-box{
-        min-width:95px;
-        padding:7px 12px;
-        font-size:22px;
-    }
-
-    .match-info{
-        gap:10px;
-    }
-
-    .info-box{
-        min-width:110px;
-        padding:7px 10px;
-    }
-
-    .info-label{
-        font-size:11px;
-    }
-
-    .info-value{
-        font-size:17px;
-    }
-
     .detail{
         font-size:15px;
     }
@@ -1159,19 +1142,11 @@ header {
 
     .team{
         width:100%;
-        font-size:18px;
-    }
-
-    .score-box{
-        min-width:82px;
-        padding:6px 10px;
-        font-size:20px;
     }
 
     .match-info{
         flex-direction:column;
         align-items:center;
-        gap:10px;
     }
 
     .info-box{
