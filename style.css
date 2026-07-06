@@ -191,8 +191,9 @@ p {
 }
 
 .logo {
-    width: clamp(140px, 18vw, 230px);
-    margin-top: -15px;
+    width: clamp(150px, 20vw, 230px);
+
+    margin-top: clamp(-15px, -1vw, -5px);
 
     filter:
         drop-shadow(0 0 10px rgba(201,162,39,.25))
@@ -1036,14 +1037,6 @@ header {
 @media (max-width:768px){
 
 
-    .hero-top{
-        gap:20px;
-    }
-
-    .hero-motto{
-        width:100px;
-    }
-
     .hero-motto span:nth-child(1){
         font-size:16px;
     }
@@ -1056,10 +1049,6 @@ header {
         font-size:20px;
     }
 
-    .logo{
-        width:180px;
-        margin-top:-10px;
-    }
 
     h1{
         font-size:42px;
@@ -1074,14 +1063,6 @@ header {
 @media (max-width:400px){
 
 
-    .hero-top{
-        gap:12px;
-    }
-
-    .hero-motto{
-        width:75px;
-    }
-
     .hero-motto span:nth-child(1){
         font-size:13px;
     }
@@ -1094,10 +1075,6 @@ header {
         font-size:16px;
     }
 
-    .logo{
-        width:150px;
-        margin-top:-5px;
-    }
 
     h1{
         font-size:34px;
