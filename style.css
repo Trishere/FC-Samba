@@ -1041,34 +1041,37 @@ header {
 
 }
 
-/* =========================================================
-   RESPONSIVE FINAL – F.C SAMBA
-========================================================= */
-
-
 /* =========================
    RESPONSIVE - MATCH CARD
 ========================= */
 
 @media (max-width:400px){
 
+    /* Score */
+
     .score{
         flex-direction:column;
+        align-items:center;
         gap:10px;
         margin:14px 0;
     }
 
     .team{
         width:100%;
+        max-width:220px;
     }
+
+    /* Match Info */
 
     .match-info{
         flex-direction:column;
         align-items:center;
+        gap:10px;
     }
 
     .info-box{
-        width:180px;
+        width:100%;
+        max-width:180px;
     }
 
 }
