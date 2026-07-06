@@ -64,17 +64,17 @@
 
         <div class="record-box win">
             <div class="record-title">W</div>
-            <div class="record-value">3</div>
+            <div id="win-count" class="record-value">0</div>
         </div>
 
         <div class="record-box loss">
             <div class="record-title">L</div>
-            <div class="record-value">5</div>
+            <div id="loss-count" class="record-value">0</div>
         </div>
 
         <div class="record-box draw">
             <div class="record-title">D</div>
-            <div class="record-value">1</div>
+            <div id="draw-count" class="record-value">0</div>
         </div>
 
     </div>
@@ -88,170 +88,7 @@
     VIỄN CHINH
 </h2>
 
- <div id="match-list" class="section-hidden">
-
-    <div class="match" onclick="toggleMatchDetail(this,event)">
-        <img class="match-knight" src="images/lossknight.png" alt="Loss">
-
-        <div class="match-body">
-            <h3>03/06/2026</h3>
-
-            <div class="score">
-                <span class="team">Samba</span>
-                <div class="score-box">0 : 4</div>
-                <span class="team">FC Lạ</span>
-            </div>
-
-            <div class="detail">
-                <p><strong>Cầu thủ:</strong> Thuận (GK), Đức Lee, Ronaldat, Anh Đạt, Lil' Trí, Hiếu Saka, Quân Burger King</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="match" onclick="toggleMatchDetail(this,event)">
-        <img class="match-knight" src="images/winknight.png" alt="Win">
-
-        <div class="match-body">
-            <h3>06/06/2026</h3>
-
-            <div class="score">
-                <span class="team">Samba</span>
-                <div class="score-box">1 : 0</div>
-                <span class="team"> Hậu FC</span>
-            </div>
-
-            <div class="detail">
-                <p><strong>Cầu thủ:</strong> Thuận (GK), Đức Lee, QHuy, Lil' Trí, Hiếu Saka, Tài Suy (C), LuGiaHuy, Nam Silun</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="match" onclick="toggleMatchDetail(this,event)">
-        <img class="match-knight" src="images/lossknight.png" alt="Loss">
-
-        <div class="match-body">
-            <h3>13/06/2026</h3>
-
-            <div class="score">
-                <span class="team">Samba</span>
-                <div class="score-box">0 : 4</div>
-                <span class="team">Phong Lâm FC</span>
-            </div>
-
-            <div class="detail">
-                <p><strong>Cầu thủ:</strong> Thuận (GK), LuGiaHuy, Vũ Lông Thủ, Tài Suy (C), Quân Burger King, Nam Silun, Đức Lee, Ronaldat, Anh Đạt, Hiếu Saka, QHuy</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="match" onclick="toggleMatchDetail(this,event)">
-        <img class="match-knight" src="images/lossknight.png" alt="Loss">
-
-        <div class="match-body">
-            <h3>14/06/2026</h3>
-
-            <div class="score">
-                <span class="team">Samba</span>
-                <div class="score-box">0 : 2</div>
-                <span class="team">Hậu FC</span>
-            </div>
-
-            <div class="detail">
-                <p><strong>Cầu thủ:</strong> Anh Đạt (GK), Ronaldat, Đức Lee, QHuy, Lil' Trí, Hiếu Saka, Nam Silun</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="match" onclick="toggleMatchDetail(this,event)">
-        <img class="match-knight" src="images/winknight.png" alt="Win">
-
-        <div class="match-body">
-            <h3>19/06/2026</h3>
-
-            <div class="score">
-                <span class="team">Samba</span>
-                <div class="score-box">5 : 0</div>
-                <span class="team">Quý FC</span>
-            </div>
-
-            <div class="detail">
-                <p><strong>Cầu thủ:</strong> Việt (GK), <span class="MVP">Ronaldat⭐</span>, QHuy, Tài Suy (C), Nam Silun, Quân Burger King, Vũ Lông Thủ</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="match" onclick="toggleMatchDetail(this,event)">
-        <img class="match-knight" src="images/drawknight.png" alt="Draw">
-
-        <div class="match-body">
-            <h3>20/06/2026</h3>
-
-            <div class="score">
-                <span class="team">Samba</span>
-                <div class="score-box">3 : 3</div>
-                <span class="team">Phong Lâm FC</span>
-            </div>
-
-            <div class="detail">
-                <p><strong>Cầu thủ:</strong> <span class="MVP">LuGiaHuy (GK)⭐</span>, Ronaldat (C), Hiếu Saka, QHuy, Lil' Trí, Nam Silun, Đức Lee</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="match" onclick="toggleMatchDetail(this,event)">
-        <img class="match-knight" src="images/winknight.png" alt="Win">
-
-        <div class="match-body">
-            <h3>25/06/2026</h3>
-
-            <div class="score">
-                <span class="team">Samba</span>
-                <div class="score-box">1 : 0</div>
-                <span class="team">Hiếu's old CTy</span>
-            </div>
-
-            <div class="detail">
-                <p><strong>Cầu thủ:</strong> Đức Lee, <span class="MVP">Ronaldat⭐</span>, Hiếu Saka, Tài Suy (C)</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="match" onclick="toggleMatchDetail(this,event)">
-        <img class="match-knight" src="images/lossknight.png" alt="Loss">
-
-        <div class="match-body">
-            <h3>27/06/2026</h3>
-
-            <div class="score">
-                <span class="team">Samba</span>
-                <div class="score-box">0 : 1</div>
-                <span class="team">Xuân Trường FC</span>
-            </div>
-
-            <div class="detail">
-                <p><strong>Cầu thủ:</strong> <span class="MVP">OnaThuan (GK)⭐</span>, Tài Suy (C), Vũ Lông Thủ, Hiếu Saka, Ronaldat, LuGiaHuy, QHuy, Lil' Trí, Nam Silun, Đức Lee</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="match" onclick="toggleMatchDetail(this,event)">
-        <img class="match-knight" src="images/lossknight.png" alt="Loss">
-
-        <div class="match-body">
-            <h3>02/07/2026</h3>
-
-            <div class="score">
-                <span class="team">Samba</span>
-                <div class="score-box">0 : 3</div>
-                <span class="team">Giặc Lạ FC</span>
-            </div>
-
-            <div class="detail">
-                <p><strong>Cầu thủ:</strong> <span class="MVP">Việt (GK)⭐</span>, Quân Burger King, Xuân Trường, Hiếu Saka, Ronaldat, QHuy, Đức Lee</p>
-            </div>
-        </div>
-    </div>
-
+<div id="match-list" class="section-hidden">
 </div>
 
  <!-- =========================
@@ -288,7 +125,7 @@
                 </div>
 
                 <div class="info-box">
-                    <span class="info-label">👥 PLAYERS</span>
+                    <span class="info-label">KNIGHTS</span>
                     <span class="info-value">7 • 6</span>
                 </div>
             </div>
@@ -315,7 +152,7 @@
                 <span class="info-value">2-0-0</span>
             </div>
             <div class="info-box">
-                <span class="info-label">👥 PLAYERS</span>
+                <span class="info-label">KNIGHTS</span>
                 <span class="info-value">6 • 6</span>
             </div>
         </div>
@@ -341,7 +178,7 @@
                 <span class="info-value">2-0-0</span>
             </div>
             <div class="info-box">
-                <span class="info-label">👥 PLAYERS</span>
+                <span class="info-label">KNIGHTS</span>
                 <span class="info-value">x • x</span>
             </div>
         </div>
@@ -495,6 +332,190 @@
 
 <!-- 👇 JavaScript -->
 <script>
+    
+const expeditionMatches = [
+
+    {
+        date: "03/06/2026",
+        opponent: "FC Lạ",
+        homeScore: 0,
+        awayScore: 4,
+        result: "loss",
+        knight: "images/lossknight.png",
+        knights: [
+            "Thuận (GK)",
+            "Đức Lee",
+            "Ronaldat",
+            "Anh Đạt",
+            "Lil' Trí",
+            "Hiếu Saka",
+            "Quân Burger King"
+        ]
+    },
+
+    {
+        date: "06/06/2026",
+        opponent: "Hậu FC",
+        homeScore: 1,
+        awayScore: 0,
+        result: "win",
+        knight: "images/winknight.png",
+        knights: [
+            "Thuận (GK)",
+            "Đức Lee",
+            "QHuy",
+            "Lil' Trí",
+            "Hiếu Saka",
+            "Tài Suy (C)",
+            "LuGiaHuy",
+            "Nam Silun"
+        ]
+    },
+
+    {
+        date: "13/06/2026",
+        opponent: "Phong Lâm FC",
+        homeScore: 0,
+        awayScore: 4,
+        result: "loss",
+        knight: "images/lossknight.png",
+        knights: [
+            "Thuận (GK)",
+            "LuGiaHuy",
+            "Vũ Lông Thủ",
+            "Tài Suy (C)",
+            "Quân Burger King",
+            "Nam Silun",
+            "Đức Lee",
+            "Ronaldat",
+            "Anh Đạt",
+            "Hiếu Saka",
+            "QHuy"
+        ]
+    },
+
+    {
+        date: "14/06/2026",
+        opponent: "Hậu FC",
+        homeScore: 0,
+        awayScore: 2,
+        result: "loss",
+        knight: "images/lossknight.png",
+        knights: [
+            "Anh Đạt (GK)",
+            "Ronaldat",
+            "Đức Lee",
+            "QHuy",
+            "Lil' Trí",
+            "Hiếu Saka",
+            "Nam Silun"
+        ]
+    },
+
+    {
+        date: "19/06/2026",
+        opponent: "Quý FC",
+        homeScore: 5,
+        awayScore: 0,
+        result: "win",
+        knight: "images/winknight.png",
+        knights: [
+            "Việt (GK)",
+            "<span class='MVP'>Ronaldat⭐</span>",
+            "QHuy",
+            "<strong>Tài Suy (C)</strong>",
+            "<strong>Nam Silun</strong>",
+            "<strong>Quân Burger King</strong>",
+            "<strong>Vũ Lông Thủ</strong>"
+        ]
+    },
+
+    {
+        date: "20/06/2026",
+        opponent: "Phong Lâm FC",
+        homeScore: 3,
+        awayScore: 3,
+        result: "draw",
+        knight: "images/drawknight.png",
+        knights: [
+            "<span class='MVP'>LuGiaHuy (GK)⭐</span>",
+            "Ronaldat (C)",
+            "Hiếu Saka",
+            "QHuy",
+            "Lil' Trí",
+            "Nam Silun",
+            "Đức Lee"
+        ]
+    },
+
+    {
+        date: "25/06/2026",
+        opponent: "Hiếu's old CTy",
+        homeScore: 1,
+        awayScore: 0,
+        result: "win",
+        knight: "images/winknight.png",
+        knights: [
+            "Đức Lee",
+            "<span class='MVP'>Ronaldat⭐</span>",
+            "Hiếu Saka",
+            "<strong>Tài Suy (C)</strong>"
+        ]
+    },
+
+    {
+        date: "27/06/2026",
+        opponent: "Xuân Trường FC",
+        homeScore: 0,
+        awayScore: 1,
+        result: "loss",
+        knight: "images/lossknight.png",
+        knights: [
+            "<span class='MVP'>OnaThuan (GK)⭐</span>",
+            "<strong>Tài Suy (C)</strong>",
+            "Vũ Lông Thủ",
+            "Hiếu Saka",
+            "Ronaldat",
+            "LuGiaHuy",
+            "QHuy",
+            "Lil' Trí",
+            "Nam Silun",
+            "Đức Lee"
+        ]
+    },
+
+    {
+        date: "02/07/2026",
+        opponent: "Giặc Lạ FC",
+        homeScore: 0,
+        awayScore: 3,
+        result: "loss",
+        knight: "images/lossknight.png",
+        knights: [
+            "<span class='MVP'>Việt (GK)⭐</span>",
+            "<strong>Quân Burger King</strong>",
+            "<strong>Xuân Trường</strong>",
+            "<strong>Hiếu Saka</strong>",
+            "<strong>Ronaldat</strong>",
+            "<strong>QHuy</strong>",
+            "<strong>Đức Lee</strong>"
+        ]
+    }
+
+];
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* =========================
    CLOSE ALL SECTIONS
 ========================= */
@@ -700,6 +721,95 @@ function toggleMatchDetail(match, event) {
         details.classList.add("show");
     }
 }
+
+/* =========================
+   RENDER MATCH 
+========================= */
+function renderMatch(match) {
+
+    return `
+        <div class="match" onclick="toggleMatchDetail(this,event)">
+
+            <img class="match-knight"
+                 src="${match.knight}"
+                 alt="${match.result}">
+
+            <div class="match-body">
+
+                <h3>${match.date}</h3>
+
+                <div class="score">
+                    <span class="team">Samba</span>
+
+                    <div class="score-box">
+                        ${match.homeScore} : ${match.awayScore}
+                    </div>
+
+                    <span class="team">${match.opponent}</span>
+                </div>
+
+                <div class="detail">
+
+                    <p>
+                        <strong>Knights:</strong>
+                        ${match.knights.join(", ")}
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+    `;
+
+}
+
+
+function renderAllMatches() {
+
+    const matchList = document.getElementById("match-list");
+
+    matchList.innerHTML = "";
+
+    expeditionMatches.forEach(match => {
+
+        matchList.innerHTML += renderMatch(match);
+
+    });
+
+}
+
+renderAllMatches();
+updateRecord();
+
+function updateRecord() {
+
+    let win = 0;
+    let loss = 0;
+    let draw = 0;
+
+    expeditionMatches.forEach(match => {
+
+        if (match.result === "win") {
+            win++;
+        }
+        else if (match.result === "loss") {
+            loss++;
+        }
+        else if (match.result === "draw") {
+            draw++;
+        }
+
+    });
+
+    document.getElementById("win-count").textContent = win;
+    document.getElementById("loss-count").textContent = loss;
+    document.getElementById("draw-count").textContent = draw;
+
+}
+
+
+
 </script>
 
 </body>
