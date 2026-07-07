@@ -889,13 +889,13 @@ nav:hover {
 .knights-label{
     display:inline-block;
 
-    padding:8px 14px;
+    padding:4px 10px;
 
     margin-right:8px;
 
     background:#5b3b20;
 
-    border:2px solid #c9a227;
+    border:1px solid #c9a227;
 
     border-radius:4px;
 
