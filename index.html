@@ -91,7 +91,7 @@
 <div id="match-list" class="section-hidden">
 </div>
 
- <!-- =========================
+<!-- =========================
     NỘI CHIẾN
  ========================== -->
 <h2 class="banner sub-banner" onclick="toggleNoiChien()">
@@ -99,95 +99,9 @@
 </h2>
 
 <div id="noichien" class="section-hidden">
-
-    <div class="match" onclick="toggleMatchDetail(this,event)">
-        <img class="match-knight" src="images/winknight.png" alt="Win">
-
-        <div class="match-body">
-
-            <h3>24/05/2026</h3>
-
-            <div class="score">
-                <span class="team">Samba</span>
-
-                <div class="score-box">
-                    10 : 0
-                </div>
-
-                <span class="team">Ronaldat</span>
-            </div>
-
-            <div class="match-info">
-
-                <div class="info-box">
-                    <span class="info-label">W-L-D</span>
-                    <span class="info-value">2-0-0</span>
-                </div>
-
-                <div class="info-box">
-                    <span class="info-label">KNIGHTS</span>
-                    <span class="info-value">7 • 6</span>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-<div class="match" onclick="toggleMatchDetail(this,event)">
-    <img class="match-knight" src="images/winknight.png" alt="Win">
-
-    <div class="match-body">
-
-        <h3>03/07/2026</h3>
-
-        <div class="score">
-            <span class="team">Samba</span>
-            <div class="score-box">1 : 0</div>
-            <span class="team">Ronaldat</span>
-        </div>
-
-        <div class="match-info">
-            <div class="info-box">
-                <span class="info-label">W-L-D</span>
-                <span class="info-value">2-0-0</span>
-            </div>
-            <div class="info-box">
-                <span class="info-label">KNIGHTS</span>
-                <span class="info-value">6 • 6</span>
-            </div>
-        </div>
-    </div>
 </div>
 
-<div class="match" onclick="toggleMatchDetail(this,event)">
-    <img class="match-knight" src="images/drawknight.png" alt="Draw">
-
-    <div class="match-body">
-
-        <h3>xx/xx/2026</h3>
-
-        <div class="score">
-            <span class="team">Samba</span>
-            <div class="score-box">x : x</div>
-            <span class="team">Ronaldat</span>
-        </div>
-
-        <div class="match-info">
-            <div class="info-box">
-                <span class="info-label">W-L-D</span>
-                <span class="info-value">2-0-0</span>
-            </div>
-            <div class="info-box">
-                <span class="info-label">KNIGHTS</span>
-                <span class="info-value">x • x</span>
-            </div>
-        </div>
-    </div>
 </div>
-
-        </div>
-    </div>
-
 
  <!-- =========================
         ĐỘI HÌNH
@@ -513,6 +427,42 @@ const expeditionMatches = [
 ];
 
 
+const civilWarMatches = [
+    {
+        date: "24/05/2026",
+        opponent: "Ronaldat",
+        homeScore: 10,
+        awayScore: 0,
+        result: "win",
+
+        record: "2-0-0",
+        knights: "7 • 6"
+    },
+
+    {
+        date: "03/07/2026",
+        opponent: "Ronaldat",
+        homeScore: 1,
+        awayScore: 0,
+        result: "win",
+
+        record: "2-0-0",
+        knights: "6 • 6"
+    },
+    
+    {
+        date: "xx/07/2026",
+        opponent: "Ronaldat",
+        homeScore: "x",
+        awayScore: "x",
+        result: "draw",
+
+        record: "2-0-0",
+        knights: "x • x"
+    },
+];
+
+
 
 
 
@@ -809,6 +759,68 @@ function updateRecord() {
     document.getElementById("draw-count").textContent = draw;
 
 }
+
+
+function renderCivilWar(match) {
+
+    return `
+        <div class="match" onclick="toggleMatchDetail(this,event)">
+
+            <img class="match-knight"
+                 src="images/${match.result}knight.png"
+                 alt="${match.result}">
+
+            <div class="match-body">
+
+                <h3>${match.date}</h3>
+
+                <div class="score">
+
+                    <span class="team">Samba</span>
+
+                    <div class="score-box">
+                        ${match.homeScore} : ${match.awayScore}
+                    </div>
+
+                    <span class="team">${match.opponent}</span>
+
+                </div>
+
+                <div class="match-info">
+
+                    <div class="info-box">
+                        <span class="info-label">W-L-D</span>
+                        <span class="info-value">${match.record}</span>
+                    </div>
+
+                    <div class="info-box">
+                        <span class="info-label">KNIGHTS</span>
+                        <span class="info-value">${match.knights}</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    `;
+}
+
+function renderAllCivilWar() {
+
+    const box = document.getElementById("noichien");
+
+    box.innerHTML = "";
+
+    civilWarMatches.forEach(match => {
+
+        box.innerHTML += renderCivilWar(match);
+
+    });
+
+}
+
+renderAllCivilWar();
 
 
 
