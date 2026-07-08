@@ -425,6 +425,7 @@ const expeditionMatches = [
 const civilWarMatches = [
     {
         date: "24/05/2026",
+        team: "Samba",
         opponent: "Ronaldat",
         homeScore: 10,
         awayScore: 0,
@@ -433,6 +434,7 @@ const civilWarMatches = [
 
     {
         date: "03/07/2026",
+        team: "Samba",
         opponent: "Ronaldat",
         homeScore: 1,
         awayScore: 0,
@@ -441,6 +443,7 @@ const civilWarMatches = [
     
     {
         date: "11/07/2026",
+        team: "Râu Con",
         opponent: "Ronaldat",
         homeScore: "x",
         awayScore: "x",
@@ -826,7 +829,7 @@ function renderCivilWar(match, index) {
 
                 <div class="score">
 
-                    <span class="team">Samba</span>
+                    <span class="team">${match.team}</span>
 
                     <div class="score-box">
                         ${match.homeScore} : ${match.awayScore}
