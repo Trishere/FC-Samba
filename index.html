@@ -457,25 +457,36 @@ const civilWarMatches = [
    SECTION HELPERS
 ========================= */
 
-function closeMainSections() {
+function hideSections(ids) {
 
-    const doiHinh = document.getElementById("doiHinh");
-
-    doiHinh.classList.add("section-hidden");
-    doiHinh.classList.remove("fade-in");
-
-}
-
-function closeChronicleSections() {
-
-    ["thanhTich", "match-list", "noichien"].forEach(id => {
+    ids.forEach(id => {
 
         const box = document.getElementById(id);
+
+        if (!box) return;
 
         box.classList.add("section-hidden");
         box.classList.remove("fade-in");
 
     });
+
+}
+
+function closeMainSections() {
+
+    hideSections([
+        "doiHinh"
+    ]);
+
+}
+
+function closeChronicleSections() {
+
+    hideSections([
+        "thanhTich",
+        "match-list",
+        "noichien"
+    ]);
 
 }
 
@@ -492,6 +503,8 @@ function closeChronicle() {
 function openSection(id) {
 
     const box = document.getElementById(id);
+
+    if (!box) return;
 
     box.classList.remove("section-hidden");
     box.classList.add("fade-in");
@@ -640,12 +653,11 @@ function togglePlayer(id, event) {
 
     const isOpen = target.classList.contains("show");
 
-    // đóng tất cả
+    
     document.querySelectorAll(".player-detail").forEach(el => {
         el.classList.remove("show");
     });
 
-    // nếu nó chưa mở thì mới mở lại
     if (!isOpen) {
         target.classList.add("show");
     }
