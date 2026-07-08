@@ -221,7 +221,7 @@ nav {
     align-items: center;
     flex-wrap: wrap;
 
-    padding: 20px 38px;
+    padding: 14px 30px;
     gap: 22px;
 
     border-radius: 10px;
@@ -237,7 +237,7 @@ nav {
     box-shadow:
         inset 0 0 0 1px rgba(255,255,255,.08),
         0 4px 0 #3d2613,
-        0 10px 24px rgba(0,0,0,.45);
+        0 10px 24px rgba(0,0,0,.30);
 }
 nav a {
     color: #f2e2b3;
