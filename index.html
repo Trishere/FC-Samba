@@ -60,26 +60,27 @@
 
         <div id="thanhTich" class="section-hidden">
 
-    <div class="record-grid">
+          <div class="record-grid">
 
-        <div class="record-box win">
-            <div class="record-title">W</div>
-            <div id="win-count" class="record-value">0</div>
+             <div class="record-box win">
+                <div class="record-title">W</div>
+                <div id="win-count" class="record-value">0</div>
+             </div>
+
+             <div class="record-box loss">
+                <div class="record-title">L</div>
+                <div id="loss-count" class="record-value">0</div>
+            </div>
+
+            <div class="record-box draw">
+                <div class="record-title">D</div>
+                <div id="draw-count" class="record-value">0</div>
+            </div>
+          </div>
+        
         </div>
 
-        <div class="record-box loss">
-            <div class="record-title">L</div>
-            <div id="loss-count" class="record-value">0</div>
-        </div>
 
-        <div class="record-box draw">
-            <div class="record-title">D</div>
-            <div id="draw-count" class="record-value">0</div>
-        </div>
-
-    </div>
-
-</div>
 
 <!-- =========================
      VIỄN CHINH
@@ -243,6 +244,8 @@
 
 </div>
 
+</div>
+
 
 <!-- 👇 JavaScript -->
 <script>
@@ -255,7 +258,6 @@ const expeditionMatches = [
         opponent: "FC Lạ",
         homeScore: 0,
         awayScore: 4,
-        result: "loss",
         knights: [
             "Thuận (GK)",
             "Đức Lee",
@@ -272,7 +274,6 @@ const expeditionMatches = [
         opponent: "Hậu FC",
         homeScore: 1,
         awayScore: 0,
-        result: "win",
         knights: [
             "Thuận (GK)",
             "Đức Lee",
@@ -290,7 +291,6 @@ const expeditionMatches = [
         opponent: "Phong Lâm FC",
         homeScore: 0,
         awayScore: 4,
-        result: "loss",
         knights: [
             "Thuận (GK)",
             "LuGiaHuy",
@@ -311,7 +311,6 @@ const expeditionMatches = [
         opponent: "Hậu FC",
         homeScore: 0,
         awayScore: 2,
-        result: "loss",
         knights: [
             "Anh Đạt (GK)",
             "Ronaldat",
@@ -328,7 +327,6 @@ const expeditionMatches = [
         opponent: "Quý FC",
         homeScore: 5,
         awayScore: 0,
-        result: "win",
         knights: [
             "Việt (GK)",
             "<span class='MVP'>Ronaldat⭐</span>",
@@ -345,7 +343,6 @@ const expeditionMatches = [
         opponent: "Phong Lâm FC",
         homeScore: 3,
         awayScore: 3,
-        result: "draw",
         knights: [
             "<span class='MVP'>LuGiaHuy (GK)⭐</span>",
             "Ronaldat (C)",
@@ -362,7 +359,6 @@ const expeditionMatches = [
         opponent: "Hiếu's old CTy",
         homeScore: 1,
         awayScore: 0,
-        result: "win",
         knights: [
             "Đức Lee",
             "<span class='MVP'>Ronaldat⭐</span>",
@@ -376,7 +372,6 @@ const expeditionMatches = [
         opponent: "Xuân Trường FC",
         homeScore: 0,
         awayScore: 1,
-        result: "loss",
         knights: [
             "<span class='MVP'>OnaThuan (GK)⭐</span>",
             "Tài Suy (C)",
@@ -396,7 +391,6 @@ const expeditionMatches = [
         opponent: "Giặc Lạ FC",
         homeScore: 0,
         awayScore: 3,
-        result: "loss",
         knights: [
             "<span class='MVP'>Việt (GK)⭐</span>",
             "Quân Burger King",
@@ -413,7 +407,6 @@ const expeditionMatches = [
         opponent: "xx FC",
         homeScore: "x",
         awayScore: "x",
-        result: "draw",
         knights: [
             "<span class='MVP'>Việt (GK)⭐</span>",
             "Quân Burger King",
@@ -435,8 +428,6 @@ const civilWarMatches = [
         opponent: "Ronaldat",
         homeScore: 10,
         awayScore: 0,
-        result: "win",
-        record: "2-0-0",
         knights: "7 • 6"
     },
 
@@ -445,8 +436,6 @@ const civilWarMatches = [
         opponent: "Ronaldat",
         homeScore: 1,
         awayScore: 0,
-        result: "win",
-        record: "2-0-0",
         knights: "6 • 6"
     },
     
@@ -455,174 +444,184 @@ const civilWarMatches = [
         opponent: "Ronaldat",
         homeScore: "x",
         awayScore: "x",
-        result: "draw",
-        record: "2-0-0",
-        knights: "x • x"
+        knights: "6 • 6"
     },
 ];
 
 
 
-
-
-
-
 /* =========================
-   CLOSE ALL SECTIONS
+   SECTION HELPERS
 ========================= */
+
 function closeMainSections() {
 
-    document.getElementById("doiHinh").classList.add("section-hidden");
-    document.getElementById("thanhTich").classList.add("section-hidden");
-    document.getElementById("match-list").classList.add("section-hidden");
-    document.getElementById("noichien").classList.add("section-hidden");
+    const doiHinh = document.getElementById("doiHinh");
 
-    document.getElementById("doiHinh").classList.remove("fade-in");
-    document.getElementById("thanhTich").classList.remove("fade-in");
-    document.getElementById("match-list").classList.remove("fade-in");
-    document.getElementById("noichien").classList.remove("fade-in");
+    doiHinh.classList.add("section-hidden");
+    doiHinh.classList.remove("fade-in");
+
+}
+
+function closeChronicleSections() {
+
+    ["thanhTich", "match-list", "noichien"].forEach(id => {
+
+        const box = document.getElementById(id);
+
+        box.classList.add("section-hidden");
+        box.classList.remove("fade-in");
+
+    });
+
+}
+
+function closeChronicle() {
+
+    closeChronicleSections();
+
+    document
+        .getElementById("chronicle-menu")
+        .classList.add("section-hidden");
 
 }
 
 function openSection(id) {
-    closeMainSections();
-    document.getElementById(id).classList.remove("section-hidden");
+
+    const box = document.getElementById(id);
+
+    box.classList.remove("section-hidden");
+    box.classList.add("fade-in");
+
 }
 
 /* =========================
-   TAB: ĐỘI HÌNH
+   BIÊN NIÊN SỬ
 ========================= */
+
 function toggleChronicle() {
 
     const menu = document.getElementById("chronicle-menu");
 
-    const isOpen = !menu.classList.contains("section-hidden");
-
-    // Nếu đang mở thì đóng toàn bộ Biên niên sử
-    if (isOpen) {
-
-        menu.classList.add("section-hidden");
+    if (menu.classList.contains("section-hidden")) {
 
         closeMainSections();
 
-        return;
+        menu.classList.remove("section-hidden");
+
+    } else {
+
+        closeChronicle();
+
     }
 
-    // Nếu đang đóng thì chỉ mở menu
-    menu.classList.remove("section-hidden");
-
 }
+
+/* =========================
+   ĐỘI HÌNH
+========================= */
 
 function toggleDoiHinhTong() {
 
     const box = document.getElementById("doiHinh");
-    const isOpen = !box.classList.contains("section-hidden");
 
+    const isOpen =
+        !box.classList.contains("section-hidden");
+
+    closeChronicle();
     closeMainSections();
 
-    if (!isOpen) {
+    if (isOpen) return;
 
-        box.classList.remove("section-hidden");
-        box.classList.add("fade-in");
+    openSection("doiHinh");
 
-        document.getElementById("content-area")
-                .scrollIntoView({
-                    behavior:"smooth"
-                });
-
-    }
-
-}
-
-/* =========================
-   TAB: VIỄN CHINH
-========================= */
-function toggleThanhTich() {
-
-    const box = document.getElementById("thanhTich");
-    const isOpen = !box.classList.contains("section-hidden");
-
-    closeMainSections();
-
-    if (!isOpen) {
-
-        document.getElementById("chronicle-menu")
-                .classList.remove("section-hidden");
-
-        box.classList.remove("section-hidden");
-        box.classList.add("fade-in");
-
-        document.getElementById("content-area").scrollIntoView({
+    document
+        .getElementById("content-area")
+        .scrollIntoView({
             behavior: "smooth"
         });
 
-    }
+}
+
+/* =========================
+   CHRONICLE SUB MENU
+========================= */
+
+function toggleChronicleSection(id) {
+
+    const box = document.getElementById(id);
+
+    const isOpen =
+        !box.classList.contains("section-hidden");
+
+    closeChronicleSections();
+
+    if (isOpen) return;
+
+    openSection(id);
+
+    document
+        .getElementById("content-area")
+        .scrollIntoView({
+            behavior: "smooth"
+        });
 
 }
 
 /* =========================
-   TAB: NỘI CHIẾN
+   THÀNH TÍCH
+========================= */
+
+function toggleThanhTich() {
+
+    toggleChronicleSection("thanhTich");
+
+}
+
+/* =========================
+   VIỄN CHINH
+========================= */
+
+function toggleMatches() {
+
+    toggleChronicleSection("match-list");
+
+    const box = document.getElementById("match-list");
+
+    requestAnimationFrame(() => {
+
+        box.querySelectorAll(".detail")
+            .forEach(detail => {
+
+                detail.classList.remove("show");
+
+            });
+
+    });
+
+}
+
+/* =========================
+   NỘI CHIẾN
 ========================= */
 
 function toggleNoiChien() {
 
+    toggleChronicleSection("noichien");
+
     const box = document.getElementById("noichien");
-    const isOpen = !box.classList.contains("section-hidden");
 
-    closeMainSections();
+    requestAnimationFrame(() => {
 
-    if (!isOpen) {
+        box.querySelectorAll(".detail")
+            .forEach(detail => {
 
-        document.getElementById("chronicle-menu")
-                .classList.remove("section-hidden");
+                detail.classList.remove("show");
 
-        box.classList.remove("section-hidden");
-        box.classList.add("fade-in");
-
-        // 🔥 FIX QUAN TRỌNG
-        requestAnimationFrame(() => {
-            box.querySelectorAll(".detail").forEach(d => {
-                d.classList.remove("show");
             });
-        });
 
-        document.getElementById("content-area").scrollIntoView({
-            behavior: "smooth"
-        });
-    }
-}
+    });
 
-/* =========================
-   TAB: MATCH LIST
-========================= */
-function toggleMatches() {
-
-    const box = document.getElementById("match-list");
-    const isOpen = !box.classList.contains("section-hidden");
-
-    closeMainSections();
-
-    if (!isOpen) {
-
-        document.getElementById("chronicle-menu")
-                .classList.remove("section-hidden");
-
-        box.classList.remove("section-hidden");
-        box.classList.add("fade-in");
-
-        // 🔥 FIX QUAN TRỌNG
-        requestAnimationFrame(() => {
-            const firstDetail = box.querySelector(".detail");
-            if (firstDetail) {
-                firstDetail.classList.remove("show"); 
-                // đảm bảo state sạch để click lần 1 ăn ngay
-            }
-        });
-
-        document.getElementById("content-area").scrollIntoView({
-            behavior: "smooth"
-        });
-    }
 }
 
 /* =========================
@@ -674,16 +673,39 @@ function toggleMatchDetail(match, event) {
 }
 
 /* =========================
+   RENDER RESULT 
+========================= */
+
+function getResult(match) {
+
+    if (
+        typeof match.homeScore !== "number" ||
+        typeof match.awayScore !== "number"
+    ) {
+        return null;
+    }
+
+    if (match.homeScore > match.awayScore) return "win";
+
+    if (match.homeScore < match.awayScore) return "loss";
+
+    return "draw";
+
+}
+
+
+/* =========================
    RENDER MATCH 
 ========================= */
-function renderMatch(match) {
 
+function renderMatch(match) {
+    const result = getResult(match);
     return `
         <div class="match" onclick="toggleMatchDetail(this,event)">
 
             <img class="match-knight"
-            src="images/${match.result}knight.png"
-            alt="${match.result}">
+            src="images/${result}knight.png"
+            alt="${result}">
 
             <div class="match-body">
 
@@ -740,14 +762,14 @@ function updateRecord() {
     let draw = 0;
 
     expeditionMatches.forEach(match => {
-
-        if (match.result === "win") {
+        const result = getResult(match);
+        if (result === "win") {
             win++;
         }
-        else if (match.result === "loss") {
+        else if (result === "loss") {
             loss++;
         }
-        else if (match.result === "draw") {
+        else if (result === "draw") {
             draw++;
         }
 
@@ -760,14 +782,43 @@ function updateRecord() {
 }
 
 
-function renderCivilWar(match) {
+function getCivilWarRecord(index) {
 
+    let win = 0;
+    let loss = 0;
+    let draw = 0;
+
+    for (let i = 0; i <= index; i++) {
+
+        const result = getResult(civilWarMatches[i]);
+
+        if (result === "win") {
+            win++;
+        }
+        else if (result === "loss") {
+            loss++;
+        }
+        else if (result === "draw") {
+            draw++;
+        }
+
+    }
+
+    return `${win}-${loss}-${draw}`;
+
+}
+
+
+function renderCivilWar(match, index) {
+
+    const record = getCivilWarRecord(index);
+    const result = getResult(match);
     return `
         <div class="match" onclick="toggleMatchDetail(this,event)">
 
             <img class="match-knight"
-                 src="images/${match.result}knight.png"
-                 alt="${match.result}">
+                 src="images/${result}knight.png"
+                 alt="${result}">
 
             <div class="match-body">
 
@@ -789,7 +840,7 @@ function renderCivilWar(match) {
 
                     <div class="info-box">
                         <span class="info-label">W-L-D</span>
-                        <span class="info-value">${match.record}</span>
+                        <span class="info-value">${record}</span>
                     </div>
 
                     <div class="info-box">
@@ -811,9 +862,9 @@ function renderAllCivilWar() {
 
     box.innerHTML = "";
 
-    civilWarMatches.forEach(match => {
+    civilWarMatches.forEach((match, index) => {
 
-        box.innerHTML += renderCivilWar(match);
+        box.innerHTML += renderCivilWar(match, index);
 
     });
 
