@@ -40,9 +40,7 @@
 
 </div>
 
-<!-- =========================
-    BIÊN NIÊN SỬ
-========================= -->
+<!-- BIÊN NIÊN SỬ -->
 <div id="content-area">
 
     <h2 class="banner" onclick="toggleChronicle()">
@@ -51,9 +49,7 @@
 
     <div id="chronicle-menu" class="section-hidden">
 
-        <!-- =========================
-            THÀNH TÍCH
-        ========================== -->
+        <!-- THÀNH TÍCH -->
         <h2 class="banner sub-banner" onclick="toggleThanhTich()">
             THÀNH TÍCH
         </h2>
@@ -80,11 +76,7 @@
         
         </div>
 
-
-
-<!-- =========================
-     VIỄN CHINH
-========================== -->
+<!-- VIỄN CHINH -->
 <h2 class="banner sub-banner" onclick="toggleMatches()">
     VIỄN CHINH
 </h2>
@@ -92,9 +84,7 @@
 <div id="match-list" class="section-hidden">
 </div>
 
-<!-- =========================
-    NỘI CHIẾN
- ========================== -->
+<!-- NỘI CHIẾN -->
 <h2 class="banner sub-banner" onclick="toggleNoiChien()">
     NỘI CHIẾN
 </h2>
@@ -104,14 +94,12 @@
 
 </div>
 
- <!-- =========================
-        ĐỘI HÌNH
-    ========================== -->
+ <!-- ĐỘI HÌNH -->
 <h2 class="banner main-banner" onclick="toggleDoiHinhTong()">
     ĐỘI HÌNH
 </h2>
 
-<!-- 👇 ĐỘI HÌNH -->
+<!-- LIST ĐỘI HÌNH -->
 <div id="doiHinh" class="section-hidden" style="margin-top:15px;">
 
     <ul class="player-list">
@@ -453,9 +441,7 @@ const civilWarMatches = [
 
 
 
-/* =========================
-   SECTION HELPERS
-========================= */
+/* SECTION HELPERS */
 
 function hideSections(ids) {
 
@@ -511,9 +497,7 @@ function openSection(id) {
 
 }
 
-/* =========================
-   BIÊN NIÊN SỬ
-========================= */
+/* BIÊN NIÊN SỬ */
 
 function toggleChronicle() {
 
@@ -533,9 +517,7 @@ function toggleChronicle() {
 
 }
 
-/* =========================
-   ĐỘI HÌNH
-========================= */
+/* ĐỘI HÌNH */
 
 function toggleDoiHinhTong() {
 
@@ -559,9 +541,7 @@ function toggleDoiHinhTong() {
 
 }
 
-/* =========================
-   CHRONICLE SUB MENU
-========================= */
+/* CHRONICLE SUB MENU */
 
 function toggleChronicleSection(id) {
 
@@ -584,9 +564,7 @@ function toggleChronicleSection(id) {
 
 }
 
-/* =========================
-   THÀNH TÍCH
-========================= */
+/* THÀNH TÍCH */
 
 function toggleThanhTich() {
 
@@ -594,9 +572,7 @@ function toggleThanhTich() {
 
 }
 
-/* =========================
-   VIỄN CHINH
-========================= */
+/* VIỄN CHINH */
 
 function toggleMatches() {
 
@@ -617,9 +593,7 @@ function toggleMatches() {
 
 }
 
-/* =========================
-   NỘI CHIẾN
-========================= */
+/* NỘI CHIẾN */
 
 function toggleNoiChien() {
 
@@ -640,9 +614,7 @@ function toggleNoiChien() {
 
 }
 
-/* =========================
-   PLAYER TOGGLE
-========================= */
+/* PLAYER TOGGLE */
 function togglePlayer(id, event) {
     if (event) {
         event.stopPropagation();
@@ -663,9 +635,7 @@ function togglePlayer(id, event) {
     }
 }
 
-/* =========================
-   MATCH DETAIL TOGGLE
-========================= */
+/* MATCH DETAIL TOGGLE */
 function toggleMatchDetail(match, event) {
  
 
@@ -687,9 +657,7 @@ function toggleMatchDetail(match, event) {
     }
 }
 
-/* =========================
-   RENDER RESULT 
-========================= */
+/* RENDER RESULT  */
 
 function getResult(match) {
 
@@ -709,9 +677,7 @@ function getResult(match) {
 }
 
 
-/* =========================
-   RENDER MATCH 
-========================= */
+/* RENDER MATCH  */
 
 function renderMatch(match) {
     const result = getResult(match);
