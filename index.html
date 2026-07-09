@@ -439,7 +439,23 @@ const civilWarMatches = [
     },
 ];
 
+/* DOM CACHE */
 
+const contentArea = document.getElementById("content-area");
+
+const chronicleMenu = document.getElementById("chronicle-menu");
+
+const doiHinh = document.getElementById("doiHinh");
+
+const matchList = document.getElementById("match-list");
+
+const noiChien = document.getElementById("noichien");
+
+const winCount = document.getElementById("win-count");
+
+const lossCount = document.getElementById("loss-count");
+
+const drawCount = document.getElementById("draw-count");
 
 /* SECTION HELPERS */
 
@@ -480,9 +496,7 @@ function closeChronicle() {
 
     closeChronicleSections();
 
-    document
-        .getElementById("chronicle-menu")
-        .classList.add("section-hidden");
+    chronicleMenu.classList.add("section-hidden");
 
 }
 
@@ -501,13 +515,11 @@ function openSection(id) {
 
 function toggleChronicle() {
 
-    const menu = document.getElementById("chronicle-menu");
-
-    if (menu.classList.contains("section-hidden")) {
+    if (chronicleMenu.classList.contains("section-hidden")) {
 
         closeMainSections();
 
-        menu.classList.remove("section-hidden");
+        chronicleMenu.classList.remove("section-hidden");
 
     } else {
 
@@ -521,10 +533,8 @@ function toggleChronicle() {
 
 function toggleDoiHinhTong() {
 
-    const box = document.getElementById("doiHinh");
-
     const isOpen =
-        !box.classList.contains("section-hidden");
+        !doiHinh.classList.contains("section-hidden");
 
     closeChronicle();
     closeMainSections();
@@ -533,11 +543,9 @@ function toggleDoiHinhTong() {
 
     openSection("doiHinh");
 
-    document
-        .getElementById("content-area")
-        .scrollIntoView({
-            behavior: "smooth"
-        });
+    contentArea.scrollIntoView({
+        behavior: "smooth"
+    });
 
 }
 
@@ -556,11 +564,9 @@ function toggleChronicleSection(id) {
 
     openSection(id);
 
-    document
-        .getElementById("content-area")
-        .scrollIntoView({
-            behavior: "smooth"
-        });
+    contentArea.scrollIntoView({
+        behavior: "smooth"
+    });
 
 }
 
@@ -578,11 +584,9 @@ function toggleMatches() {
 
     toggleChronicleSection("match-list");
 
-    const box = document.getElementById("match-list");
-
     requestAnimationFrame(() => {
 
-        box.querySelectorAll(".detail")
+        matchList.querySelectorAll(".detail")
             .forEach(detail => {
 
                 detail.classList.remove("show");
@@ -599,11 +603,9 @@ function toggleNoiChien() {
 
     toggleChronicleSection("noichien");
 
-    const box = document.getElementById("noichien");
-
     requestAnimationFrame(() => {
 
-        box.querySelectorAll(".detail")
+        noiChien.querySelectorAll(".detail")
             .forEach(detail => {
 
                 detail.classList.remove("show");
@@ -721,15 +723,10 @@ function renderMatch(match) {
 
 function renderAllMatches() {
 
-    const matchList = document.getElementById("match-list");
-
-    matchList.innerHTML = "";
-
-    expeditionMatches.forEach(match => {
-
-        matchList.innerHTML += renderMatch(match);
-
-    });
+    matchList.innerHTML =
+        expeditionMatches
+            .map(renderMatch)
+            .join("");
 
 }
 
@@ -743,7 +740,9 @@ function updateRecord() {
     let draw = 0;
 
     expeditionMatches.forEach(match => {
+
         const result = getResult(match);
+
         if (result === "win") {
             win++;
         }
@@ -756,9 +755,9 @@ function updateRecord() {
 
     });
 
-    document.getElementById("win-count").textContent = win;
-    document.getElementById("loss-count").textContent = loss;
-    document.getElementById("draw-count").textContent = draw;
+    winCount.textContent = win;
+    lossCount.textContent = loss;
+    drawCount.textContent = draw;
 
 }
 
@@ -839,15 +838,10 @@ function renderCivilWar(match, index) {
 
 function renderAllCivilWar() {
 
-    const box = document.getElementById("noichien");
-
-    box.innerHTML = "";
-
-    civilWarMatches.forEach((match, index) => {
-
-        box.innerHTML += renderCivilWar(match, index);
-
-    });
+    noiChien.innerHTML =
+        civilWarMatches
+            .map((match, index) => renderCivilWar(match, index))
+            .join("");
 
 }
 
