@@ -511,6 +511,14 @@ function openSection(id) {
 
 }
 
+function scrollToContent() {
+
+    contentArea.scrollIntoView({
+        behavior: "smooth"
+    });
+
+}
+
 /* BIÊN NIÊN SỬ */
 
 function toggleChronicle() {
@@ -543,9 +551,7 @@ function toggleDoiHinhTong() {
 
     openSection("doiHinh");
 
-    contentArea.scrollIntoView({
-        behavior: "smooth"
-    });
+    scrollToContent();
 
 }
 
@@ -564,9 +570,7 @@ function toggleChronicleSection(id) {
 
     openSection(id);
 
-    contentArea.scrollIntoView({
-        behavior: "smooth"
-    });
+    scrollToContent();
 
 }
 
