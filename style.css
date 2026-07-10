@@ -192,6 +192,7 @@ p {
 
 .logo {
     width: clamp(150px, 20vw, 230px);
+    height: auto;
 
     margin-top: clamp(-15px, -1vw, -5px);
 
