@@ -465,7 +465,8 @@ const civilWarMatches = [
         opponent: "Ricon ",
         homeScore: 4,
         awayScore: 0,
-        knights: "6 • 6"
+        knights: "6 • 6",
+        mvp: ["Quốc Huy"]
     },
 ];
 
@@ -836,7 +837,7 @@ function renderCivilWar(match, index) {
     const record = getCivilWarRecord(index);
     const result = getResult(match);
     return `
-        <div class="match" onclick="toggleMatchDetail(this,event)">
+        <div class="match">
 
             <img class="match-knight"
                  src="images/${result}knight.png"
@@ -868,6 +869,11 @@ function renderCivilWar(match, index) {
                     <div class="info-box">
                         <span class="info-label">KNIGHTS</span>
                         <span class="info-value">${match.knights}</span>
+                    </div>
+
+                    <div class="info-box">
+                        <span class="info-label">MVP</span>
+                        <span class="info-value">${(match.mvp || []).join(", ") || "N/A"}</span>
                     </div>
 
                 </div>
