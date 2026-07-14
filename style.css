@@ -82,7 +82,7 @@ h1 {
     display: inline-block;
     text-align: center;
     max-width: 90%;
-
+    
     overflow: visible;
 }
 
@@ -204,7 +204,9 @@ p {
 }
 
 .logo:hover {
-    transform: translateY(-6px) scale(1.03);
+    transition:
+    transform .3s ease,
+    filter .3s ease;
 }
 
 /* ===== THANH MENU ===== */
@@ -291,21 +293,6 @@ nav:hover {
 .player-list {
     list-style: none;
     padding: 0;
-}
-
-.player-toggle{
-    all: unset;
-
-    display: block;
-    width: 100%;
-
-    box-sizing: border-box;
-
-    cursor: pointer;
-
-    color: inherit;
-    font: inherit;
-    text-align: inherit;
 }
 
 /* ===== PLAYER DETAIL ===== */
@@ -636,7 +623,7 @@ nav:hover {
     border: 1px solid #c9a227;
     border-radius: 3px;
 
-    font-size: inherit;      /* dùng đúng cỡ chữ của danh sách */
+    font-size: inherit;      
     font-weight: 700;
 
     letter-spacing: 0;
@@ -904,10 +891,6 @@ nav:hover {
 }
 
 
-.detail.show {
-    display: block;
-}
-
 .detail p {
     font-size:clamp(14px,2vw,20px);
     line-height: 1.8;
@@ -933,7 +916,6 @@ nav:hover {
 
     text-transform:uppercase;
 }
-
 
 
 /* ===== KHÁC ===== */
@@ -1051,10 +1033,6 @@ header {
     display: none;
 }
 
-/* ===== PLAYER + MATCH TOGGLE STATE ===== */
-.player-detail {
-    display: block;
-}
 
 .detail {
     max-height: 0;
