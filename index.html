@@ -73,14 +73,14 @@
 <!-- BIÊN NIÊN SỬ -->
 <main id="content-area">
 
-    <h2 class="banner" onclick="toggleChronicle()">
+    <h2 id="chronicle-banner" class="banner">
         BIÊN NIÊN SỬ
     </h2>
 
     <section id="chronicle-menu" class="section-hidden">
 
         <!-- THÀNH TÍCH -->
-        <h2 class="banner sub-banner" onclick="toggleThanhTich()">
+        <h2 id="achievement-banner" class="banner sub-banner">
             THÀNH TÍCH
         </h2>
 
@@ -107,7 +107,7 @@
         </section>
 
 <!-- VIỄN CHINH -->
-<h2 class="banner sub-banner" onclick="toggleMatches()">
+<h2 id="expedition-banner" class="banner sub-banner">
     VIỄN CHINH
 </h2>
 
@@ -115,7 +115,7 @@
 </section>
 
 <!-- NỘI CHIẾN -->
-<h2 class="banner sub-banner" onclick="toggleNoiChien()">
+<h2 id="civilwar-banner" class="banner sub-banner">
     NỘI CHIẾN
 </h2>
 
@@ -125,7 +125,7 @@
 
 
  <!-- ĐỘI HÌNH -->
-<h2 class="banner main-banner" onclick="toggleDoiHinhTong()">
+<h2 id="team-banner" class="banner main-banner">
     ĐỘI HÌNH
 </h2>
 
@@ -135,7 +135,7 @@
     <ul class="player-list">
 
         <li>
-            <div onclick="togglePlayer('onathuan', event)">OnaThuan (GK)</div>
+            <button class="player-toggle" data-player="onathuan">OnaThuan (GK)</button>
 
             <div id="onathuan" class="player-detail">
                 <img src="images/onathuan.jpg" alt="OnaThuan" width="150">
@@ -147,7 +147,7 @@
         </li>
 
         <li>
-            <div onclick="togglePlayer('taisuy', event)">Tài Suy (C)</div>
+            <button class="player-toggle" data-player="taisuy">Tài Suy (C)</button>
 
             <div id="taisuy" class="player-detail">
                 <img src="images/taisuy.jpg" alt="Tài Suy" width="150">
@@ -160,7 +160,7 @@
         </li>
 
     <li>
-      <div onclick="togglePlayer('quochuy', event)">Quốc Huy</div>
+      <button class="player-toggle" data-player="quochuy">Quốc Huy</button>
       <div id="quochuy" class="player-detail">
         <img src="images/quochuy.jpg" alt="Quốc Huy" width="150">
         <div class="player-card-info">
@@ -171,7 +171,7 @@
     </li>
 
     <li>
-      <div onclick="togglePlayer('ronaldat', event)">Ronaldat</div>
+      <button class="player-toggle" data-player="ronaldat">Ronaldat</button>
       <div id="ronaldat" class="player-detail">
         <img src="images/ronaldat.jpg" alt="Ronaldat" width="150">
         <div class="player-card-info">
@@ -182,7 +182,7 @@
     </li>
 
     <li>
-      <div onclick="togglePlayer('duclee', event)">Đức Lee</div>
+      <button class="player-toggle" data-player="duclee">Đức Lee</button>
       <div id="duclee" class="player-detail">
         <img src="images/duclee.jpg" alt="Đức Lee" width="150">
         <div class="player-card-info">
@@ -193,7 +193,7 @@
     </li>
 
     <li>
-      <div onclick="togglePlayer('liltri', event)">Lil' Trí</div>
+      <button class="player-toggle" data-player="liltri">Lil' Trí</button>
       <div id="liltri" class="player-detail">
         <img src="images/liltri.jpg" alt="Lil Tri" width="150">
         <div class="player-card-info">
@@ -204,7 +204,7 @@
     </li>
 
     <li>
-      <div onclick="togglePlayer('hieusaka', event)">Hiếu Saka</div>
+      <button class="player-toggle" data-player="hieusaka">Hiếu Saka</button>
       <div id="hieusaka" class="player-detail">
         <img src="images/hieusaka.jpg" alt="Hiếu Saka" width="150">
         <div class="player-card-info">
@@ -215,7 +215,7 @@
     </li>
 
     <li>
-      <div onclick="togglePlayer('namsilun', event)">Nam Silun</div>
+      <button class="player-toggle" data-player="namsilun">Nam Silun</button>
       <div id="namsilun" class="player-detail">
         <img src="images/namsilun.jpg" alt="Nam Silun" width="150">
         <div class="player-card-info">
@@ -226,7 +226,7 @@
     </li>
 
     <li>
-      <div onclick="togglePlayer('lugiahuy', event)">LuGiaHuy</div>
+      <button class="player-toggle" data-player="lugiahuy">LuGiaHuy</button>
       <div id="lugiahuy" class="player-detail">
         <img src="images/lugiahuy.jpg" alt="LuGiaHuy" width="150">
         <div class="player-card-info">
@@ -237,7 +237,7 @@
     </li>
 
     <li>
-      <div onclick="togglePlayer('vulongthu', event)">Vũ Lông Thủ</div>
+      <button class="player-toggle" data-player="vulongthu">Vũ Lông Thủ</button>
       <div id="vulongthu" class="player-detail">
         <img src="images/vulongthu.jpg" alt="Vũ Lông Thủ" width="150">
         <div class="player-card-info">
@@ -248,7 +248,7 @@
     </li>
 
     <li>
-      <div onclick="togglePlayer('quanburger', event)">Quân Burger King</div>
+      <button class="player-toggle" data-player="quanburger">Quân Burger King</button>
       <div id="quanburger" class="player-detail">
         <img src="images/quanburger.jpg" alt="Quân Burger King" width="150">
         <div class="player-card-info">
@@ -487,6 +487,19 @@ const lossCount = document.getElementById("loss-count");
 
 const drawCount = document.getElementById("draw-count");
 
+
+/* BUTTON CACHE */
+
+const chronicleBanner = document.getElementById("chronicle-banner");
+
+const achievementBanner = document.getElementById("achievement-banner");
+
+const expeditionBanner = document.getElementById("expedition-banner");
+
+const civilwarBanner = document.getElementById("civilwar-banner");
+
+const teamBanner = document.getElementById("team-banner");
+
 /* SECTION HELPERS */
 
 function hideSections(ids) {
@@ -673,11 +686,6 @@ function togglePlayer(id, event) {
 
 /* MATCH DETAIL TOGGLE */
 function toggleMatchDetail(match, event) {
- 
-
-    if (event) {
-        event.stopPropagation();
-    }
 
     const details = match.querySelector(".detail");
     if (!details) return;
@@ -718,7 +726,7 @@ function getResult(match) {
 function renderMatch(match) {
     const result = getResult(match);
     return `
-        <div class="match" onclick="toggleMatchDetail(this,event)">
+        <div class="match">
 
             <img class="match-knight"
             src="images/${result}knight.png"
@@ -878,9 +886,43 @@ function renderAllCivilWar() {
             .join("");
 
 }
-
 renderAllCivilWar();
 
+/* EVENT LISTENERS */
+
+chronicleBanner.addEventListener("click", toggleChronicle);
+
+achievementBanner.addEventListener("click", toggleThanhTich);
+
+expeditionBanner.addEventListener("click", toggleMatches);
+
+civilwarBanner.addEventListener("click", toggleNoiChien);
+
+teamBanner.addEventListener("click", toggleDoiHinhTong);
+
+/* PLAYER EVENT LISTENERS */
+
+document.querySelectorAll(".player-toggle").forEach(button => {
+
+    button.addEventListener("click", function (event) {
+
+        togglePlayer(this.dataset.player, event);
+
+    });
+
+});
+
+/* MATCH EVENT LISTENER */
+
+matchList.addEventListener("click", function (event) {
+
+    const match = event.target.closest(".match");
+
+    if (!match) return;
+
+    toggleMatchDetail(match);
+
+});
 
 
 </script>
