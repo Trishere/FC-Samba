@@ -103,6 +103,12 @@
                 <div id="draw-count" class="record-value">0</div>
             </div>
           </div>
+          
+          <!-- MVP HALL OF FAME -->
+          <div class="mvp-hall">
+            <h3>MVP HALL OF FAME</h3>
+            <div id="mvp-ranking"></div>
+          </div>
         
         </section>
 
@@ -277,14 +283,16 @@ const expeditionMatches = [
         homeScore: 0,
         awayScore: 4,
         knights: [
-            "Thuận (GK)",
+            "OnaThuan (GK)",
             "Đức Lee",
             "Ronaldat",
             "Anh Đạt",
             "Lil' Trí",
             "Hiếu Saka",
             "Quân Burger King"
-        ]
+        ],
+
+        mvp: ["OnaThuan (GK)"]
     },
 
     {
@@ -293,7 +301,7 @@ const expeditionMatches = [
         homeScore: 1,
         awayScore: 0,
         knights: [
-            "Thuận (GK)",
+            "OnaThuan (GK)",
             "Đức Lee",
             "QHuy",
             "Lil' Trí",
@@ -301,7 +309,9 @@ const expeditionMatches = [
             "Tài Suy (C)",
             "LuGiaHuy",
             "Nam Silun"
-        ]
+        ],
+        mvp: ["OnaThuan (GK)"]
+
     },
 
     {
@@ -310,7 +320,7 @@ const expeditionMatches = [
         homeScore: 0,
         awayScore: 4,
         knights: [
-            "Thuận (GK)",
+            "OnaThuan (GK)",
             "LuGiaHuy",
             "Vũ Lông Thủ",
             "Tài Suy (C)",
@@ -321,7 +331,8 @@ const expeditionMatches = [
             "Anh Đạt",
             "Hiếu Saka",
             "QHuy"
-        ]
+        ],
+        mvp: ["OnaThuan (GK)"]
     },
 
     {
@@ -347,13 +358,14 @@ const expeditionMatches = [
         awayScore: 0,
         knights: [
             "Việt (GK)",
-            "<span class='MVP'>Ronaldat⭐</span>",
+            "Ronaldat",
             "QHuy",
             "Tài Suy (C)",
             "Nam Silun",
             "Quân Burger King",
             "Vũ Lông Thủ"
-        ]
+        ],
+        mvp: ["Ronaldat"]
     },
 
     {
@@ -362,14 +374,15 @@ const expeditionMatches = [
         homeScore: 3,
         awayScore: 3,
         knights: [
-            "<span class='MVP'>LuGiaHuy (GK)⭐</span>",
+            "LuGiaHuy (GK)",
             "Ronaldat (C)",
             "Hiếu Saka",
             "QHuy",
             "Lil' Trí",
             "Nam Silun",
             "Đức Lee"
-        ]
+        ],
+        mvp: ["LuGiaHuy (GK)"]
     },
 
     {
@@ -379,10 +392,11 @@ const expeditionMatches = [
         awayScore: 0,
         knights: [
             "Đức Lee",
-            "<span class='MVP'>Ronaldat⭐</span>",
+            "Ronaldat",
             "Hiếu Saka",
             "Tài Suy (C)"
-        ]
+        ],
+        mvp: ["Ronaldat"]
     },
 
     {
@@ -391,7 +405,7 @@ const expeditionMatches = [
         homeScore: 0,
         awayScore: 1,
         knights: [
-            "<span class='MVP'>OnaThuan (GK)⭐</span>",
+            "OnaThuan (GK)",
             "Tài Suy (C)",
             "Vũ Lông Thủ",
             "Hiếu Saka",
@@ -401,7 +415,8 @@ const expeditionMatches = [
             "Lil' Trí",
             "Nam Silun",
             "Đức Lee"
-        ]
+        ],
+        mvp: ["OnaThuan (GK)"]
     },
 
     {
@@ -410,14 +425,15 @@ const expeditionMatches = [
         homeScore: 0,
         awayScore: 3,
         knights: [
-            "<span class='MVP'>Việt (GK)⭐</span>",
+            "Việt (GK)",
             "Quân Burger King",
             "Xuân Trường",
             "Hiếu Saka",
             "Ronaldat",
             "QHuy",
             "Đức Lee"
-        ]
+        ],
+        mvp: ["Việt (GK)"]
     },
 
     {
@@ -426,19 +442,19 @@ const expeditionMatches = [
         homeScore: "x",
         awayScore: "x",
         knights: [
-            "<span class='MVP'>Việt (GK)⭐</span>",
+            "Việt (GK)",
             "Quân Burger King",
             "Xuân Trường",
             "Hiếu Saka",
             "Ronaldat",
             "QHuy",
             "Đức Lee"
-        ]
+        ],
     },
 
 ];
 
-//NỘI CHIẾN//
+//NỘI CHIẾN//
 
 const civilWarMatches = [
     {
@@ -487,6 +503,8 @@ const winCount = document.getElementById("win-count");
 const lossCount = document.getElementById("loss-count");
 
 const drawCount = document.getElementById("draw-count");
+
+const mvpRanking = document.getElementById("mvp-ranking");
 
 
 /* BUTTON CACHE */
@@ -727,19 +745,22 @@ function getResult(match) {
 /* RENDER MATCH  */
 
 function renderMatch(match) {
+
     const result = getResult(match);
+
     return `
         <div class="match">
 
             <img class="match-knight"
-            src="images/${result}knight.png"
-            alt="${result}">
+                 src="images/${result}knight.png"
+                 alt="${result}">
 
             <div class="match-body">
 
                 <h3>${match.date}</h3>
 
                 <div class="score">
+
                     <span class="team">Samba</span>
 
                     <div class="score-box">
@@ -747,13 +768,27 @@ function renderMatch(match) {
                     </div>
 
                     <span class="team">${match.opponent}</span>
+
                 </div>
 
                 <div class="detail">
 
                     <p>
+
                         <span class="knights-label">KNIGHTS:</span>
-                        ${match.knights.join(", ")}
+
+                        ${match.knights.map(player => {
+
+                            if ((match.mvp || []).includes(player)) {
+
+                                return `<span class="MVP">${player}⭐</span>`;
+
+                            }
+
+                            return player;
+
+                        }).join(", ")}
+
                     </p>
 
                 </div>
@@ -803,6 +838,51 @@ function updateRecord() {
     winCount.textContent = win;
     lossCount.textContent = loss;
     drawCount.textContent = draw;
+
+}
+
+function updateMvpRanking() {
+
+    const mvpCount = {};
+
+    [...expeditionMatches, ...civilWarMatches].forEach(match => {
+
+        (match.mvp || []).forEach(player => {
+
+            mvpCount[player] = (mvpCount[player] || 0) + 1;
+
+        });
+
+    });
+
+    const ranking = Object.entries(mvpCount);
+
+    ranking.sort((a, b) => b[1] - a[1]);
+
+    mvpRanking.innerHTML = ranking.map(([player, count], index) => {
+
+        const rank = index + 1;
+
+        const rankClass =
+            index === 0 ? "gold" :
+            index === 1 ? "silver" :
+            index === 2 ? "bronze" : "";
+
+        return `
+            <div class="mvp-row ${rankClass}">
+
+                <span class="mvp-player">
+                    ${rank}. ${player}
+                </span>
+
+                <span class="mvp-count">
+                    ${count} MVP
+                </span>
+
+            </div>
+        `;
+
+    }).join("");
 
 }
 
@@ -895,6 +975,7 @@ function renderAllCivilWar() {
 
 }
 renderAllCivilWar();
+updateMvpRanking();
 
 /* EVENT LISTENERS */
 

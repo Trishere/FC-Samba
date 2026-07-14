@@ -327,21 +327,6 @@ nav:hover {
     box-shadow: 0 10px 25px rgba(0,0,0,.4);
 }
 
-/* animation mở kiểu “cuộn mở scroll cổ” */
-@keyframes scrollUnfold {
-    0% {
-        transform: scaleY(0.2);
-        opacity: 0;
-    }
-    70% {
-        transform: scaleY(1.05);
-        opacity: 1;
-    }
-    100% {
-        transform: scaleY(1);
-    }
-}
-
 .player-detail img {
     width:clamp(140px,24vw,180px);
 
@@ -539,6 +524,171 @@ nav:hover {
 #thanhTich h2 {
     color: gold;
     margin-bottom: 15px;
+}
+
+/* ==================
+   MVP HALL OF FAME
+================== */
+
+.mvp-hall{
+
+    width:min(650px,90%);
+
+    margin:28px auto 0;
+
+    padding:18px 20px;
+
+    background:linear-gradient(
+        to bottom,
+        #5b3b20,
+        #3d2613
+    );
+
+    border:3px solid #c9a227;
+
+    border-radius:8px;
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,.35);
+
+}
+
+.mvp-hall h3{
+
+    margin:0 0 18px;
+
+    text-align:center;
+
+    color:#f2e2b3;
+
+    font-size:clamp(20px,2.2vw,26px);
+
+    letter-spacing:1px;
+
+}
+
+#mvp-ranking{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+}
+
+/* ===== MVP ROW ===== */
+
+.mvp-row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:16px;
+
+    padding:12px 18px;
+
+    border-radius:6px;
+
+    background:rgba(255,255,255,.04);
+
+    border:1px solid rgba(201,162,39,.18);
+
+    transition:all .25s ease;
+
+}
+
+.mvp-row + .mvp-row{
+
+    margin-top:10px;
+
+}
+
+.mvp-player{
+
+    color:#f2e2b3;
+
+    font-weight:bold;
+
+    font-size:clamp(16px,2vw,19px);
+
+}
+
+.mvp-count{
+
+    color:#f2e2b3;
+
+    font-weight:bold;
+
+    white-space:nowrap;
+
+}
+
+/* ===== TOP 3 ===== */
+
+.mvp-row.gold{
+
+    background:linear-gradient(
+        to bottom,
+        #d8b64b,
+        #b68d2a
+    );
+
+    border-color:#f2d46f;
+
+    color:#2b1b12;
+
+    box-shadow:0 0 16px rgba(201,162,39,.45);
+
+}
+
+.mvp-row.gold .mvp-player,
+.mvp-row.gold .mvp-count{
+
+    color:#2b1b12;
+
+}
+
+.mvp-row.silver{
+
+    background:linear-gradient(
+        to bottom,
+        #c9c9c9,
+        #9d9d9d
+    );
+
+    border-color:#ececec;
+
+}
+
+.mvp-row.silver .mvp-player,
+.mvp-row.silver .mvp-count{
+
+    color:#2b1b12;
+
+}
+
+.mvp-row.bronze{
+
+    background:linear-gradient(
+        to bottom,
+        #b7793f,
+        #8d5524
+    );
+
+    border-color:#d8a36a;
+
+}
+
+.mvp-row:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 6px 16px rgba(0,0,0,.35);
+
 }
 
 /* ===== RECORD GRID ===== */
