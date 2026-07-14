@@ -665,28 +665,30 @@ function toggleNoiChien() {
 }
 
 /* PLAYER TOGGLE */
-function togglePlayer(id, event) {
-    if (event) {
-        event.stopPropagation();
-    }
+function togglePlayer(id) {
 
     const target = document.getElementById(id);
+
     if (!target) return;
 
     const isOpen = target.classList.contains("show");
 
-    
     document.querySelectorAll(".player-detail").forEach(el => {
+
         el.classList.remove("show");
+
     });
 
     if (!isOpen) {
+
         target.classList.add("show");
+
     }
+
 }
 
 /* MATCH DETAIL TOGGLE */
-function toggleMatchDetail(match, event) {
+function toggleMatchDetail(match) {
 
     const details = match.querySelector(".detail");
     if (!details) return;
@@ -910,23 +912,27 @@ teamBanner.addEventListener("click", toggleDoiHinhTong);
 
 document.querySelectorAll(".player-toggle").forEach(button => {
 
-    button.addEventListener("click", function (event) {
+    button.addEventListener("click", function () {
 
-        togglePlayer(this.dataset.player, event);
+        togglePlayer(this.dataset.player);
 
     });
 
 });
 
-/* MATCH EVENT LISTENER */
+/* MATCH EVENT LISTENERS */
 
-matchList.addEventListener("click", function (event) {
+[matchList, noiChien].forEach(container => {
 
-    const match = event.target.closest(".match");
+    container.addEventListener("click", function (event) {
 
-    if (!match) return;
+        const match = event.target.closest(".match");
 
-    toggleMatchDetail(match);
+        if (!match) return;
+
+        toggleMatchDetail(match);
+
+    });
 
 });
 
