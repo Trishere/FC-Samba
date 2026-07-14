@@ -851,14 +851,13 @@ nav:hover {
 .match-info{
     display:flex;
     justify-content:center;
+    flex-wrap:wrap;
     gap:clamp(10px,2vw,18px);
-
     margin-top:clamp(10px,1.5vw,14px);
 }
 
 .info-box{
-
-    min-width:110px;
+    min-width:95px;
 
     padding:
     clamp(7px,1vw,8px)
