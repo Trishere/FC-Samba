@@ -644,6 +644,36 @@ nav:hover {
     color: #745c0e;
 }
 
+/* MVP */
+.MVP {
+    display: inline;
+
+    margin: 0;
+    padding: 1px 4px;
+
+    background: linear-gradient(
+        to bottom,
+        #8a6a1d,
+        var(--brown-mid)
+    );
+
+    color: #f5e6b7;
+
+    border: 1px solid #c9a227;
+    border-radius: 3px;
+
+    font-size: inherit;      
+    font-weight: 700;
+
+    letter-spacing: 0;
+    text-transform: none;
+
+    text-shadow: 1px 1px 2px rgba(0,0,0,.6);
+
+    box-shadow: 0 1px 3px rgba(0,0,0,.3);
+
+    white-space: nowrap;
+}
 
 /* ===== ĐỘI HÌNH & THÀNH TÍCH ===== */
 #doiHinh,
@@ -681,6 +711,15 @@ nav:hover {
 #thanhTich h2 {
     color: gold;
     margin-bottom: 15px;
+}
+#doiHinh ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#doiHinh li{
+    margin:10px 0;
 }
 
 /* ==================
@@ -912,47 +951,6 @@ nav:hover {
 }
 
 
-/* MVP */
-.MVP {
-    display: inline;
-
-    margin: 0;
-    padding: 1px 4px;
-
-    background: linear-gradient(
-        to bottom,
-        #8a6a1d,
-        var(--brown-mid)
-    );
-
-    color: #f5e6b7;
-
-    border: 1px solid #c9a227;
-    border-radius: 3px;
-
-    font-size: inherit;      
-    font-weight: 700;
-
-    letter-spacing: 0;
-    text-transform: none;
-
-    text-shadow: 1px 1px 2px rgba(0,0,0,.6);
-
-    box-shadow: 0 1px 3px rgba(0,0,0,.3);
-
-    white-space: nowrap;
-}
-
-#doiHinh ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-#doiHinh li{
-    margin:10px 0;
-}
-
 
 /* ===== KẾT QUẢ TRẬN ĐẤU ===== */
 .match {
@@ -982,77 +980,6 @@ nav:hover {
 
     cursor: pointer;
 }
-
-.knights-list{
-
-    display:flex;
-
-    flex-wrap:wrap;
-
-    justify-content:center;
-
-    gap:10px;
-
-    margin-top:14px;
-
-}
-
-.knight-badge{
-
-    display:inline-block;
-
-    padding:6px 12px;
-
-    background:linear-gradient(
-        to bottom,
-        #f4e8c8,
-        #e4d0a2
-    );
-
-    color:#4b3118;
-
-    border:1px solid #b89045;
-
-    border-radius:6px;
-
-    font-size:15px;
-
-    font-weight:700;
-
-    white-space:nowrap;
-
-    box-shadow:
-        0 2px 5px rgba(0,0,0,.18);
-
-}
-
-.knight-badge.MVP{
-
-    background:linear-gradient(
-        to bottom,
-        #d8b64b,
-        #b68d2a
-    );
-
-    color: var(--text-dark);
-
-    border:1px solid #f2d46f;
-
-    box-shadow:
-        0 0 12px rgba(201,162,39,.45);
-
-    text-shadow:none;
-
-}
-
-.match-knight{
-    width:clamp(60px,10vw,90px);
-    height:auto;
-    flex-shrink:0;
-
-    image-rendering:pixelated;
-}
-
 
 .match-body{
     flex:1;
@@ -1237,6 +1164,76 @@ nav:hover {
     font-weight:700;
 
     text-transform:uppercase;
+}
+
+.knights-list{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:10px;
+
+    margin-top:14px;
+
+}
+
+.knight-badge{
+
+    display:inline-block;
+
+    padding:6px 12px;
+
+    background:linear-gradient(
+        to bottom,
+        #f4e8c8,
+        #e4d0a2
+    );
+
+    color:#4b3118;
+
+    border:1px solid #b89045;
+
+    border-radius:6px;
+
+    font-size:15px;
+
+    font-weight:700;
+
+    white-space:nowrap;
+
+    box-shadow:
+        0 2px 5px rgba(0,0,0,.18);
+
+}
+
+.knight-badge.MVP{
+
+    background:linear-gradient(
+        to bottom,
+        #d8b64b,
+        #b68d2a
+    );
+
+    color: var(--text-dark);
+
+    border:1px solid #f2d46f;
+
+    box-shadow:
+        0 0 12px rgba(201,162,39,.45);
+
+    text-shadow:none;
+
+}
+
+.match-knight{
+    width:clamp(60px,10vw,90px);
+    height:auto;
+    flex-shrink:0;
+
+    image-rendering:pixelated;
 }
 
 
