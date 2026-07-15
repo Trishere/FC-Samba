@@ -3,6 +3,29 @@
 *::after{
     box-sizing: border-box;
 }
+/* =====================
+   COLOR VARIABLES
+===================== */
+:root {
+
+    --gold: #c9a227;
+    --gold-light: #e8c86a;
+    --gold-bright: #ffd84d;
+
+    --brown-dark: #3d2613;
+    --brown-mid: #5b3b20;
+    --brown-light: #7a542e;
+
+    --cream: #f2e2b3;
+    --cream-light: #f5e6b7;
+
+    --text-dark: #2b1b12;
+    --text-brown: #3b2a1b;
+
+    --shadow:
+        0 8px 20px rgba(0,0,0,.4);
+
+}
 
 body {
     position: relative;
@@ -245,11 +268,11 @@ nav {
 
     box-shadow:
         inset 0 0 0 1px rgba(255,255,255,.08),
-        0 4px 0 #3d2613,
+        0 4px 0 var(--brown-dark),
         0 10px 24px rgba(0,0,0,.30);
 }
 nav a {
-    color: #f2e2b3;
+    color: var(--cream);
 
     text-decoration: none;
 
@@ -283,7 +306,7 @@ nav a:hover {
         #a67c1b
     );
 
-    color: #2b1b12;
+    color: var(--text-dark);
 
     transform: translateY(-2px);
 
@@ -295,7 +318,7 @@ nav a:hover {
 nav:hover {
     box-shadow:
         inset 0 0 0 1px rgba(255,255,255,.12),
-        0 5px 0 #3d2613,
+        0 5px 0 var(--brown-dark),
         0 14px 28px rgba(0,0,0,.5);
 }
 
@@ -389,10 +412,10 @@ nav:hover {
 
 /* ===== BANNER ===== */
 .banner {
-    background: linear-gradient(to bottom,#7a542e,#5b3b20,#3d2613);
-    color: #f2e2b3;
+    background: linear-gradient(to bottom,var(--brown-light),var(--brown-mid),var(--brown-dark));
+    color: var(--cream);
 
-    border: 3px solid #c9a227;
+    border: 3px solid var(--gold);
     display: block;
     width: fit-content;
     padding: 16px 34px;
@@ -401,7 +424,7 @@ nav:hover {
     font-size: 22px;
     font-weight: bold;
     box-shadow:
-        0 3px 0 #3d2613,
+        0 3px 0 var(--brown-dark),
         0 8px 18px rgba(0,0,0,.35);
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -415,7 +438,7 @@ nav:hover {
     transform: translateY(-2px);
 
     box-shadow:
-        0 5px 0 #3d2613,
+        0 5px 0 var(--brown-dark),
         0 12px 24px rgba(0,0,0,.45);
 }
 
@@ -502,11 +525,11 @@ nav:hover {
 #thanhTich {
     background: linear-gradient(
         to bottom,
-        #5b3b20,
-        #3d2613
+        var(--brown-mid),
+        var(--brown-dark)
     );
 
-    border: 3px solid #c9a227;
+    border: 3px solid var(--gold);
 
     color: rgb(240,240,240);
     padding: 20px;
@@ -549,8 +572,8 @@ nav:hover {
 
     background:linear-gradient(
         to bottom,
-        #5b3b20,
-        #3d2613
+        var(--brown-mid),
+        var(--brown-dark)
     );
 
     border:3px solid #c9a227;
@@ -568,7 +591,7 @@ nav:hover {
 
     text-align:center;
 
-    color:#f2e2b3;
+    color:var(--cream);
 
     font-size:clamp(20px,2.2vw,26px);
 
@@ -618,7 +641,7 @@ nav:hover {
 
 .mvp-player{
 
-    color:#f2e2b3;
+    color:var(--cream);
 
     font-weight:bold;
 
@@ -628,7 +651,7 @@ nav:hover {
 
 .mvp-count{
 
-    color:#f2e2b3;
+    color:var(--cream);
 
     font-weight:bold;
 
@@ -648,7 +671,7 @@ nav:hover {
 
     border-color:#f2d46f;
 
-    color:#2b1b12;
+    color: var(--text-dark);
 
     box-shadow:0 0 16px rgba(201,162,39,.45);
 
@@ -657,7 +680,7 @@ nav:hover {
 .mvp-row.gold .mvp-player,
 .mvp-row.gold .mvp-count{
 
-    color:#2b1b12;
+    color: var(--text-dark);
 
 }
 
@@ -676,7 +699,7 @@ nav:hover {
 .mvp-row.silver .mvp-player,
 .mvp-row.silver .mvp-count{
 
-    color:#2b1b12;
+    color: var(--text-dark);
 
 }
 
@@ -774,7 +797,7 @@ nav:hover {
     background: linear-gradient(
         to bottom,
         #8a6a1d,
-        #5b3b20
+        var(--brown-mid)
     );
 
     color: #f5e6b7;
@@ -815,11 +838,11 @@ nav:hover {
 
     background:linear-gradient(
         to bottom,
-        #5b3b20,
-        #3d2613
+        var(--brown-mid),
+        var(--brown-dark)
     );
 
-    color:#f2e2b3;
+    color:var(--cream);
 
     border:2px solid rgba(201,162,39,.35);
 
@@ -839,8 +862,8 @@ nav:hover {
 
     background:linear-gradient(
         to bottom,
-        #7a542e,
-        #5b3b20
+        var(--brown-light),
+        var(--brown-mid),
     );
 
     border-color:#c9a227;
@@ -857,8 +880,8 @@ nav:hover {
 .match {
     background: linear-gradient(
         to bottom,
-        #5b3b20,
-        #3d2613
+        var(--brown-mid),
+        var(--brown-dark)
     );
 
     width: min(650px, 90%);
@@ -870,7 +893,7 @@ nav:hover {
     align-items: center;
     gap:clamp(10px,2vw,18px);
 
-    border: 3px solid #c9a227;
+    border: 3px solid var(--gold);
 
     border-radius: 6px;
 
@@ -880,6 +903,68 @@ nav:hover {
     transition: all .25s ease;
 
     cursor: pointer;
+}
+
+.knights-list{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:10px;
+
+    margin-top:14px;
+
+}
+
+.knight-badge{
+
+    display:inline-block;
+
+    padding:6px 12px;
+
+    background:linear-gradient(
+        to bottom,
+        #f4e8c8,
+        #e4d0a2
+    );
+
+    color:#4b3118;
+
+    border:1px solid #b89045;
+
+    border-radius:6px;
+
+    font-size:15px;
+
+    font-weight:700;
+
+    white-space:nowrap;
+
+    box-shadow:
+        0 2px 5px rgba(0,0,0,.18);
+
+}
+
+.knight-badge.MVP{
+
+    background:linear-gradient(
+        to bottom,
+        #d8b64b,
+        #b68d2a
+    );
+
+    color: var(--text-dark);
+
+    border:1px solid #f2d46f;
+
+    box-shadow:
+        0 0 12px rgba(201,162,39,.45);
+
+    text-shadow:none;
+
 }
 
 .match-knight{
@@ -908,7 +993,7 @@ nav:hover {
     border-color: #e8c86a;
 
     box-shadow:
-        0 4px 0 #3d2613,
+        0 4px 0 var(--brown-dark),
         0 12px 22px rgba(0,0,0,.45);
 }
 
@@ -953,7 +1038,7 @@ nav:hover {
     font-size:clamp(18px,2.2vw,24px);
     font-weight:700;
 
-    color:#f2e2b3;
+    color:var(--cream);
 
     line-height:1.2;
 
@@ -988,7 +1073,7 @@ nav:hover {
     text-align:center;
 
     box-shadow:
-        0 3px 0 #3d2613,
+        0 3px 0 var(--brown-dark),
         0 8px 16px rgba(0,0,0,.25);
 }
 
@@ -1046,7 +1131,7 @@ nav:hover {
 
     font-weight:700;
 
-    color:#f2e2b3;
+    color: var(--cream);
 }
 
 
@@ -1063,7 +1148,7 @@ nav:hover {
 
     margin-right:8px;
 
-    background:#5b3b20;
+    background:var(--brown-mid);
 
     border:1px solid #c9a227;
 
@@ -1101,12 +1186,12 @@ header {
 .tab-menu button {
     background: linear-gradient(
         to bottom,
-        #7a542e,
-        #5b3b20,
-        #3d2613
+        var(--brown-light),
+        var(--brown-mid),
+        var(--brown-dark)
     );
 
-    color: #f2e2b3;
+    color: var(--cream);
 
     border: 2px solid #c9a227;
 
@@ -1153,7 +1238,7 @@ header {
         #b68d2a
     ) !important;
 
-    color: #2b1b12 !important;
+    color: var(--text-dark) !important;
 
     border-color: #f2d46f !important;
 

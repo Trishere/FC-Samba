@@ -778,23 +778,23 @@ function renderMatch(match) {
 
                 <div class="detail">
 
-                    <p>
+                    <span class="knights-label">⚔ KNIGHTS</span>
 
-                        <span class="knights-label">KNIGHTS:</span>
+                    <div class="knights-list">
 
                         ${match.knights.map(player => {
 
                             if ((match.mvp || []).includes(player)) {
 
-                                return `<span class="MVP">${player}</span>`;
+                                return `<span class="knight-badge MVP">${player}</span>`;
 
                             }
 
-                            return player;
+                            return `<span class="knight-badge">${player}</span>`;
 
-                        }).join(", ")}
+                        }).join("")}
 
-                    </p>
+                    </div>
 
                 </div>
 
