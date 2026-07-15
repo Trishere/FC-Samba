@@ -397,7 +397,6 @@ nav:hover {
     letter-spacing: 1px;
     cursor: pointer;
 
-    /* Thêm 2 dòng này */
     transition: transform .2s ease, box-shadow .2s ease;
     user-select: none;
 }
@@ -1231,6 +1230,16 @@ header {
 
 @media (max-width:400px){
 
+    nav{
+        gap:10px;
+        padding:10px 14px;
+    }
+
+    nav a{
+        padding:8px 12px;
+        font-size:16px;
+    }
+    
     /* Score */
 
     .score{
