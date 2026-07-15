@@ -283,7 +283,7 @@ const expeditionMatches = [
         homeScore: 0,
         awayScore: 4,
         knights: [
-            "OnaThuan (GK)",
+            "OnaThuan",
             "Đức Lee",
             "Ronaldat",
             "Anh Đạt",
@@ -301,7 +301,7 @@ const expeditionMatches = [
         homeScore: 1,
         awayScore: 0,
         knights: [
-            "OnaThuan (GK)",
+            "OnaThuan",
             "Đức Lee",
             "QHuy",
             "Lil' Trí",
@@ -320,7 +320,7 @@ const expeditionMatches = [
         homeScore: 0,
         awayScore: 4,
         knights: [
-            "OnaThuan (GK)",
+            "OnaThuan",
             "LuGiaHuy",
             "Vũ Lông Thủ",
             "Tài Suy (C)",
@@ -374,8 +374,8 @@ const expeditionMatches = [
         homeScore: 3,
         awayScore: 3,
         knights: [
-            "LuGiaHuy (GK)",
-            "Ronaldat (C)",
+            "LuGiaHuy",
+            "Ronaldat",
             "Hiếu Saka",
             "QHuy",
             "Lil' Trí",
@@ -405,7 +405,7 @@ const expeditionMatches = [
         homeScore: 0,
         awayScore: 1,
         knights: [
-            "OnaThuan (GK)",
+            "OnaThuan",
             "Tài Suy (C)",
             "Vũ Lông Thủ",
             "Hiếu Saka",
@@ -425,7 +425,7 @@ const expeditionMatches = [
         homeScore: 0,
         awayScore: 3,
         knights: [
-            "Việt (GK)",
+            "Việt",
             "Quân Burger King",
             "Xuân Trường",
             "Hiếu Saka",
@@ -439,8 +439,8 @@ const expeditionMatches = [
     {
         date: "xx/xx/2026",
         opponent: "xx FC",
-        homeScore: "x",
-        awayScore: "x",
+        homeScore: null,
+        awayScore: null,
         knights: [
             "Việt (GK)",
             "Quân Burger King",
@@ -742,18 +742,24 @@ function getResult(match) {
 }
 
 
-/* RENDER MATCH  */
+/* RENDER MATCH */
 
 function renderMatch(match) {
 
     const result = getResult(match);
 
-    return `
-        <div class="match">
-
+    const knightHtml = result
+        ? `
             <img class="match-knight"
                  src="images/${result}knight.png"
                  alt="${result}">
+          `
+        : "";
+
+    return `
+        <div class="match">
+
+            ${knightHtml}
 
             <div class="match-body">
 
@@ -809,9 +815,6 @@ function renderAllMatches() {
             .join("");
 
 }
-
-renderAllMatches();
-updateRecord();
 
 function updateRecord() {
 
@@ -974,8 +977,19 @@ function renderAllCivilWar() {
             .join("");
 
 }
-renderAllCivilWar();
-updateMvpRanking();
+
+/* INIT */
+
+function init() {
+
+    renderAllMatches();
+    updateRecord();
+    renderAllCivilWar();
+    updateMvpRanking();
+
+}
+
+init();
 
 /* EVENT LISTENERS */
 
