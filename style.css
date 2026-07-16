@@ -55,6 +55,15 @@ body {
     overflow-x: hidden;
 }
 
+@media (max-width: 768px), (hover: none) and (pointer: coarse) {
+    body {
+        background-attachment: scroll;
+    }
+    body::before {
+        display: none;
+    }
+}
+
 body::before {
     content: "";
     position: fixed;
@@ -91,7 +100,7 @@ h1 {
     font-size: clamp(50px, 6vw, 80px);
     margin-top: -20px;
     margin-bottom: 12px;
-    font-family: "Times New Roman", serif;
+    font-family: "Cinzel", serif;
     font-weight: 700;
 
     background: linear-gradient(90deg, #ffde20, #ffd84d, #fff3b0);
@@ -346,6 +355,7 @@ nav:hover {
     border-radius: 8px;
     margin: 10px auto 30px;
     font-size: 22px;
+    font-family: "Times New Roman", serif;
     font-weight: bold;
     box-shadow:
         0 3px 0 var(--brown-dark),
