@@ -43,11 +43,18 @@ body {
     position: relative;
 
     background:
+        linear-gradient(to right,
+        rgba(20,15,10,0.95) 0%,
+        transparent 12%,
+        transparent 88%,
+        rgba(20,15,10,0.95) 100%
+      ),
+
         linear-gradient(
-            rgba(20, 15, 10, 0.75),
-            rgba(20, 15, 10, 0.75)
-        ),
-        url("images/rong.png");
+        rgba(20, 15, 10, 0.75),
+        rgba(20, 15, 10, 0.75)
+      ),
+      url("images/rong.png");
 
     background-size: cover;
     background-position: center;
