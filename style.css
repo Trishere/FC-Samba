@@ -556,7 +556,7 @@ nav:hover {
     background:linear-gradient(
         to bottom,
         var(--brown-light),
-        var(--brown-mid),
+        var(--brown-mid)
     );
 
     border-color:#c9a227;
