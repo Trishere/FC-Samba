@@ -535,7 +535,18 @@ function hideSections(ids) {
 
 }
 
+function closePlayerDetails() {
+
+    document.querySelectorAll(".player-detail").forEach(player => {
+
+        player.classList.remove("show");
+
+    });
+
+}
+
 function closeMainSections() {
+    closePlayerDetails();
 
     hideSections([
         "doiHinh"
@@ -910,11 +921,9 @@ function getCivilWarRecord(index) {
         }
 
     }
-
     return `${win}-${loss}-${draw}`;
 
 }
-
 
 function renderCivilWar(match, index) {
 
@@ -987,7 +996,6 @@ function init() {
     updateMvpRanking();
 
 }
-
 init();
 
 /* EVENT LISTENERS */
