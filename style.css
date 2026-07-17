@@ -166,10 +166,8 @@ h2 {
 }
 
 nav,
-.welcome,
 .logo,
 h1,
-.banner-wrapper,
 .banner,
 #doiHinh,
 #thanhTich,
@@ -468,76 +466,6 @@ nav:hover {
     right:6px;
 }
 
-.tab-menu {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    margin: 20px 0;
-}
-
-.tab-menu button {
-    background: linear-gradient(
-        to bottom,
-        var(--brown-light),
-        var(--brown-mid),
-        var(--brown-dark)
-    );
-
-    color: var(--cream);
-
-    border: 2px solid #c9a227;
-
-    border-radius: 6px;
-
-    padding: 14px 28px;
-
-    cursor: pointer;
-
-    font-size: 18px;
-
-    font-family: "Times New Roman", serif;
-
-    font-weight: bold;
-
-    letter-spacing: 1px;
-
-    box-shadow: 0 4px 10px rgba(0,0,0,.35);
-
-    transition: all .25s ease;
-}
-
-.tab-menu button:hover {
-    background: linear-gradient(
-        to bottom,
-        #8b6238,
-        #6d4827,
-        #4a2f18
-    );
-
-    transform: translateY(-2px);
-
-    box-shadow: var(--shadow-panel);
-}
-
-.tab-menu button:active {
-    transform: translateY(2px);
-}
-
-.active-tab {
-    background: linear-gradient(
-        to bottom,
-        #d8b64b,
-        #b68d2a
-    ) !important;
-
-    color: var(--text-dark) !important;
-
-    border-color: #f2d46f !important;
-
-    box-shadow: 0 0 14px rgba(201,162,39,.5);
-
-    transition: all .3s ease;
-}
 /* ===== DANH SÁCH CẦU THỦ ===== */
 .player-list {
     list-style: none;
@@ -1041,13 +969,6 @@ nav:hover {
     color: rgb(230, 208, 10);
 }
 
-.match-body > p {
-    font-size: 24px;
-    font-weight: bold;
-    margin: 10px 0;
-    color: rgb(253, 253, 253);
-}
-
 /* ===== SCORE ===== */
 
 .score{
@@ -1264,11 +1185,6 @@ nav:hover {
 header {
     padding: 20px;
 }
-
-.hidden {
-    display: none;
-}
-
 
 .fade-in {
     animation: royalReveal .55s cubic-bezier(.22,1,.36,1);

@@ -141,7 +141,7 @@
     <ul class="player-list">
 
         <li>
-            <button class="player-toggle" data-player="onathuan">OnaThuan (GK)</button>
+            <button class="player-toggle" data-player="onathuan" aria-expanded="false">OnaThuan (GK)</button>
 
             <div id="onathuan" class="player-detail">
                 <img src="images/onathuan.jpg" alt="OnaThuan" width="150">
@@ -153,7 +153,7 @@
         </li>
 
         <li>
-            <button class="player-toggle" data-player="taisuy">Tài Suy (C)</button>
+            <button class="player-toggle" data-player="taisuy" aria-expanded="false">Tài Suy (C)</button>
 
             <div id="taisuy" class="player-detail">
                 <img src="images/taisuy.jpg" alt="Tài Suy" width="150">
@@ -166,7 +166,7 @@
         </li>
 
     <li>
-      <button class="player-toggle" data-player="quochuy">Quốc Huy</button>
+      <button class="player-toggle" data-player="quochuy" aria-expanded="false">Quốc Huy</button>
       <div id="quochuy" class="player-detail">
         <img src="images/quochuy.jpg" alt="Quốc Huy" width="150">
         <div class="player-card-info">
@@ -177,7 +177,7 @@
     </li>
 
     <li>
-      <button class="player-toggle" data-player="ronaldat">Ronaldat</button>
+      <button class="player-toggle" data-player="ronaldat" aria-expanded="false">Ronaldat</button>
       <div id="ronaldat" class="player-detail">
         <img src="images/ronaldat.jpg" alt="Ronaldat" width="150">
         <div class="player-card-info">
@@ -188,7 +188,7 @@
     </li>
 
     <li>
-      <button class="player-toggle" data-player="duclee">Đức Lee</button>
+      <button class="player-toggle" data-player="duclee" aria-expanded="false">Đức Lee</button>
       <div id="duclee" class="player-detail">
         <img src="images/duclee.jpg" alt="Đức Lee" width="150">
         <div class="player-card-info">
@@ -199,7 +199,7 @@
     </li>
 
     <li>
-      <button class="player-toggle" data-player="liltri">Lil' Trí</button>
+      <button class="player-toggle" data-player="liltri" aria-expanded="false">Lil' Trí</button>
       <div id="liltri" class="player-detail">
         <img src="images/liltri.jpg" alt="Lil' Trí" width="150">
         <div class="player-card-info">
@@ -210,7 +210,7 @@
     </li>
 
     <li>
-      <button class="player-toggle" data-player="hieusaka">Hiếu Saka</button>
+      <button class="player-toggle" data-player="hieusaka" aria-expanded="false">Hiếu Saka</button>
       <div id="hieusaka" class="player-detail">
         <img src="images/hieusaka.jpg" alt="Hiếu Saka" width="150">
         <div class="player-card-info">
@@ -221,7 +221,7 @@
     </li>
 
     <li>
-      <button class="player-toggle" data-player="namsilun">Nam Silun</button>
+      <button class="player-toggle" data-player="namsilun" aria-expanded="false">Nam Silun</button>
       <div id="namsilun" class="player-detail">
         <img src="images/namsilun.jpg" alt="Nam Silun" width="150">
         <div class="player-card-info">
@@ -232,7 +232,7 @@
     </li>
 
     <li>
-      <button class="player-toggle" data-player="lugiahuy">LuGiaHuy</button>
+      <button class="player-toggle" data-player="lugiahuy" aria-expanded="false">LuGiaHuy</button>
       <div id="lugiahuy" class="player-detail">
         <img src="images/lugiahuy.jpg" alt="LuGiaHuy" width="150">
         <div class="player-card-info">
@@ -243,7 +243,7 @@
     </li>
 
     <li>
-      <button class="player-toggle" data-player="vulongthu">Vũ Lông Thủ</button>
+      <button class="player-toggle" data-player="vulongthu" aria-expanded="false">Vũ Lông Thủ</button>
       <div id="vulongthu" class="player-detail">
         <img src="images/vulongthu.jpg" alt="Vũ Lông Thủ" width="150">
         <div class="player-card-info">
@@ -254,7 +254,7 @@
     </li>
 
     <li>
-      <button class="player-toggle" data-player="quanburger">Quân Burger King</button>
+      <button class="player-toggle" data-player="quanburger" aria-expanded="false">Quân Burger King</button>
       <div id="quanburger" class="player-detail">
         <img src="images/quanburger.jpg" alt="Quân Burger King" width="150">
         <div class="player-card-info">
@@ -303,7 +303,7 @@ const expeditionMatches = [
         knights: [
             "OnaThuan",
             "Đức Lee",
-            "Quốc Huy",
+            "QHuy",
             "Lil' Trí",
             "Hiếu Saka",
             "Tài Suy (C)",
@@ -330,7 +330,7 @@ const expeditionMatches = [
             "Ronaldat",
             "Anh Đạt",
             "Hiếu Saka",
-            "Quốc Huy"
+            "QHuy"
         ],
         mvp: ["OnaThuan"]
     },
@@ -344,7 +344,7 @@ const expeditionMatches = [
             "Anh Đạt (GK)",
             "Ronaldat",
             "Đức Lee",
-            "Quốc Huy",
+            "QHuy",
             "Lil' Trí",
             "Hiếu Saka",
             "Nam Silun"
@@ -359,7 +359,7 @@ const expeditionMatches = [
         knights: [
             "Việt (GK)",
             "Ronaldat",
-            "Quốc Huy",
+            "QHuy",
             "Tài Suy (C)",
             "Nam Silun",
             "Quân Burger King",
@@ -377,7 +377,7 @@ const expeditionMatches = [
             "LuGiaHuy",
             "Ronaldat",
             "Hiếu Saka",
-            "Quốc Huy",
+            "QHuy",
             "Lil' Trí",
             "Nam Silun",
             "Đức Lee"
@@ -411,7 +411,7 @@ const expeditionMatches = [
             "Hiếu Saka",
             "Ronaldat",
             "LuGiaHuy",
-            "Quốc Huy",
+            "QHuy",
             "Lil' Trí",
             "Nam Silun",
             "Đức Lee"
@@ -430,7 +430,7 @@ const expeditionMatches = [
             "Xuân Trường",
             "Hiếu Saka",
             "Ronaldat",
-            "Quốc Huy",
+            "QHuy",
             "Đức Lee"
         ],
         mvp: ["Việt"]
@@ -446,7 +446,7 @@ const expeditionMatches = [
             "Xuân Trường",
             "Hiếu Saka",
             "Ronaldat",
-            "Quốc Huy",
+            "QHuy",
             "Đức Lee"
         ],
     },
@@ -762,84 +762,67 @@ function getResult(match) {
 }
 
 
-/* SHARED MATCH CARD PIECES */
+/* RENDER MATCH */
 
-function renderKnightBadge(result) {
-
-    return result
-        ? `<img class="match-knight" src="images/${result}knight.png" alt="${result}">`
-        : "";
-
-}
-
-function renderScoreRow(teamLabel, match) {
-
-    return `
-        <div class="score">
-
-            <span class="team">${teamLabel}</span>
-
-            <div class="score-box">
-                ${match.homeScore} : ${match.awayScore}
-            </div>
-
-            <span class="team">${match.opponent}</span>
-
-        </div>
-    `;
-
-}
-
-function renderMatchCard(match, { team, bodyContent }) {
+function renderMatch(match) {
 
     const result = getResult(match);
+
+    const knightHtml = result
+        ? `
+            <img class="match-knight"
+                 src="images/${result}knight.png"
+                 alt="${result}">
+          `
+        : "";
 
     return `
         <div class="match">
 
-            ${renderKnightBadge(result)}
+            ${knightHtml}
 
             <div class="match-body">
 
                 <h3>${match.date}</h3>
 
-                ${renderScoreRow(team, match)}
+                <div class="score">
 
-                ${bodyContent}
+                    <span class="team">Samba</span>
+
+                    <div class="score-box">
+                        ${match.homeScore} : ${match.awayScore}
+                    </div>
+
+                    <span class="team">${match.opponent}</span>
+
+                </div>
+
+                <div class="detail">
+
+                    <span class="knights-label">⚔ KNIGHTS</span>
+
+                    <div class="knights-list">
+
+                        ${match.knights.map(player => {
+
+                            if ((match.mvp || []).includes(player)) {
+
+                                return `<span class="knight-badge MVP">${player}</span>`;
+
+                            }
+
+                            return `<span class="knight-badge">${player}</span>`;
+
+                        }).join("")}
+
+                    </div>
+
+                </div>
 
             </div>
 
         </div>
     `;
-
-}
-
-
-/* RENDER MATCH — VIỄN CHINH */
-
-function renderMatch(match) {
-
-    const knightsBody = `
-        <div class="detail">
-
-            <span class="knights-label">⚔ KNIGHTS</span>
-
-            <div class="knights-list">
-
-                ${match.knights.map(player => {
-
-                    const isMvp = (match.mvp || []).includes(player);
-
-                    return `<span class="knight-badge${isMvp ? " MVP" : ""}">${player}</span>`;
-
-                }).join("")}
-
-            </div>
-
-        </div>
-    `;
-
-    return renderMatchCard(match, { team: "Samba", bodyContent: knightsBody });
 
 }
 
@@ -952,35 +935,56 @@ function getCivilWarRecord(index) {
 
 }
 
-/* RENDER MATCH — NỘI CHIẾN */
-
 function renderCivilWar(match, index) {
 
     const record = getCivilWarRecord(index);
+    const result = getResult(match);
+    return `
+        <div class="match">
 
-    const infoBody = `
-        <div class="match-info">
+            <img class="match-knight"
+                 src="images/${result}knight.png"
+                 alt="${result}">
 
-            <div class="info-box">
-                <span class="info-label">W-L-D</span>
-                <span class="info-value">${record}</span>
-            </div>
+            <div class="match-body">
 
-            <div class="info-box">
-                <span class="info-label">KNIGHTS</span>
-                <span class="info-value">${match.knights}</span>
-            </div>
+                <h3>${match.date}</h3>
 
-            <div class="info-box">
-                <span class="info-label">MVP</span>
-                <span class="info-value">${(match.mvp || []).join(", ") || "N/A"}</span>
+                <div class="score">
+
+                    <span class="team">${match.team}</span>
+
+                    <div class="score-box">
+                        ${match.homeScore} : ${match.awayScore}
+                    </div>
+
+                    <span class="team">${match.opponent}</span>
+
+                </div>
+
+                <div class="match-info">
+
+                    <div class="info-box">
+                        <span class="info-label">W-L-D</span>
+                        <span class="info-value">${record}</span>
+                    </div>
+
+                    <div class="info-box">
+                        <span class="info-label">KNIGHTS</span>
+                        <span class="info-value">${match.knights}</span>
+                    </div>
+
+                    <div class="info-box">
+                        <span class="info-label">MVP</span>
+                        <span class="info-value">${(match.mvp || []).join(", ") || "N/A"}</span>
+                    </div>
+
+                </div>
+
             </div>
 
         </div>
     `;
-
-    return renderMatchCard(match, { team: match.team, bodyContent: infoBody });
-
 }
 
 function renderAllCivilWar() {
