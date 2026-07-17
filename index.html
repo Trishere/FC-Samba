@@ -303,7 +303,7 @@ const expeditionMatches = [
         knights: [
             "OnaThuan",
             "Đức Lee",
-            "QHuy",
+            "Quốc Huy",
             "Lil' Trí",
             "Hiếu Saka",
             "Tài Suy (C)",
@@ -330,7 +330,7 @@ const expeditionMatches = [
             "Ronaldat",
             "Anh Đạt",
             "Hiếu Saka",
-            "QHuy"
+            "Quốc Huy"
         ],
         mvp: ["OnaThuan"]
     },
@@ -344,7 +344,7 @@ const expeditionMatches = [
             "Anh Đạt (GK)",
             "Ronaldat",
             "Đức Lee",
-            "QHuy",
+            "Quốc Huy",
             "Lil' Trí",
             "Hiếu Saka",
             "Nam Silun"
@@ -359,7 +359,7 @@ const expeditionMatches = [
         knights: [
             "Việt (GK)",
             "Ronaldat",
-            "QHuy",
+            "Quốc Huy",
             "Tài Suy (C)",
             "Nam Silun",
             "Quân Burger King",
@@ -377,7 +377,7 @@ const expeditionMatches = [
             "LuGiaHuy",
             "Ronaldat",
             "Hiếu Saka",
-            "QHuy",
+            "Quốc Huy",
             "Lil' Trí",
             "Nam Silun",
             "Đức Lee"
@@ -411,7 +411,7 @@ const expeditionMatches = [
             "Hiếu Saka",
             "Ronaldat",
             "LuGiaHuy",
-            "QHuy",
+            "Quốc Huy",
             "Lil' Trí",
             "Nam Silun",
             "Đức Lee"
@@ -430,7 +430,7 @@ const expeditionMatches = [
             "Xuân Trường",
             "Hiếu Saka",
             "Ronaldat",
-            "QHuy",
+            "Quốc Huy",
             "Đức Lee"
         ],
         mvp: ["Việt"]
@@ -446,7 +446,7 @@ const expeditionMatches = [
             "Xuân Trường",
             "Hiếu Saka",
             "Ronaldat",
-            "QHuy",
+            "Quốc Huy",
             "Đức Lee"
         ],
     },
@@ -762,67 +762,84 @@ function getResult(match) {
 }
 
 
-/* RENDER MATCH */
+/* SHARED MATCH CARD PIECES */
 
-function renderMatch(match) {
+function renderKnightBadge(result) {
+
+    return result
+        ? `<img class="match-knight" src="images/${result}knight.png" alt="${result}">`
+        : "";
+
+}
+
+function renderScoreRow(teamLabel, match) {
+
+    return `
+        <div class="score">
+
+            <span class="team">${teamLabel}</span>
+
+            <div class="score-box">
+                ${match.homeScore} : ${match.awayScore}
+            </div>
+
+            <span class="team">${match.opponent}</span>
+
+        </div>
+    `;
+
+}
+
+function renderMatchCard(match, { team, bodyContent }) {
 
     const result = getResult(match);
-
-    const knightHtml = result
-        ? `
-            <img class="match-knight"
-                 src="images/${result}knight.png"
-                 alt="${result}">
-          `
-        : "";
 
     return `
         <div class="match">
 
-            ${knightHtml}
+            ${renderKnightBadge(result)}
 
             <div class="match-body">
 
                 <h3>${match.date}</h3>
 
-                <div class="score">
+                ${renderScoreRow(team, match)}
 
-                    <span class="team">Samba</span>
-
-                    <div class="score-box">
-                        ${match.homeScore} : ${match.awayScore}
-                    </div>
-
-                    <span class="team">${match.opponent}</span>
-
-                </div>
-
-                <div class="detail">
-
-                    <span class="knights-label">⚔ KNIGHTS</span>
-
-                    <div class="knights-list">
-
-                        ${match.knights.map(player => {
-
-                            if ((match.mvp || []).includes(player)) {
-
-                                return `<span class="knight-badge MVP">${player}</span>`;
-
-                            }
-
-                            return `<span class="knight-badge">${player}</span>`;
-
-                        }).join("")}
-
-                    </div>
-
-                </div>
+                ${bodyContent}
 
             </div>
 
         </div>
     `;
+
+}
+
+
+/* RENDER MATCH — VIỄN CHINH */
+
+function renderMatch(match) {
+
+    const knightsBody = `
+        <div class="detail">
+
+            <span class="knights-label">⚔ KNIGHTS</span>
+
+            <div class="knights-list">
+
+                ${match.knights.map(player => {
+
+                    const isMvp = (match.mvp || []).includes(player);
+
+                    return `<span class="knight-badge${isMvp ? " MVP" : ""}">${player}</span>`;
+
+                }).join("")}
+
+            </div>
+
+        </div>
+    `;
+
+    return renderMatchCard(match, { team: "Samba", bodyContent: knightsBody });
 
 }
 
@@ -935,56 +952,35 @@ function getCivilWarRecord(index) {
 
 }
 
+/* RENDER MATCH — NỘI CHIẾN */
+
 function renderCivilWar(match, index) {
 
     const record = getCivilWarRecord(index);
-    const result = getResult(match);
-    return `
-        <div class="match">
 
-            <img class="match-knight"
-                 src="images/${result}knight.png"
-                 alt="${result}">
+    const infoBody = `
+        <div class="match-info">
 
-            <div class="match-body">
+            <div class="info-box">
+                <span class="info-label">W-L-D</span>
+                <span class="info-value">${record}</span>
+            </div>
 
-                <h3>${match.date}</h3>
+            <div class="info-box">
+                <span class="info-label">KNIGHTS</span>
+                <span class="info-value">${match.knights}</span>
+            </div>
 
-                <div class="score">
-
-                    <span class="team">${match.team}</span>
-
-                    <div class="score-box">
-                        ${match.homeScore} : ${match.awayScore}
-                    </div>
-
-                    <span class="team">${match.opponent}</span>
-
-                </div>
-
-                <div class="match-info">
-
-                    <div class="info-box">
-                        <span class="info-label">W-L-D</span>
-                        <span class="info-value">${record}</span>
-                    </div>
-
-                    <div class="info-box">
-                        <span class="info-label">KNIGHTS</span>
-                        <span class="info-value">${match.knights}</span>
-                    </div>
-
-                    <div class="info-box">
-                        <span class="info-label">MVP</span>
-                        <span class="info-value">${(match.mvp || []).join(", ") || "N/A"}</span>
-                    </div>
-
-                </div>
-
+            <div class="info-box">
+                <span class="info-label">MVP</span>
+                <span class="info-value">${(match.mvp || []).join(", ") || "N/A"}</span>
             </div>
 
         </div>
     `;
+
+    return renderMatchCard(match, { team: match.team, bodyContent: infoBody });
+
 }
 
 function renderAllCivilWar() {

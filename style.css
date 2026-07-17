@@ -1178,21 +1178,13 @@ nav:hover {
 
 .knights-label{
     display:inline-block;
-
     padding:4px 10px;
-
-    margin-right:8px;
-
+    margin-bottom:8px;
     background:var(--brown-mid);
-
     border:1px solid #c9a227;
-
     border-radius:4px;
-
     color:#f4e3b2;
-
     font-weight:700;
-
     text-transform:uppercase;
 }
 
