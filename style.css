@@ -662,6 +662,10 @@ nav:hover {
     text-transform:uppercase;
 }
 
+#doiHinh {
+    margin-top: 15px;
+}
+
 #thanhTich {
     width: min(380px, 95%);
 }
@@ -707,7 +711,7 @@ nav:hover {
 
 }
 
-.mvp-hall h3{
+.mvp-hall h4{
 
     margin:0 0 18px;
 
@@ -1099,13 +1103,21 @@ nav:hover {
 
 .knights-label{
     display:inline-block;
+
     padding:4px 10px;
+
     margin-bottom:8px;
+
     background:var(--brown-mid);
+
     border:1px solid #c9a227;
+
     border-radius:4px;
+
     color:#f4e3b2;
+
     font-weight:700;
+
     text-transform:uppercase;
 }
 
