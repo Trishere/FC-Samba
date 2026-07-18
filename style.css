@@ -1085,13 +1085,13 @@ nav:hover {
 }
 
 .civilwar-roster{
+    position:relative;
     max-height:0;
     overflow:hidden;
     opacity:0;
 
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
+    display:grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap:clamp(14px,2.5vw,24px);
 
     transition:
@@ -1099,14 +1099,27 @@ nav:hover {
         opacity .25s ease;
 }
 
+.civilwar-roster::before{
+    content:"";
+
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:50%;
+
+    transform:translateX(-50%);
+    border-left:1px dashed rgba(201,162,39,.35);
+
+}
+
 .civilwar-roster.show{
-    max-height:500px;
+    max-height:600px;
     opacity:1;
     margin-top:clamp(12px,1.5vw,16px);
 }
 
 .roster-side{
-    min-width:140px;
+    min-width:0;
 
     text-align:center;
 }
@@ -1134,10 +1147,15 @@ nav:hover {
 }
 
 .roster-list{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:8px;
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap:6px 10px;
+    justify-items:center;
+}
+
+.roster-list .knight-badge{
+    padding: 4px 8px;
+    font-size: 15px;
 }
 
 .roster-empty{
@@ -1380,6 +1398,20 @@ header {
     .team{
         width:100%;
         max-width:220px;
+    }
+
+    .civilwar-roster{
+        grid-template-columns: 1fr;
+        gap:16px;
+    }
+
+    .roster-side:first-child{
+        border-bottom:1px dashed rgba(201,162,39,.35);
+        padding-bottom:12px;
+    }
+
+    .civilwar-roster::before{
+        display:none;
     }
 
     /* Match Info */
