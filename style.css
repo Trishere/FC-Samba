@@ -1387,15 +1387,18 @@ header {
     /* Score */
 
     .score{
-        flex-direction:column;
-        align-items:center;
-        gap:10px;
+        gap:8px;
         margin:14px 0;
     }
 
     .team{
-        width:100%;
-        max-width:220px;
+        font-size:16px;
+    }
+
+    .score-box{
+        min-width:70px;
+        padding:6px 10px;
+        font-size:18px;
     }
 
     .civilwar-roster{
