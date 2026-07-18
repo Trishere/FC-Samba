@@ -1444,22 +1444,31 @@ header {
 
     .hero-top{
         display:grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns:1fr 1fr;
+        grid-template-areas:
+            "logo logo"
+            "left right";
+
+        align-items:center;
         justify-items:center;
-        row-gap:12px;
+        row-gap:16px;
     }
 
     .logo{
-        grid-column:1 / 3;
-        order:0;
+        grid-area:logo;
+        width:120px;
+        margin-top:0;
     }
 
     .hero-motto.left{
-        justify-self:end;
+        grid-area:left;
+        text-align:right;
     }
 
     .hero-motto.right{
-        justify-self:start;
+        grid-area:right;
+        text-align:left;
     }
+}
 
 }
