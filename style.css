@@ -197,7 +197,7 @@ h1,
     display:flex;
     align-items:center;
     justify-content:center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     row-gap: 6px;
     gap:clamp(6px,2vw,40px);
 }
@@ -1443,31 +1443,25 @@ header {
 
 
     .hero-top{
-        display:grid;
-        grid-template-columns:1fr 1fr;
-        grid-template-areas:
-            "logo logo"
-            "left right";
-
-        align-items:center;
-        justify-items:center;
-        row-gap:16px;
+        gap:8px;
     }
 
     .logo{
-        grid-area:logo;
-        width:120px;
+        width:100px;
         margin-top:0;
     }
 
-    .hero-motto.left{
-        grid-area:left;
-        text-align:right;
+    .hero-motto span:nth-child(1){
+        font-size:11px;
     }
 
-    .hero-motto.right{
-        grid-area:right;
-        text-align:left;
+    .hero-motto span:nth-child(2){
+        font-size:8px;
+        margin:2px 0;
+    }
+
+    .hero-motto span:nth-child(3){
+        font-size:13px;
     }
 
 }
