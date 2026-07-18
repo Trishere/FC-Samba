@@ -199,14 +199,14 @@ h1,
     justify-content:center;
     flex-wrap: wrap;
     row-gap: 6px;
-    gap:clamp(12px,4vw,40px);
+    gap:clamp(6px,2vw,40px);
 }
 
 .hero-motto{
     display:flex;
     flex-direction:column;
 
-    width:clamp(75px,18vw,160px);
+    width:fit-content;
 
     font-size:70px;
     font-weight:100;
@@ -217,7 +217,7 @@ h1,
 
     text-transform:uppercase;
 
-    letter-spacing:2px;
+    letter-spacing:clamp(.5px,.2vw,2px);
 
     text-shadow:
         0 2px 8px rgba(0,0,0,.55);
@@ -247,7 +247,7 @@ h1,
 }
 
 .logo {
-    width: clamp(150px, 20vw, 230px);
+    width: clamp(110px, 30vw, 230px);
     height: auto;
 
     margin-top: clamp(-15px, -1vw, -5px);
@@ -1469,6 +1469,5 @@ header {
         grid-area:right;
         text-align:left;
     }
-}
 
 }
