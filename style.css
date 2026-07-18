@@ -120,7 +120,7 @@ h1 {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
-    letter-spacing: 3px;
+    letter-spacing: clamp(1px, 0.5vw, 3px);
     text-shadow: 0 2px 8px rgba(0,0,0,.35);
 
     position: relative;
@@ -138,7 +138,7 @@ h1::after {
     top: 50%;
     transform: translateY(-50%);
 
-    width: clamp(40px, 12vw, 180px);
+    width: clamp(24px, 10vw, 180px);;
     height: 3px;
 
     background: linear-gradient(
@@ -153,12 +153,12 @@ h1::after {
 
 h1::before {
     right: 100%;
-    margin-right: 25px;
+    margin-right: clamp(10px, 2vw, 25px);
 }
 
 h1::after {
     left: 100%;
-    margin-left: 25px;
+    margin-left: clamp(10px, 2vw, 25px);
 }
 
 h2 {
@@ -1462,6 +1462,16 @@ header {
 
     .hero-motto span:nth-child(3){
         font-size:13px;
+    }
+
+    h1{
+        margin-top:-12px;
+        font-size:42px;
+    }
+
+    h1::before,
+    h1::after{
+        width:22px;
     }
 
 }
