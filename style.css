@@ -124,9 +124,9 @@ h1 {
     text-shadow: 0 2px 8px rgba(0,0,0,.35);
 
     position: relative;
-    display: block;
+    display: inline-block;
     text-align: center;
-    width: 100%;
+    max-width:90%;
     
     overflow: visible;
 }
@@ -197,16 +197,14 @@ h1,
     display:flex;
     align-items:center;
     justify-content:center;
-    flex-wrap: nowrap;
-    row-gap: 6px;
-    gap:clamp(6px,2vw,40px);
+    gap:clamp(8px,2vw,40px);
 }
 
 .hero-motto{
     display:flex;
     flex-direction:column;
 
-    width:clamp(65px, 16vw, 120px);
+    width: clamp(70px,16vw,130px);
 
     font-size:70px;
     font-weight:100;
