@@ -468,8 +468,10 @@ const expeditionMatches = [
 const civilWarMatches = [
     {
         date: "24/05/2026",
-        team: "Samba",
+        team: "Quốc Huy",
+        teamRoster: ["Quốc Huy", "Đức Lee","Tài Suy","Vũ Lông Thủ","Phong Lâm", "Quân Burger King" ], // TODO: điền tên cầu thủ phe Samba
         opponent: "Ronaldat",
+        opponentRoster: ["Ronaldat", "Anh Đạt", "Hiếu Saka", "Nam Silun", "Lil' Trí", "LuGiaHuy"], // TODO: điền tên cầu thủ phe Ronaldat
         homeScore: 10,
         awayScore: 0,
         knights: "7 • 6"
@@ -477,8 +479,10 @@ const civilWarMatches = [
 
     {
         date: "03/07/2026",
-        team: "Samba",
+        team: "Quốc Huy",
+        teamRoster: ["Quốc Huy", "Đức Lee","Tài Suy","Vũ Lông Thủ","Lil' Trí", "Quân Burger King" ],
         opponent: "Ronaldat",
+        opponentRoster: ["Ronaldat", "Team Quý"],
         homeScore: 1,
         awayScore: 0,
         knights: "6 • 6"
@@ -487,7 +491,9 @@ const civilWarMatches = [
     {
         date: "11/07/2026",
         team: "Râu Con",
+        teamRoster: ["Quốc Huy","Tài Suy","Nam Silun", "Hiếu Saka", "LuGiaHuy", "Anh Đạt" ],
         opponent: "Ricon ",
+        opponentRoster: ["Ronaldat", "Đức Lee", "Quân Burger King", "Lil' Trí","OnaThuan", "Vũ Lông Thủ"],
         homeScore: 4,
         awayScore: 0,
         knights: "6 • 6",
@@ -497,7 +503,9 @@ const civilWarMatches = [
     {
         date: "18/07/2026",
         team: "Râu Con",
+        teamRoster: [],
         opponent: "Ricon ",
+        opponentRoster: [],
         homeScore: null,
         awayScore: null,
         knights: "6 • 6",
@@ -727,9 +735,19 @@ function togglePlayer(id) {
 
     });
 
+    document.querySelectorAll(".player-toggle").forEach(btn => {
+
+        btn.setAttribute("aria-expanded", "false");
+
+    });
+
     if (!isOpen) {
 
         target.classList.add("show");
+
+        const trigger = document.querySelector(`.player-toggle[data-player="${id}"]`);
+
+        if (trigger) trigger.setAttribute("aria-expanded", "true");
 
     }
 
@@ -749,6 +767,26 @@ function toggleMatchDetail(match) {
 
     if (!isOpen) {
         details.classList.add("show");
+    }
+}
+
+/* CIVIL WAR ROSTER TOGGLE */
+function toggleCivilWarRoster(box) {
+
+    const card = box.closest(".match");
+    if (!card) return;
+
+    const roster = card.querySelector(".civilwar-roster");
+    if (!roster) return;
+
+    const isOpen = roster.classList.contains("show");
+
+    document.querySelectorAll(".civilwar-roster").forEach(r => {
+        r.classList.remove("show");
+    });
+
+    if (!isOpen) {
+        roster.classList.add("show");
     }
 }
 
@@ -979,14 +1017,36 @@ function renderCivilWar(match, index) {
                         <span class="info-value">${record}</span>
                     </div>
 
-                    <div class="info-box">
-                        <span class="info-label">KNIGHTS</span>
+                    <div class="info-box knights-toggle" data-index="${index}">
+                        <span class="info-label">⚔ KNIGHTS</span>
                         <span class="info-value">${match.knights}</span>
                     </div>
 
                     <div class="info-box">
                         <span class="info-label">MVP</span>
                         <span class="info-value">${(match.mvp || []).join(", ") || "N/A"}</span>
+                    </div>
+
+                </div>
+
+                <div class="civilwar-roster">
+
+                    <div class="roster-side">
+                        <span class="roster-label">${match.team}</span>
+                        <div class="roster-list">
+                            ${(match.teamRoster || []).length
+                                ? match.teamRoster.map(player => `<span class="knight-badge">${player}</span>`).join("")
+                                : `<span class="roster-empty">Chưa cập nhật</span>`}
+                        </div>
+                    </div>
+
+                    <div class="roster-side">
+                        <span class="roster-label">${match.opponent}</span>
+                        <div class="roster-list">
+                            ${(match.opponentRoster || []).length
+                                ? match.opponentRoster.map(player => `<span class="knight-badge">${player}</span>`).join("")
+                                : `<span class="roster-empty">Chưa cập nhật</span>`}
+                        </div>
                     </div>
 
                 </div>
@@ -1047,6 +1107,13 @@ document.querySelectorAll(".player-toggle").forEach(button => {
 [matchList, noiChien].forEach(container => {
 
     container.addEventListener("click", function (event) {
+
+        const knightsBox = event.target.closest(".knights-toggle");
+
+        if (knightsBox) {
+            toggleCivilWarRoster(knightsBox);
+            return;
+        }
 
         const match = event.target.closest(".match");
 

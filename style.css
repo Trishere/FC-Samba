@@ -1066,6 +1066,88 @@ nav:hover {
         inset 0 1px 0 rgba(255,255,255,.05);
 }
 
+.info-box.knights-toggle{
+    cursor:pointer;
+
+    transition:
+        background .2s ease,
+        border-color .2s ease,
+        transform .2s ease;
+}
+
+.info-box.knights-toggle:hover{
+    background:rgba(201,162,39,.15);
+    border-color:#c9a227;
+}
+
+.info-box.knights-toggle:active{
+    transform:scale(.97);
+}
+
+.civilwar-roster{
+    max-height:0;
+    overflow:hidden;
+    opacity:0;
+
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:clamp(14px,2.5vw,24px);
+
+    transition:
+        max-height .35s ease,
+        opacity .25s ease;
+}
+
+.civilwar-roster.show{
+    max-height:500px;
+    opacity:1;
+    margin-top:clamp(12px,1.5vw,16px);
+}
+
+.roster-side{
+    min-width:140px;
+
+    text-align:center;
+}
+
+.roster-label{
+    display:inline-block;
+
+    padding:4px 10px;
+
+    margin-bottom:8px;
+
+    background:var(--brown-mid);
+
+    border:1px solid #c9a227;
+
+    border-radius:4px;
+
+    color:#f4e3b2;
+
+    font-weight:700;
+
+    text-transform:uppercase;
+
+    font-size:.85rem;
+}
+
+.roster-list{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:8px;
+}
+
+.roster-empty{
+    color:rgba(240,240,240,.55);
+
+    font-size:.85rem;
+
+    font-style:italic;
+}
+
 .info-label{
 
     display:block;
