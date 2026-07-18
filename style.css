@@ -124,9 +124,9 @@ h1 {
     text-shadow: 0 2px 8px rgba(0,0,0,.35);
 
     position: relative;
-    display: inline-block;
+    display: block;
     text-align: center;
-    max-width: 90%;
+    width: 100%;
     
     overflow: visible;
 }
@@ -206,7 +206,7 @@ h1,
     display:flex;
     flex-direction:column;
 
-    width:fit-content;
+    width:clamp(65px, 16vw, 120px);
 
     font-size:70px;
     font-weight:100;
