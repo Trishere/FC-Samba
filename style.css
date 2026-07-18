@@ -1442,5 +1442,5 @@ header {
     }
 
     .hero-top{ row-gap: 4px; }
-    .logo{ order: -1; flex-basis: 100%; }
+    .logo{ order: -1; flex-basis: 100%; max-width: clamp(150px, 20vw, 230px); }
 }
