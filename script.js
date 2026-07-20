@@ -257,7 +257,7 @@ const goalRankingList = document.getElementById("goal-ranking-list");
 
 const goalPeriod = document.getElementById("goal-period");
 
-goalPeriod.textContent = "Period: Jul – Aug 2026";
+goalPeriod.textContent = "Period: Jul – Sep 2026";
 
 
 /* BUTTON CACHE */
