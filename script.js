@@ -718,6 +718,8 @@ function updateGoalRanking() {
             index === 1 ? "silver" :
             index === 2 ? "bronze" : "";
 
+        const goalText = count === 1 ? "Goal" : "Goals";
+
         return `
             <div class="goal-row ${rankClass}">
 
@@ -726,7 +728,7 @@ function updateGoalRanking() {
                 </span>
 
                 <span class="goal-count">
-                    ${count} Goals
+                    ${count} ${goalText}
                 </span>
 
             </div>
