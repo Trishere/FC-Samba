@@ -652,13 +652,7 @@ nav:hover {
         0 6px 18px rgba(0,0,0,.45);
 }
 
-#doiHinh h2{
-    color:#e8c86a;
 
-    letter-spacing:2px;
-
-    text-transform:uppercase;
-}
 
 #doiHinh {
     margin-top: 15px;
@@ -668,10 +662,7 @@ nav:hover {
     width: min(380px, 95%);
 }
 
-#thanhTich h2 {
-    color: gold;
-    margin-bottom: 15px;
-}
+
 #doiHinh ul {
     list-style: none;
     padding: 0;
@@ -757,11 +748,6 @@ nav:hover {
 
 }
 
-.mvp-row + .mvp-row{
-
-    margin-top:10px;
-
-}
 
 .mvp-player{
 
