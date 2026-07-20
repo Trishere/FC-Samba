@@ -674,7 +674,7 @@ nav:hover {
 }
 
 /* ==================
-   MVP HALL OF FAME
+   MVP HALL OF FAME & GOAL RANKING
 ================== */
 
 .mvp-hall{
@@ -700,9 +700,33 @@ nav:hover {
 
 }
 
-.mvp-hall h4{
+.goal-ranking-box{
 
-    margin:0 0 18px;
+    width:min(520px,90%);
+
+    margin:24px auto 0;
+
+    padding:14px 16px;
+
+    background:linear-gradient(
+        to bottom,
+        var(--brown-mid),
+        var(--brown-dark)
+    );
+
+    border:3px solid #c9a227;
+
+    border-radius:8px;
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,.35);
+
+}
+
+.mvp-hall h4,
+.goal-ranking-box h4{
+
+    margin:0 0 14px;
 
     text-align:center;
 
@@ -711,6 +735,20 @@ nav:hover {
     font-size:clamp(20px,2.2vw,26px);
 
     letter-spacing:1px;
+
+}
+
+.goal-period{
+
+    margin:0 0 12px;
+
+    text-align:center;
+
+    color:var(--cream);
+
+    opacity:.85;
+
+    font-size:clamp(13px,1.6vw,15px);
 
 }
 
@@ -724,7 +762,17 @@ nav:hover {
 
 }
 
-/* ===== MVP ROW ===== */
+#goal-ranking-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:8px;
+
+}
+
+/* ===== ROW ===== */
 
 .mvp-row{
 
@@ -748,6 +796,27 @@ nav:hover {
 
 }
 
+.goal-row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:10px 14px;
+
+    border-radius:6px;
+
+    background:rgba(255,255,255,.04);
+
+    border:1px solid rgba(201,162,39,.18);
+
+    transition:all .25s ease;
+
+}
 
 .mvp-player{
 
@@ -756,6 +825,16 @@ nav:hover {
     font-weight:bold;
 
     font-size:clamp(16px,2vw,19px);
+
+}
+
+.goal-player{
+
+    color:var(--cream);
+
+    font-weight:bold;
+
+    font-size:clamp(15px,1.8vw,17px);
 
 }
 
@@ -769,9 +848,22 @@ nav:hover {
 
 }
 
+.goal-count{
+
+    color:var(--cream);
+
+    font-weight:bold;
+
+    white-space:nowrap;
+
+    font-size:15px;
+
+}
+
 /* ===== TOP 3 ===== */
 
-.mvp-row.gold{
+.mvp-row.gold,
+.goal-row.gold{
 
     background:linear-gradient(
         to bottom,
@@ -781,20 +873,21 @@ nav:hover {
 
     border-color:#f2d46f;
 
-    color: var(--text-dark);
-
     box-shadow:0 0 16px rgba(201,162,39,.45);
 
 }
 
 .mvp-row.gold .mvp-player,
-.mvp-row.gold .mvp-count{
+.mvp-row.gold .mvp-count,
+.goal-row.gold .goal-player,
+.goal-row.gold .goal-count{
 
     color: var(--text-dark);
 
 }
 
-.mvp-row.silver{
+.mvp-row.silver,
+.goal-row.silver{
 
     background:linear-gradient(
         to bottom,
@@ -807,13 +900,16 @@ nav:hover {
 }
 
 .mvp-row.silver .mvp-player,
-.mvp-row.silver .mvp-count{
+.mvp-row.silver .mvp-count,
+.goal-row.silver .goal-player,
+.goal-row.silver .goal-count{
 
     color: var(--text-dark);
 
 }
 
-.mvp-row.bronze{
+.mvp-row.bronze,
+.goal-row.bronze{
 
     background:linear-gradient(
         to bottom,
@@ -825,7 +921,17 @@ nav:hover {
 
 }
 
-.mvp-row:hover{
+.mvp-row.bronze .mvp-player,
+.mvp-row.bronze .mvp-count,
+.goal-row.bronze .goal-player,
+.goal-row.bronze .goal-count{
+
+    color: var(--text-dark);
+
+}
+
+.mvp-row:hover,
+.goal-row:hover{
 
     transform:translateY(-2px);
 

@@ -211,7 +211,8 @@ const civilWarMatches = [
         homeScore: 4,
         awayScore: 0,
         knights: "6 • 6",
-        mvp: ["Quốc Huy"]
+        mvp: ["Quốc Huy"],
+        goals: ["Tài Suy", "Quốc Huy","Đức lee", "Đức Lee", "LuGiaHuy", "Hiếu Saka", "Nam Silun", "Hiếu Saka", "Tài Suy", "Đức Lee", "Ronaldat"  ]
     },
 
     {
@@ -223,7 +224,8 @@ const civilWarMatches = [
         homeScore: 4,
         awayScore: 4,
         knights: "6 • 6",
-        mvp: ["Quân Burger"]
+        mvp: ["Quân Burger"],
+        goals: ["Ronaldat", "Anh Đạt", "Anh Đạt", "Quân Burger", "Quân Burger", "Tài Suy", "Hiếu Saka", "Vũ Lông Thủ"]
     },
 ];
 
@@ -246,6 +248,16 @@ const lossCount = document.getElementById("loss-count");
 const drawCount = document.getElementById("draw-count");
 
 const mvpRanking = document.getElementById("mvp-ranking");
+
+const goalRankingBanner = document.getElementById("goal-ranking-banner");
+
+const goalRanking = document.getElementById("goalRanking");
+
+const goalRankingList = document.getElementById("goal-ranking-list");
+
+const goalPeriod = document.getElementById("goal-period");
+
+goalPeriod.textContent = "Period: Jul – Aug 2026";
 
 
 /* BUTTON CACHE */
@@ -300,6 +312,7 @@ function closeChronicleSections() {
 
     hideSections([
         "thanhTich",
+        "goalRanking",
         "match-list",
         "noichien"
     ]);
@@ -395,6 +408,8 @@ function toggleThanhTich() {
     toggleChronicleSection("thanhTich");
 
 }
+
+
 
 /* VIỄN CHINH */
 
@@ -671,6 +686,55 @@ function updateMvpRanking() {
 
 }
 
+function toggleGoalRanking() {
+
+    toggleChronicleSection("goalRanking");
+}
+
+function updateGoalRanking() {
+
+    const goalCount = {};
+
+    [...expeditionMatches, ...civilWarMatches].forEach(match => {
+
+        (match.goals || []).forEach(player => {
+
+            goalCount[player] = (goalCount[player] || 0) + 1;
+
+        });
+
+    });
+
+    const ranking = Object.entries(goalCount);
+
+    ranking.sort((a, b) => b[1] - a[1]);
+
+    goalRankingList.innerHTML = ranking.map(([player, count], index) => {
+
+        const rank = index + 1;
+
+        const rankClass =
+            index === 0 ? "gold" :
+            index === 1 ? "silver" :
+            index === 2 ? "bronze" : "";
+
+        return `
+            <div class="goal-row ${rankClass}">
+
+                <span class="goal-player">
+                    ${rank}. ${player}
+                </span>
+
+                <span class="goal-count">
+                    ${count} Goals
+                </span>
+
+            </div>
+        `;
+
+    }).join("");
+
+}
 
 function getCivilWarRecord(index) {
 
@@ -788,6 +852,7 @@ function init() {
     updateRecord();
     renderAllCivilWar();
     updateMvpRanking();
+    updateGoalRanking();
 
 }
 init();
@@ -797,6 +862,8 @@ init();
 chronicleBanner.addEventListener("click", toggleChronicle);
 
 achievementBanner.addEventListener("click", toggleThanhTich);
+
+goalRankingBanner.addEventListener("click", toggleGoalRanking);
 
 expeditionBanner.addEventListener("click", toggleMatches);
 
