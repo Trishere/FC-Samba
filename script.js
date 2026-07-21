@@ -211,7 +211,7 @@ const civilWarMatches = [
         awayScore: 0,
         knights: "6 • 6",
         mvp: ["Quốc Huy"],
-        goals: ["Tài Suy", "Quốc Huy","Đức Lee", "Đức Lee", "LuGiaHuy", "Hiếu Saka", "Nam Silun", "Hiếu Saka", "Tài Suy", "Đức Lee", "Ronaldat"],
+        goals: ["Nam Silun", "Tài Suy", "Quốc Huy","Đức Lee", "Đức Lee", "LuGiaHuy", "Hiếu Saka", "Nam Silun", "Hiếu Saka", "Tài Suy", "Đức Lee", "Ronaldat"],
         assists: ["Anh Đạt", "Quân Burger", "Tài Suy", "Nam Silun", "Ronaldat", "LuGiaHuy", "Đức Lee"]
     },
 
