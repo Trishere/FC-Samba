@@ -16,7 +16,7 @@ const expeditionMatches = [
             "Quân Burger"
         ],
 
-        mvp: ["OnaThuan"]
+        
     },
 
     {
@@ -34,7 +34,7 @@ const expeditionMatches = [
             "LuGiaHuy",
             "Nam Silun"
         ],
-        mvp: ["OnaThuan"]
+        
 
     },
 
@@ -56,7 +56,7 @@ const expeditionMatches = [
             "Hiếu Saka",
             "QHuy"
         ],
-        mvp: ["OnaThuan"]
+    
     },
 
     {
@@ -89,7 +89,7 @@ const expeditionMatches = [
             "Quân Burger",
             "Vũ Lông Thủ"
         ],
-        mvp: ["Ronaldat"]
+        
     },
 
     {
@@ -106,7 +106,7 @@ const expeditionMatches = [
             "Nam Silun",
             "Đức Lee"
         ],
-        mvp: ["LuGiaHuy"]
+        
     },
 
     {
@@ -120,7 +120,7 @@ const expeditionMatches = [
             "Hiếu Saka",
             "Tài Suy (C)"
         ],
-        mvp: ["Ronaldat"]
+       
     },
 
     {
@@ -140,7 +140,7 @@ const expeditionMatches = [
             "Nam Silun",
             "Đức Lee"
         ],
-        mvp: ["OnaThuan"]
+        
     },
 
     {
@@ -157,7 +157,6 @@ const expeditionMatches = [
             "QHuy",
             "Đức Lee"
         ],
-        mvp: ["Việt"]
     },
 
     {
