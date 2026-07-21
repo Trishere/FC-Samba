@@ -212,7 +212,7 @@ const civilWarMatches = [
         knights: "6 • 6",
         mvp: ["Quốc Huy"],
         goals: ["Nam Silun", "Tài Suy", "Quốc Huy","Đức Lee", "Đức Lee", "LuGiaHuy", "Hiếu Saka", "Nam Silun", "Hiếu Saka", "Tài Suy", "Đức Lee", "Ronaldat"],
-        assists: ["Anh Đạt", "Quân Burger", "Tài Suy", "Nam Silun", "Ronaldat", "LuGiaHuy", "Đức Lee"]
+        assists: ["Anh Đạt", "Quân Burger", "Tài Suy", "Nam Silun", "LuGiaHuy", "Đức Lee"]
     },
 
 
@@ -227,7 +227,7 @@ const civilWarMatches = [
         knights: "6 • 6",
         mvp: ["Quân Burger"],
         goals: ["Ronaldat", "Anh Đạt", "Anh Đạt", "Quân Burger", "Quân Burger", "Tài Suy", "Hiếu Saka", "Vũ Lông Thủ"],
-        assists: ["Nam Silun", "Ronaldat"]
+        assists: ["Nam Silun"]
     },
 ];
 
