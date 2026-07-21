@@ -212,8 +212,10 @@ const civilWarMatches = [
         awayScore: 0,
         knights: "6 • 6",
         mvp: ["Quốc Huy"],
-        goals: ["Tài Suy", "Quốc Huy","Đức Lee", "Đức Lee", "LuGiaHuy", "Hiếu Saka", "Nam Silun", "Hiếu Saka", "Tài Suy", "Đức Lee", "Ronaldat"  ]
+        goals: ["Tài Suy", "Quốc Huy","Đức Lee", "Đức Lee", "LuGiaHuy", "Hiếu Saka", "Nam Silun", "Hiếu Saka", "Tài Suy", "Đức Lee", "Ronaldat"  ],
+        assists: ["Anh Đạt", "Quân Burger", "Tài Suy", "Nam Silun", "Ronaldat", "LuGiaHuy", "Đức Lee"]
     },
+
 
     {
         date: "18/07/2026",
@@ -225,7 +227,8 @@ const civilWarMatches = [
         awayScore: 4,
         knights: "6 • 6",
         mvp: ["Quân Burger"],
-        goals: ["Ronaldat", "Anh Đạt", "Anh Đạt", "Quân Burger", "Quân Burger", "Tài Suy", "Hiếu Saka", "Vũ Lông Thủ"]
+        goals: ["Ronaldat", "Anh Đạt", "Anh Đạt", "Quân Burger", "Quân Burger", "Tài Suy", "Hiếu Saka", "Vũ Lông Thủ"],
+        assists: ["Nam Silun", "Ronaldat"]
     },
 ];
 
@@ -246,8 +249,6 @@ const winCount = document.getElementById("win-count");
 const lossCount = document.getElementById("loss-count");
 
 const drawCount = document.getElementById("draw-count");
-
-const mvpRanking = document.getElementById("mvp-ranking");
 
 const goalRankingBanner = document.getElementById("goal-ranking-banner");
 
@@ -641,51 +642,6 @@ function updateRecord() {
 
 }
 
-function updateMvpRanking() {
-
-    const mvpCount = {};
-
-    [...expeditionMatches, ...civilWarMatches].forEach(match => {
-
-        (match.mvp || []).forEach(player => {
-
-            mvpCount[player] = (mvpCount[player] || 0) + 1;
-
-        });
-
-    });
-
-    const ranking = Object.entries(mvpCount);
-
-    ranking.sort((a, b) => b[1] - a[1]);
-
-    mvpRanking.innerHTML = ranking.map(([player, count], index) => {
-
-        const rank = index + 1;
-
-        const rankClass =
-            index === 0 ? "gold" :
-            index === 1 ? "silver" :
-            index === 2 ? "bronze" : "";
-
-        return `
-            <div class="mvp-row ${rankClass}">
-
-                <span class="mvp-player">
-                    ${rank}. ${player}
-                </span>
-
-                <span class="mvp-count">
-                    ${count} MVP
-                </span>
-
-            </div>
-        `;
-
-    }).join("");
-
-}
-
 function toggleGoalRanking() {
 
     toggleChronicleSection("goalRanking");
@@ -693,23 +649,87 @@ function toggleGoalRanking() {
 
 function updateGoalRanking() {
 
-    const goalCount = {};
+    const playerStats = {};
 
     [...expeditionMatches, ...civilWarMatches].forEach(match => {
 
+        // Goals
         (match.goals || []).forEach(player => {
 
-            goalCount[player] = (goalCount[player] || 0) + 1;
+            if (!playerStats[player]) {
+
+                playerStats[player] = {
+                    goals: 0,
+                    assists: 0,
+                    mvp: 0
+                };
+
+            }
+
+            playerStats[player].goals++;
+
+        });
+
+        // Assists
+        (match.assists || []).forEach(player => {
+
+            if (!playerStats[player]) {
+
+                playerStats[player] = {
+                    goals: 0,
+                    assists: 0,
+                    mvp: 0
+                };
+
+            }
+
+            playerStats[player].assists++;
+
+        });
+
+        // MVP
+        (match.mvp || []).forEach(player => {
+
+            if (!playerStats[player]) {
+
+                playerStats[player] = {
+                    goals: 0,
+                    assists: 0,
+                    mvp: 0
+                };
+
+            }
+
+            playerStats[player].mvp++;
 
         });
 
     });
 
-    const ranking = Object.entries(goalCount);
+    const ranking = Object.entries(playerStats);
 
-    ranking.sort((a, b) => b[1] - a[1]);
+    ranking.sort((a, b) => {
 
-    goalRankingList.innerHTML = ranking.map(([player, count], index) => {
+        // 1. Goals
+        if (b[1].goals !== a[1].goals) {
+
+            return b[1].goals - a[1].goals;
+
+        }
+
+        // 2. Assists
+        if (b[1].assists !== a[1].assists) {
+
+            return b[1].assists - a[1].assists;
+
+        }
+
+        // 3. MVP
+        return b[1].mvp - a[1].mvp;
+
+    });
+
+    goalRankingList.innerHTML = ranking.map(([player, stats], index) => {
 
         const rank = index + 1;
 
@@ -717,8 +737,6 @@ function updateGoalRanking() {
             index === 0 ? "gold" :
             index === 1 ? "silver" :
             index === 2 ? "bronze" : "";
-
-        const goalText = count === 1 ? "Goal" : "Goals";
 
         return `
             <div class="goal-row ${rankClass}">
@@ -728,12 +746,10 @@ function updateGoalRanking() {
                 </span>
 
                 <span class="goal-count">
-                    ${count} ${goalText}
+                    ${stats.goals}G • ${stats.assists}A • ${stats.mvp}MVP
                 </span>
-
             </div>
         `;
-
     }).join("");
 
 }
@@ -853,7 +869,6 @@ function init() {
     renderAllMatches();
     updateRecord();
     renderAllCivilWar();
-    updateMvpRanking();
     updateGoalRanking();
 
 }
