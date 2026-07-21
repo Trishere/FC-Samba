@@ -249,8 +249,6 @@ const lossCount = document.getElementById("loss-count");
 
 const drawCount = document.getElementById("draw-count");
 
-const goalRankingBanner = document.getElementById("goal-ranking-banner");
-
 const goalRanking = document.getElementById("goalRanking");
 
 const goalRankingList = document.getElementById("goal-ranking-list");
@@ -641,11 +639,6 @@ function updateRecord() {
 
 }
 
-function toggleGoalRanking() {
-
-    toggleChronicleSection("goalRanking");
-}
-
 function updateGoalRanking() {
 
     const playerStats = {};
@@ -878,8 +871,6 @@ init();
 chronicleBanner.addEventListener("click", toggleChronicle);
 
 achievementBanner.addEventListener("click", toggleThanhTich);
-
-goalRankingBanner.addEventListener("click", toggleGoalRanking);
 
 expeditionBanner.addEventListener("click", toggleMatches);
 
