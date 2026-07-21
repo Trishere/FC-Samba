@@ -211,7 +211,7 @@ const civilWarMatches = [
         awayScore: 0,
         knights: "6 • 6",
         mvp: ["Quốc Huy"],
-        goals: ["Tài Suy", "Quốc Huy","Đức Lee", "Đức Lee", "LuGiaHuy", "Hiếu Saka", "Nam Silun", "Hiếu Saka", "Tài Suy", "Đức Lee", "Ronaldat"  ],
+        goals: ["Tài Suy", "Quốc Huy","Đức Lee", "Đức Lee", "LuGiaHuy", "Hiếu Saka", "Nam Silun", "Hiếu Saka", "Tài Suy", "Đức Lee", "Ronaldat"],
         assists: ["Anh Đạt", "Quân Burger", "Tài Suy", "Nam Silun", "Ronaldat", "LuGiaHuy", "Đức Lee"]
     },
 
@@ -647,6 +647,7 @@ function updateGoalRanking() {
 
         // Goals
         (match.goals || []).forEach(player => {
+            player = player.normalize("NFC").trim();
 
             if (!playerStats[player]) {
 
@@ -664,6 +665,7 @@ function updateGoalRanking() {
 
         // Assists
         (match.assists || []).forEach(player => {
+            player = player.normalize("NFC").trim();
 
             if (!playerStats[player]) {
 
@@ -681,6 +683,7 @@ function updateGoalRanking() {
 
         // MVP
         (match.mvp || []).forEach(player => {
+            player = player.normalize("NFC").trim();
 
             if (!playerStats[player]) {
 
