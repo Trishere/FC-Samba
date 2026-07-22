@@ -389,6 +389,14 @@ function toggleChronicleSection(id) {
     const isOpen =
         !box.classList.contains("section-hidden");
 
+    if (id === "thanhTich") {
+
+        document.querySelectorAll(".goal-row.open").forEach(row => {
+            row.classList.remove("open");
+        });
+
+    }
+
     closeChronicleSections();
 
     if (isOpen) return;
