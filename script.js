@@ -750,7 +750,7 @@ Object.values(playerStats).forEach(stats => {
                 </span>
 
                 <span class="goal-count">
-                    ${stats.points.toFixed(2)} PTS  |   ${stats.goals}G • ${stats.assists}A • ${stats.mvp} MVP
+                    ❖ ${stats.points.toFixed(2)} PTS  |   ${stats.goals}G • ${stats.assists}A • ${stats.mvp} MVP
                 </span>
             </div>
         `;
