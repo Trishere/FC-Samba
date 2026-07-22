@@ -781,14 +781,6 @@ GOAL RANKING
 
 .goal-row{
 
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    gap:12px;
-
     padding:10px 14px;
 
     border-radius:6px;
@@ -835,6 +827,33 @@ GOAL RANKING
 
 }
 
+.goal-detail{
+
+    display:none;
+
+    margin-top:10px;
+
+    padding-top:10px;
+
+    border-top:1px solid rgba(201,162,39,.18);
+
+    color:var(--cream);
+
+    opacity:.85;
+
+}
+
+.goal-row.gold .goal-detail,
+.goal-row.silver .goal-detail,
+.goal-row.bronze .goal-detail{
+
+    border-top:1px solid rgba(0,0,0,.2);
+
+}
+
+.goal-row.open .goal-detail{
+    display:block;
+}
 
 /* ===== TOP 3 ===== */
 
@@ -853,9 +872,10 @@ GOAL RANKING
 }
 
 .goal-row.gold .goal-player,
-.goal-row.gold .goal-count{
+.goal-row.gold .goal-points,
+.goal-row.gold .goal-detail{
 
-    color: var(--text-dark);
+    color:var(--text-dark);
 
 }
 
@@ -870,12 +890,15 @@ GOAL RANKING
     border-color:#ececec;
 
 }
-.goal-row.silver .goal-player,
-.goal-row.silver .goal-count{
 
-    color: var(--text-dark);
+.goal-row.silver .goal-player,
+.goal-row.silver .goal-points,
+.goal-row.silver .goal-detail{
+
+    color:var(--text-dark);
 
 }
+
 .goal-row.bronze{
 
     background:linear-gradient(
@@ -887,10 +910,12 @@ GOAL RANKING
     border-color:#d8a36a;
 
 }
-.goal-row.bronze .goal-player,
-.goal-row.bronze .goal-count{
 
-    color: var(--text-dark);
+.goal-row.bronze .goal-player,
+.goal-row.bronze .goal-points,
+.goal-row.bronze .goal-detail{
+
+    color:var(--text-dark);
 
 }
 

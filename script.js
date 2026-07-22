@@ -744,17 +744,25 @@ goalRankingList.innerHTML = ranking.map(([player, stats], index) => {
         index === 2 ? "bronze" : "";
 
     return `
-        <div class="goal-row ${rankClass}">
+    <div class="goal-row ${rankClass}">
+
+        <div class="goal-summary">
 
             <span class="goal-player">
                 ${rank}. ${player}
             </span>
 
-            <span class="goal-count">
-                ❂ ${stats.points.toFixed(2)} PTS │ ${stats.goals}G • ${stats.assists}A • ${stats.mvp} MVP
+            <span class="goal-points">
+                ❂ ${stats.points.toFixed(2)} PTS
             </span>
 
         </div>
+
+        <div class="goal-detail">
+            ${stats.goals}G • ${stats.assists}A • ${stats.mvp} MVP
+        </div>
+
+    </div>
     `;
 
 }).join("");
@@ -927,3 +935,17 @@ document.querySelectorAll(".player-toggle").forEach(button => {
     });
 
 }); 
+
+/* GOAL RANKING EVENT LISTENER */
+
+goalRankingList.addEventListener("click", function (event) {
+
+    const summary = event.target.closest(".goal-summary");
+
+    if (!summary) return;
+
+    const row = summary.closest(".goal-row");
+
+    row.classList.toggle("open");
+
+});
