@@ -706,7 +706,7 @@ Object.values(playerStats).forEach(stats => {
     stats.points =
         stats.goals +
         stats.assists * 0.75 +
-        stats.mvp * 0.5;
+        stats.mvp * 0.25;
 });
 
     const ranking = Object.entries(playerStats);
@@ -744,25 +744,25 @@ goalRankingList.innerHTML = ranking.map(([player, stats], index) => {
         index === 2 ? "bronze" : "";
 
     return `
-    <div class="goal-row ${rankClass}">
+        <div class="goal-row ${rankClass}">
 
-        <div class="goal-summary">
+            <div class="goal-summary">
 
-            <span class="goal-player">
-                ${rank}. ${player}
-            </span>
+                <span class="goal-player">
+                    ${rank}. ${player}
+                </span>
 
-            <span class="goal-points">
+                <span class="goal-points">
+                    ${stats.goals}G • ${stats.assists}A • ${stats.mvp} MVP
+                </span>
+
+            </div>
+
+            <div class="goal-detail">
                 ❂ ${stats.points.toFixed(2)} PTS
-            </span>
+            </div>
 
         </div>
-
-        <div class="goal-detail">
-            ${stats.goals}G • ${stats.assists}A • ${stats.mvp} MVP
-        </div>
-
-    </div>
     `;
 
 }).join("");

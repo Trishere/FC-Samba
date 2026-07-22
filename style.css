@@ -674,8 +674,6 @@ nav:hover {
 GOAL RANKING
 ================== */
 
-
-
 .goal-ranking-box{
 
     width:100%;
@@ -803,7 +801,7 @@ GOAL RANKING
 
 }
 
-.goal-count{
+.goal-points{
 
     color:var(--cream);
 
@@ -840,14 +838,6 @@ GOAL RANKING
     color:var(--cream);
 
     opacity:.85;
-
-}
-
-.goal-row.gold .goal-detail,
-.goal-row.silver .goal-detail,
-.goal-row.bronze .goal-detail{
-
-    border-top:1px solid rgba(0,0,0,.2);
 
 }
 
