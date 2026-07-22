@@ -711,7 +711,7 @@ Object.values(playerStats).forEach(stats => {
 
     const ranking = Object.entries(playerStats);
 
-    ranking.sort((a, b) => {
+ranking.sort((a, b) => {
 
     // 1. Total Points
     if (b[1].points !== a[1].points) {
@@ -731,32 +731,35 @@ Object.values(playerStats).forEach(stats => {
     // 4. MVP
     return b[1].mvp - a[1].mvp;
 
-    });
+});
 
-    goalRankingList.innerHTML = ranking.map(([player, stats], index) => {
 
-        const rank = index + 1;
+goalRankingList.innerHTML = ranking.map(([player, stats], index) => {
 
-        const rankClass =
-            index === 0 ? "gold" :
-            index === 1 ? "silver" :
-            index === 2 ? "bronze" : "";
+    const rank = index + 1;
 
-        return `
-            <div class="goal-row ${rankClass}">
+    const rankClass =
+        index === 0 ? "gold" :
+        index === 1 ? "silver" :
+        index === 2 ? "bronze" : "";
 
-                <span class="goal-player">
-                    ${rank}. ${player}
-                </span>
+    return `
+        <div class="goal-row ${rankClass}">
 
-                <span class="goal-count">
-                    ❂ ${stats.points.toFixed(2)} PTS  |   ${stats.goals}G • ${stats.assists}A • ${stats.mvp} MVP
-                </span>
-            </div>
-        `;
-    }).join("");
+            <span class="goal-player">
+                ${rank}. ${player}
+            </span>
 
+            <span class="goal-count">
+                ❂ ${stats.points.toFixed(2)} PTS │ ${stats.goals}G • ${stats.assists}A • ${stats.mvp} MVP
+            </span>
+
+        </div>
+    `;
+
+}).join("");
 }
+      
 
 function getCivilWarRecord(index) {
 
@@ -923,4 +926,4 @@ document.querySelectorAll(".player-toggle").forEach(button => {
 
     });
 
-});
+}); 
