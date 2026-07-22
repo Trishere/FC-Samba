@@ -701,26 +701,35 @@ function updateGoalRanking() {
 
     });
 
+
+Object.values(playerStats).forEach(stats => {
+    stats.points =
+        stats.goals +
+        stats.assists * 0.75 +
+        stats.mvp * 0.5;
+});
+
     const ranking = Object.entries(playerStats);
 
     ranking.sort((a, b) => {
 
-        // 1. Goals
-        if (b[1].goals !== a[1].goals) {
+    // 1. Total Points
+    if (b[1].points !== a[1].points) {
+        return b[1].points - a[1].points;
+    }
 
-            return b[1].goals - a[1].goals;
+    // 2. Goals
+    if (b[1].goals !== a[1].goals) {
+        return b[1].goals - a[1].goals;
+    }
 
-        }
+    // 3. Assists
+    if (b[1].assists !== a[1].assists) {
+        return b[1].assists - a[1].assists;
+    }
 
-        // 2. Assists
-        if (b[1].assists !== a[1].assists) {
-
-            return b[1].assists - a[1].assists;
-
-        }
-
-        // 3. MVP
-        return b[1].mvp - a[1].mvp;
+    // 4. MVP
+    return b[1].mvp - a[1].mvp;
 
     });
 
@@ -741,7 +750,7 @@ function updateGoalRanking() {
                 </span>
 
                 <span class="goal-count">
-                    ${stats.goals}G • ${stats.assists}A • ${stats.mvp}MVP
+                    ${stats.goals}G • ${stats.assists}A • ${stats.mvp}MVP || ${stats.points.toFixed(2)} PTS
                 </span>
             </div>
         `;
