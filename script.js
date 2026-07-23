@@ -69,7 +69,7 @@ function closeChronicleSections() {
 
     hideSections([
         "thanhTich",
-        "goalRanking",
+        "hall-of-fame",
         "match-list",
         "noichien"
     ]);
@@ -755,14 +755,16 @@ document.querySelectorAll(".player-toggle").forEach(button => {
 
 /* GOAL RANKING EVENT LISTENER */
 
-goalRankingList.addEventListener("click", function (event) {
+document
+    .getElementById("hall-of-fame")
+    .addEventListener("click", function(event) {
 
-    const summary = event.target.closest(".goal-summary");
+        const summary = event.target.closest(".goal-summary");
 
-    if (!summary) return;
+        if (!summary) return;
 
-    const row = summary.closest(".goal-row");
+        const row = summary.closest(".goal-row");
 
-    row.classList.toggle("open");
+        row.classList.toggle("open");
 
-});
+    });
