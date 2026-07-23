@@ -15,7 +15,7 @@ const winCount = document.getElementById("win-count");
 const lossCount = document.getElementById("loss-count");
 
 const drawCount = document.getElementById("draw-count");
-
+const hallOfFame = document.getElementById("hall-of-fame");
 
 /* BUTTON CACHE */
 
