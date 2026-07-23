@@ -166,10 +166,9 @@ const expeditionMatches = [
         awayScore: null,
         knights: [
             "Quân Burger",
-            "Xuân Trường",
             "Hiếu Saka",
             "Ronaldat",
-            "QHuy",
+            "Quốc Huy",
             "Đức Lee"
         ],
     },
