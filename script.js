@@ -1,4 +1,3 @@
-
 /* DOM CACHE */
 const contentArea = document.getElementById("content-area");
 
@@ -69,7 +68,6 @@ function closeChronicleSections() {
 
     hideSections([
         "thanhTich",
-        "hall-of-fame",
         "match-list",
         "noichien"
     ]);
