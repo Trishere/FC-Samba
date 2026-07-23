@@ -557,7 +557,7 @@ function renderPeriod(period) {
                 <h4>PLAYER RANKING</h4>
 
                 <p class="goal-period">
-                    Period: ${period.title}
+                    ${period.title}
                 </p>
 
             </div>
