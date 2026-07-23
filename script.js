@@ -1,238 +1,5 @@
- //VIỄN CHINH//   
-const expeditionMatches = [
-
-    {
-        date: "03/06/2026",
-        opponent: "FC Lạ",
-        homeScore: 0,
-        awayScore: 4,
-        knights: [
-            "OnaThuan",
-            "Đức Lee",
-            "Ronaldat",
-            "Anh Đạt",
-            "Lil' Trí",
-            "Hiếu Saka",
-            "Quân Burger"
-        ],
-
-        
-    },
-
-    {
-        date: "06/06/2026",
-        opponent: "Hậu FC",
-        homeScore: 1,
-        awayScore: 0,
-        knights: [
-            "OnaThuan",
-            "Đức Lee",
-            "QHuy",
-            "Lil' Trí",
-            "Hiếu Saka",
-            "Tài Suy (C)",
-            "LuGiaHuy",
-            "Nam Silun"
-        ],
-        
-
-    },
-
-    {
-        date: "13/06/2026",
-        opponent: "Phong Lâm FC",
-        homeScore: 0,
-        awayScore: 4,
-        knights: [
-            "OnaThuan",
-            "LuGiaHuy",
-            "Vũ Lông Thủ",
-            "Tài Suy (C)",
-            "Quân Burger",
-            "Nam Silun",
-            "Đức Lee",
-            "Ronaldat",
-            "Anh Đạt",
-            "Hiếu Saka",
-            "QHuy"
-        ],
-    
-    },
-
-    {
-        date: "14/06/2026",
-        opponent: "Hậu FC",
-        homeScore: 0,
-        awayScore: 2,
-        knights: [
-            "Anh Đạt (GK)",
-            "Ronaldat",
-            "Đức Lee",
-            "QHuy",
-            "Lil' Trí",
-            "Hiếu Saka",
-            "Nam Silun"
-        ]
-    },
-
-    {
-        date: "19/06/2026",
-        opponent: "Quý FC",
-        homeScore: 5,
-        awayScore: 0,
-        knights: [
-            "Việt (GK)",
-            "Ronaldat",
-            "QHuy",
-            "Tài Suy (C)",
-            "Nam Silun",
-            "Quân Burger",
-            "Vũ Lông Thủ"
-        ],
-        
-    },
-
-    {
-        date: "20/06/2026",
-        opponent: "Phong Lâm FC",
-        homeScore: 3,
-        awayScore: 3,
-        knights: [
-            "LuGiaHuy",
-            "Ronaldat",
-            "Hiếu Saka",
-            "QHuy",
-            "Lil' Trí",
-            "Nam Silun",
-            "Đức Lee"
-        ],
-        
-    },
-
-    {
-        date: "25/06/2026",
-        opponent: "Hiếu's old CTy",
-        homeScore: 1,
-        awayScore: 0,
-        knights: [
-            "Đức Lee",
-            "Ronaldat",
-            "Hiếu Saka",
-            "Tài Suy (C)"
-        ],
-       
-    },
-
-    {
-        date: "27/06/2026",
-        opponent: "Xuân Trường FC",
-        homeScore: 0,
-        awayScore: 1,
-        knights: [
-            "OnaThuan",
-            "Tài Suy (C)",
-            "Vũ Lông Thủ",
-            "Hiếu Saka",
-            "Ronaldat",
-            "LuGiaHuy",
-            "QHuy",
-            "Lil' Trí",
-            "Nam Silun",
-            "Đức Lee"
-        ],
-        
-    },
-
-    {
-        date: "02/07/2026",
-        opponent: "Giặc Lạ FC",
-        homeScore: 0,
-        awayScore: 3,
-        knights: [
-            "Việt",
-            "Quân Burger",
-            "Xuân Trường",
-            "Hiếu Saka",
-            "Ronaldat",
-            "QHuy",
-            "Đức Lee"
-        ],
-    },
-
-    {
-        date: "xx/07/2026",
-        opponent: "xx FC",
-        homeScore: null,
-        awayScore: null,
-        knights: [
-            "Quân Burger",
-            "Xuân Trường",
-            "Hiếu Saka",
-            "Ronaldat",
-            "QHuy",
-            "Đức Lee"
-        ],
-    },
-
-];
-
-//NỘI CHIẾN//
-
-const civilWarMatches = [
-    {
-        date: "24/05/2026",
-        team: "Quốc Huy",
-        teamRoster: ["Quốc Huy", "Đức Lee","Tài Suy","Vũ Lông Thủ","Phong Lâm", "Quân Burger" ], 
-        opponent: "Ronaldat",
-        opponentRoster: ["Ronaldat", "Anh Đạt", "Hiếu Saka", "Nam Silun", "Lil' Trí", "LuGiaHuy"], 
-        homeScore: 10,
-        awayScore: 0,
-        knights: "7 • 6"
-    },
-
-    {
-        date: "03/07/2026",
-        team: "Quốc Huy",
-        teamRoster: ["Quốc Huy", "Đức Lee","Tài Suy","Vũ Lông Thủ","Lil' Trí", "Quân Burger" ],
-        opponent: "Ronaldat",
-        opponentRoster: ["Ronaldat", "Team Quý"],
-        homeScore: 1,
-        awayScore: 0,
-        knights: "6 • 6"
-    },
-    
-    {
-        date: "11/07/2026",
-        team: "Râu Con",
-        teamRoster: ["Quốc Huy","Tài Suy","Nam Silun", "Hiếu Saka", "LuGiaHuy", "Anh Đạt" ],
-        opponent: "Ricon ",
-        opponentRoster: ["Ronaldat", "Đức Lee", "Quân Burger", "Lil' Trí","OnaThuan", "Vũ Lông Thủ"],
-        homeScore: 4,
-        awayScore: 0,
-        knights: "6 • 6",
-        mvp: ["Quốc Huy"],
-        goals: ["Nam Silun", "Tài Suy", "Quốc Huy","Đức Lee", "Đức Lee", "LuGiaHuy", "Hiếu Saka", "Nam Silun", "Hiếu Saka", "Tài Suy", "Đức Lee", "Ronaldat"],
-        assists: ["Anh Đạt", "Quân Burger", "Tài Suy", "Nam Silun", "LuGiaHuy", "Đức Lee"]
-    },
-
-
-    {
-        date: "18/07/2026",
-        team: "Râu Con",
-        teamRoster: ["Quốc Huy","Tài Suy","Nam Silun", "Hiếu Saka", "LuGiaHuy", "Anh Đạt"],
-        opponent: "Ricon ",
-        opponentRoster: ["Ronaldat", "Đức Lee", "Quân Burger", "Lil' Trí","OnaThuan", "Vũ Lông Thủ"],
-        homeScore: 4,
-        awayScore: 4,
-        knights: "6 • 6",
-        mvp: ["Quân Burger"],
-        goals: ["Ronaldat", "Anh Đạt", "Anh Đạt", "Quân Burger", "Quân Burger", "Tài Suy", "Hiếu Saka", "Vũ Lông Thủ"],
-        assists: ["Nam Silun"]
-    },
-];
 
 /* DOM CACHE */
-
 const contentArea = document.getElementById("content-area");
 
 const chronicleMenu = document.getElementById("chronicle-menu");
@@ -647,28 +414,25 @@ function updateRecord() {
 
 }
 
-function updateGoalRanking() {
+function getRanking(matches) {
 
     const playerStats = {};
 
-    [...expeditionMatches, ...civilWarMatches].forEach(match => {
+    matches.forEach(match => {
 
         // Goals
         (match.goals || []).forEach(player => {
             player = player.normalize("NFC").trim();
 
             if (!playerStats[player]) {
-
                 playerStats[player] = {
                     goals: 0,
                     assists: 0,
                     mvp: 0
                 };
-
             }
 
             playerStats[player].goals++;
-
         });
 
         // Assists
@@ -676,17 +440,14 @@ function updateGoalRanking() {
             player = player.normalize("NFC").trim();
 
             if (!playerStats[player]) {
-
                 playerStats[player] = {
                     goals: 0,
                     assists: 0,
                     mvp: 0
                 };
-
             }
 
             playerStats[player].assists++;
-
         });
 
         // MVP
@@ -694,86 +455,142 @@ function updateGoalRanking() {
             player = player.normalize("NFC").trim();
 
             if (!playerStats[player]) {
-
                 playerStats[player] = {
                     goals: 0,
                     assists: 0,
                     mvp: 0
                 };
-
             }
 
             playerStats[player].mvp++;
-
         });
 
     });
 
-
-Object.values(playerStats).forEach(stats => {
-    stats.points =
-        stats.goals +
-        stats.assists * 0.75 +
-        stats.mvp * 0.25;
-});
+    Object.values(playerStats).forEach(stats => {
+        stats.points =
+            stats.goals +
+            stats.assists * 0.75 +
+            stats.mvp * 0.25;
+    });
 
     const ranking = Object.entries(playerStats);
 
-ranking.sort((a, b) => {
+    ranking.sort((a, b) => {
 
-    // 1. Total Points
-    if (b[1].points !== a[1].points) {
-        return b[1].points - a[1].points;
-    }
+        // 1. Total Points
+        if (b[1].points !== a[1].points) {
+            return b[1].points - a[1].points;
+        }
 
-    // 2. Goals
-    if (b[1].goals !== a[1].goals) {
-        return b[1].goals - a[1].goals;
-    }
+        // 2. Goals
+        if (b[1].goals !== a[1].goals) {
+            return b[1].goals - a[1].goals;
+        }
 
-    // 3. Assists
-    if (b[1].assists !== a[1].assists) {
-        return b[1].assists - a[1].assists;
-    }
+        // 3. Assists
+        if (b[1].assists !== a[1].assists) {
+            return b[1].assists - a[1].assists;
+        }
 
-    // 4. MVP
-    return b[1].mvp - a[1].mvp;
+        // 4. MVP
+        return b[1].mvp - a[1].mvp;
 
-});
+    });
 
+    return ranking;
 
-goalRankingList.innerHTML = ranking.map(([player, stats], index) => {
+}
 
-    const rank = index + 1;
+function getMatchesInPeriod(period) {
 
-    const rankClass =
-        index === 0 ? "gold" :
-        index === 1 ? "silver" :
-        index === 2 ? "bronze" : "";
+    return [...expeditionMatches, ...civilWarMatches].filter(match => {
+
+        if (!match.date || match.date.includes("xx")) {
+            return false;
+        }
+
+        const [, month, year] = match.date.split("/").map(Number);
+
+        return (
+            year === period.year &&
+            period.months.includes(month)
+        );
+
+    });
+
+}
+
+function renderPeriod(period) {
+
+    const matches = getMatchesInPeriod(period);
+    const ranking = getRanking(matches);
+
+    const rows = ranking.map(([player, stats], index) => {
+
+        const rank = index + 1;
+
+        const rankClass =
+            index === 0 ? "gold" :
+            index === 1 ? "silver" :
+            index === 2 ? "bronze" : "";
+
+        return `
+            <div class="goal-row ${rankClass}">
+
+                <div class="goal-summary">
+
+                    <span class="goal-player">
+                        ${rank}. ${player}
+                    </span>
+
+                    <span class="goal-points">
+                        ${stats.goals}G • ${stats.assists}A • ${stats.mvp} MVP
+                    </span>
+
+                </div>
+
+                <div class="goal-detail">
+                    ❂ ${stats.points.toFixed(2)} PTS
+                </div>
+
+            </div>
+        `;
+
+    }).join("");
 
     return `
-        <div class="goal-row ${rankClass}">
+        <div class="goal-ranking-box">
 
-            <div class="goal-summary">
+            <div class="goal-ranking-header">
 
-                <span class="goal-player">
-                    ${rank}. ${player}
-                </span>
+                <h4>PLAYER RANKING</h4>
 
-                <span class="goal-points">
-                    ${stats.goals}G • ${stats.assists}A • ${stats.mvp} MVP
-                </span>
+                <p class="goal-period">
+                    Period: ${period.title}
+                </p>
 
             </div>
 
-            <div class="goal-detail">
-                ❂ ${stats.points.toFixed(2)} PTS
+            <div class="goal-ranking-divider"></div>
+
+            <div class="goal-ranking-list">
+                ${rows}
             </div>
 
         </div>
     `;
 
-}).join("");
+}
+
+function renderHallOfFame() {
+
+    const hallOfFame = document.getElementById("hall-of-fame");
+
+    hallOfFame.innerHTML = hallOfFamePeriods
+        .map(period => renderPeriod(period))
+        .join("");
+
 }
       
 
@@ -892,7 +709,7 @@ function init() {
     renderAllMatches();
     updateRecord();
     renderAllCivilWar();
-    updateGoalRanking();
+    renderHallOfFame();
 
 }
 init();
