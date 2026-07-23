@@ -160,8 +160,8 @@ const expeditionMatches = [
     },
 
     {
-        date: "xx/07/2026",
-        opponent: "xx FC",
+        date: "25/07/2026",
+        opponent: "XT F.C",
         homeScore: null,
         awayScore: null,
         knights: [
