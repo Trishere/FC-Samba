@@ -16,14 +16,6 @@ const lossCount = document.getElementById("loss-count");
 
 const drawCount = document.getElementById("draw-count");
 
-const goalRanking = document.getElementById("goalRanking");
-
-const goalRankingList = document.getElementById("goal-ranking-list");
-
-const goalPeriod = document.getElementById("goal-period");
-
-goalPeriod.textContent = "Period: Jul – Sep 2026";
-
 
 /* BUTTON CACHE */
 
