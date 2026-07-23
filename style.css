@@ -711,6 +711,22 @@ GOAL RANKING
     box-shadow:
         0 6px 16px rgba(0,0,0,.28);
 
+    cursor:pointer;
+
+    transition:
+        background .2s ease,
+        transform .2s ease,
+        box-shadow .2s ease;
+
+}
+
+.goal-ranking-header:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,.35);
+
 }
 
 .goal-ranking-header h4{
@@ -770,6 +786,21 @@ GOAL RANKING
     flex-direction:column;
 
     gap:8px;
+
+    max-height:0;
+    overflow:hidden;
+    opacity:0;
+
+    transition:
+        max-height .35s ease,
+        opacity .25s ease;
+
+}
+
+.goal-ranking-list.show{
+
+    max-height:3000px;
+    opacity:1;
 
 }
 

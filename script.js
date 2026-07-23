@@ -757,6 +757,19 @@ document
     .getElementById("hall-of-fame")
     .addEventListener("click", function(event) {
 
+        const header = event.target.closest(".goal-ranking-header");
+
+        if (header) {
+
+            const box = header.closest(".goal-ranking-box");
+            const list = box.querySelector(".goal-ranking-list");
+
+            list.classList.toggle("show");
+
+            return;
+
+        }
+
         const summary = event.target.closest(".goal-summary");
 
         if (!summary) return;
