@@ -161,15 +161,14 @@ const expeditionMatches = [
 
     {
         date: "25/07/2026",
-        opponent: "XT F.C",
+        opponent: "Ronaldat",
         homeScore: null,
         awayScore: null,
         knights: [
             "Quân Burger",
             "Hiếu Saka",
-            "Ronaldat",
             "Quốc Huy",
-            "Đức Lee"
+            "Đức Lee",
         ],
     },
 
