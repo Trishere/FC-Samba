@@ -177,7 +177,7 @@ const expeditionMatches = [
             "LuGiaHuy"
         ],
         mpv: [],
-        goals: ["Quân Burger", "Đức Lee", "Đức Lee", "Đức Lee", "Nam Silun", "Quốc Huy", "Quân Burger", "Quân Burger"],
+        goals: [ "Quân Burger","Quân Burger", "Đức Lee", "Đức Lee", "Đức Lee", "Nam Silun", "Quốc Huy", "Quân Burger", "Quân Burger"],
         assists: ["Hiếu Saka", "Quốc Huy", "Quốc Huy", "Quốc Huy", "Nam Silun", "Anh Đạt", "Hiếu Saka"]
     },
 
