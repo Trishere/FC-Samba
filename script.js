@@ -404,153 +404,12 @@ function updateRecord() {
 
 }
 
-function getRanking(matches) {
+/* HALL OF FAME — link ra trang ranking.html riêng */
 
-    const playerStats = {};
-
-    matches.forEach(match => {
-
-        // Goals
-        (match.goals || []).forEach(player => {
-            player = player.normalize("NFC").trim();
-
-            if (!playerStats[player]) {
-                playerStats[player] = {
-                    goals: 0,
-                    assists: 0,
-                    mvp: 0
-                };
-            }
-
-            playerStats[player].goals++;
-        });
-
-        // Assists
-        (match.assists || []).forEach(player => {
-            player = player.normalize("NFC").trim();
-
-            if (!playerStats[player]) {
-                playerStats[player] = {
-                    goals: 0,
-                    assists: 0,
-                    mvp: 0
-                };
-            }
-
-            playerStats[player].assists++;
-        });
-
-        // MVP
-        (match.mvp || []).forEach(player => {
-            player = player.normalize("NFC").trim();
-
-            if (!playerStats[player]) {
-                playerStats[player] = {
-                    goals: 0,
-                    assists: 0,
-                    mvp: 0
-                };
-            }
-
-            playerStats[player].mvp++;
-        });
-
-    });
-
-    Object.values(playerStats).forEach(stats => {
-        stats.points =
-            stats.goals +
-            stats.assists * 0.75 +
-            stats.mvp * 0.25;
-    });
-
-    const ranking = Object.entries(playerStats);
-
-    ranking.sort((a, b) => {
-
-        // 1. Total Points
-        if (b[1].points !== a[1].points) {
-            return b[1].points - a[1].points;
-        }
-
-        // 2. Goals
-        if (b[1].goals !== a[1].goals) {
-            return b[1].goals - a[1].goals;
-        }
-
-        // 3. Assists
-        if (b[1].assists !== a[1].assists) {
-            return b[1].assists - a[1].assists;
-        }
-
-        // 4. MVP
-        return b[1].mvp - a[1].mvp;
-
-    });
-
-    return ranking;
-
-}
-
-function getMatchesInPeriod(period) {
-
-    return [...expeditionMatches, ...civilWarMatches].filter(match => {
-
-        if (!match.date || match.date.includes("xx")) {
-            return false;
-        }
-
-        const [, month, year] = match.date.split("/").map(Number);
-
-        return (
-            year === period.year &&
-            period.months.includes(month)
-        );
-
-    });
-
-}
-
-function renderPeriod(period) {
-
-    const matches = getMatchesInPeriod(period);
-    const ranking = getRanking(matches);
-
-    const rows = ranking.map(([player, stats], index) => {
-
-        const rank = index + 1;
-
-        const rankClass =
-            index === 0 ? "gold" :
-            index === 1 ? "silver" :
-            index === 2 ? "bronze" : "";
-
-        return `
-            <div class="goal-row ${rankClass}">
-
-                <div class="goal-summary">
-
-                    <span class="goal-player">
-                        ${rank}. ${player}
-                    </span>
-
-                    <span class="goal-points">
-                        ${stats.goals}G • ${stats.assists}A • ${stats.mvp} MVP
-                    </span>
-
-                </div>
-
-                <div class="goal-detail">
-                    ❂ ${stats.points.toFixed(2)} PTS
-                </div>
-
-            </div>
-        `;
-
-    }).join("");
+function renderPeriod(period, index) {
 
     return `
-        <div class="goal-ranking-box">
+        <a class="goal-ranking-box" href="ranking.html?index=${index}">
 
             <div class="goal-ranking-header">
 
@@ -562,13 +421,7 @@ function renderPeriod(period) {
 
             </div>
 
-            <div class="goal-ranking-divider"></div>
-
-            <div class="goal-ranking-list">
-                ${rows}
-            </div>
-
-        </div>
+        </a>
     `;
 
 }
@@ -578,7 +431,7 @@ function renderHallOfFame() {
     const hallOfFame = document.getElementById("hall-of-fame");
 
     hallOfFame.innerHTML = hallOfFamePeriods
-        .map(period => renderPeriod(period))
+        .map((period, index) => renderPeriod(period, index))
         .join("");
 
 }
@@ -749,33 +602,4 @@ document.querySelectorAll(".player-toggle").forEach(button => {
 
     });
 
-}); 
-
-/* GOAL RANKING EVENT LISTENER */
-
-document
-    .getElementById("hall-of-fame")
-    .addEventListener("click", function(event) {
-
-        const header = event.target.closest(".goal-ranking-header");
-
-        if (header) {
-
-            const box = header.closest(".goal-ranking-box");
-            const list = box.querySelector(".goal-ranking-list");
-
-            list.classList.toggle("show");
-
-            return;
-
-        }
-
-        const summary = event.target.closest(".goal-summary");
-
-        if (!summary) return;
-
-        const row = summary.closest(".goal-row");
-
-        row.classList.toggle("open");
-
-    });
+});

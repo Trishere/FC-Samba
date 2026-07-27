@@ -690,6 +690,31 @@ GOAL RANKING
 
 }
 
+a.goal-ranking-box{
+
+    display:block;
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+.goal-ranking-header.static{
+
+    cursor:default;
+
+}
+
+.goal-ranking-header.static:hover{
+
+    transform:none;
+
+    box-shadow:
+        0 6px 16px rgba(0,0,0,.28);
+
+}
+
 .goal-ranking-header{
 
     width:fit-content;
@@ -1034,7 +1059,7 @@ GOAL RANKING
 }
 
 .match-body{
-    flex:1;
+    flex:1
 }
 
 
