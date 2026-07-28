@@ -40,7 +40,17 @@ function getRanking(matches) {
 
     function addStat(list, key) {
 
-        (list || []).forEach(player => {
+        (list || []).forEach(entry => {
+
+            const match = entry.match(/^(.*?)\s*[x×\*]\s*(\d+)$/i);
+
+            let player = entry;
+            let count = 1;
+
+            if (match) {
+                player = match[1];
+                count = Number(match[2]);
+            }
 
             player = player.normalize("NFC").trim();
 
@@ -52,7 +62,7 @@ function getRanking(matches) {
                 };
             }
 
-            playerStats[player][key]++;
+            playerStats[player][key] += count;
 
         });
 
