@@ -11,6 +11,12 @@ const hallOfFamePeriods = [
         year: 2026,
         months: [10, 11, 12]
     },
+    {
+        id: "2027-q1",
+        title: "Jan - Feb 2027",
+        year: 2027,
+        months: [1, 2, 3]
+    },
 
 
 

@@ -14,7 +14,6 @@ const winCount = document.getElementById("win-count");
 const lossCount = document.getElementById("loss-count");
 
 const drawCount = document.getElementById("draw-count");
-const hallOfFame = document.getElementById("hall-of-fame");
 
 /* BUTTON CACHE */
 
@@ -404,39 +403,6 @@ function updateRecord() {
 
 }
 
-/* HALL OF FAME — link ra trang ranking.html riêng */
-
-function renderPeriod(period, index) {
-
-    return `
-        <a class="goal-ranking-box" href="ranking.html?index=${index}">
-
-            <div class="goal-ranking-header">
-
-                <h4>PLAYER RANKING</h4>
-
-                <p class="goal-period">
-                    ${period.title}
-                </p>
-
-            </div>
-
-        </a>
-    `;
-
-}
-
-function renderHallOfFame() {
-
-    const hallOfFame = document.getElementById("hall-of-fame");
-
-    hallOfFame.innerHTML = hallOfFamePeriods
-        .map((period, index) => renderPeriod(period, index))
-        .join("");
-
-}
-      
-
 function getCivilWarRecord(index) {
 
     let win = 0;
@@ -552,7 +518,6 @@ function init() {
     renderAllMatches();
     updateRecord();
     renderAllCivilWar();
-    renderHallOfFame();
 
 }
 init();
