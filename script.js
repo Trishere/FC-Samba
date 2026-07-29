@@ -5,10 +5,6 @@ const chronicleMenu = document.getElementById("chronicle-menu");
 
 const doiHinh = document.getElementById("doiHinh");
 
-const matchList = document.getElementById("match-list");
-
-const noiChien = document.getElementById("noichien");
-
 const winCount = document.getElementById("win-count");
 
 const lossCount = document.getElementById("loss-count");
@@ -20,10 +16,6 @@ const drawCount = document.getElementById("draw-count");
 const chronicleBanner = document.getElementById("chronicle-banner");
 
 const achievementBanner = document.getElementById("achievement-banner");
-
-const expeditionBanner = document.getElementById("expedition-banner");
-
-const civilwarBanner = document.getElementById("civilwar-banner");
 
 const teamBanner = document.getElementById("team-banner");
 
@@ -66,9 +58,7 @@ function closeMainSections() {
 function closeChronicleSections() {
 
     hideSections([
-        "thanhTich",
-        "match-list",
-        "noichien"
+        "thanhTich"
     ]);
 
 }
@@ -171,46 +161,6 @@ function toggleThanhTich() {
 
 }
 
-
-
-/* VIỄN CHINH */
-
-function toggleMatches() {
-
-    toggleChronicleSection("match-list");
-
-    requestAnimationFrame(() => {
-
-        matchList.querySelectorAll(".detail")
-            .forEach(detail => {
-
-                detail.classList.remove("show");
-
-            });
-
-    });
-
-}
-
-/* NỘI CHIẾN */
-
-function toggleNoiChien() {
-
-    toggleChronicleSection("noichien");
-
-    requestAnimationFrame(() => {
-
-        noiChien.querySelectorAll(".detail")
-            .forEach(detail => {
-
-                detail.classList.remove("show");
-
-            });
-
-    });
-
-}
-
 /* PLAYER TOGGLE */
 function togglePlayer(id) {
 
@@ -244,43 +194,6 @@ function togglePlayer(id) {
 
 }
 
-/* MATCH DETAIL TOGGLE */
-function toggleMatchDetail(match) {
-
-    const details = match.querySelector(".detail");
-    if (!details) return;
-
-    const isOpen = details.classList.contains("show");
-
-    document.querySelectorAll(".detail").forEach(d => {
-        d.classList.remove("show");
-    });
-
-    if (!isOpen) {
-        details.classList.add("show");
-    }
-}
-
-/* CIVIL WAR ROSTER TOGGLE */
-function toggleCivilWarRoster(box) {
-
-    const card = box.closest(".match");
-    if (!card) return;
-
-    const roster = card.querySelector(".civilwar-roster");
-    if (!roster) return;
-
-    const isOpen = roster.classList.contains("show");
-
-    document.querySelectorAll(".civilwar-roster").forEach(r => {
-        r.classList.remove("show");
-    });
-
-    if (!isOpen) {
-        roster.classList.add("show");
-    }
-}
-
 /* RENDER RESULT  */
 
 function getResult(match) {
@@ -297,81 +210,6 @@ function getResult(match) {
     if (match.homeScore < match.awayScore) return "loss";
 
     return "draw";
-
-}
-
-
-/* RENDER MATCH */
-
-function renderMatch(match) {
-
-    const result = getResult(match);
-
-    const knightHtml = result
-        ? `
-            <img class="match-knight"
-                 src="images/${result}knight.png"
-                 alt="${result}">
-          `
-        : "";
-
-    return `
-        <div class="match">
-
-            ${knightHtml}
-
-            <div class="match-body">
-
-                <h3>${match.date}</h3>
-
-                <div class="score">
-
-                    <span class="team">Samba</span>
-
-                    <div class="score-box">
-                        ${match.homeScore} : ${match.awayScore}
-                    </div>
-
-                    <span class="team">${match.opponent}</span>
-
-                </div>
-
-                <div class="detail">
-
-                    <span class="knights-label">⚔ KNIGHTS</span>
-
-                    <div class="knights-list">
-
-                        ${match.knights.map(player => {
-
-                            if ((match.mvp || []).includes(player)) {
-
-                                return `<span class="knight-badge MVP">${player}</span>`;
-
-                            }
-
-                            return `<span class="knight-badge">${player}</span>`;
-
-                        }).join("")}
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-    `;
-
-}
-
-
-function renderAllMatches() {
-
-    matchList.innerHTML =
-        expeditionMatches
-            .map(renderMatch)
-            .join("");
 
 }
 
@@ -403,121 +241,11 @@ function updateRecord() {
 
 }
 
-function getCivilWarRecord(index) {
-
-    let win = 0;
-    let loss = 0;
-    let draw = 0;
-
-    for (let i = 0; i <= index; i++) {
-
-        const result = getResult(civilWarMatches[i]);
-
-        if (result === "win") {
-            win++;
-        }
-        else if (result === "loss") {
-            loss++;
-        }
-        else if (result === "draw") {
-            draw++;
-        }
-
-    }
-    return `${win}-${loss}-${draw}`;
-
-}
-
-function renderCivilWar(match, index) {
-
-    const record = getCivilWarRecord(index);
-    const result = getResult(match);
-    return `
-        <div class="match">
-
-            <img class="match-knight"
-                 src="images/${result}knight.png"
-                 alt="${result}">
-
-            <div class="match-body">
-
-                <h3>${match.date}</h3>
-
-                <div class="score">
-
-                    <span class="team">${match.team}</span>
-
-                    <div class="score-box">
-                        ${match.homeScore} : ${match.awayScore}
-                    </div>
-
-                    <span class="team">${match.opponent}</span>
-
-                </div>
-
-                <div class="match-info">
-
-                    <div class="info-box">
-                        <span class="info-label">W-L-D</span>
-                        <span class="info-value">${record}</span>
-                    </div>
-
-                    <div class="info-box knights-toggle" data-index="${index}">
-                        <span class="info-label">⚔ KNIGHTS</span>
-                        <span class="info-value">${match.knights}</span>
-                    </div>
-
-                    <div class="info-box">
-                        <span class="info-label">MVP</span>
-                        <span class="info-value">${(match.mvp || []).join(", ") || "N/A"}</span>
-                    </div>
-
-                </div>
-
-                <div class="civilwar-roster">
-
-                    <div class="roster-side">
-                        <span class="roster-label">${match.team}</span>
-                        <div class="roster-list">
-                            ${(match.teamRoster || []).length
-                                ? match.teamRoster.map(player => `<span class="knight-badge">${player}</span>`).join("")
-                                : `<span class="roster-empty">Chưa cập nhật</span>`}
-                        </div>
-                    </div>
-
-                    <div class="roster-side">
-                        <span class="roster-label">${match.opponent}</span>
-                        <div class="roster-list">
-                            ${(match.opponentRoster || []).length
-                                ? match.opponentRoster.map(player => `<span class="knight-badge">${player}</span>`).join("")
-                                : `<span class="roster-empty">Chưa cập nhật</span>`}
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-    `;
-}
-
-function renderAllCivilWar() {
-
-    noiChien.innerHTML =
-        civilWarMatches
-            .map((match, index) => renderCivilWar(match, index))
-            .join("");
-
-}
-
 /* INIT */
 
 function init() {
 
-    renderAllMatches();
     updateRecord();
-    renderAllCivilWar();
 
 }
 init();
@@ -528,10 +256,6 @@ chronicleBanner.addEventListener("click", toggleChronicle);
 
 achievementBanner.addEventListener("click", toggleThanhTich);
 
-expeditionBanner.addEventListener("click", toggleMatches);
-
-civilwarBanner.addEventListener("click", toggleNoiChien);
-
 teamBanner.addEventListener("click", toggleDoiHinhTong);
 
 /* PLAYER EVENT LISTENERS */
@@ -541,29 +265,6 @@ document.querySelectorAll(".player-toggle").forEach(button => {
     button.addEventListener("click", function () {
 
         togglePlayer(this.dataset.player);
-
-    });
-
-});
-
-/* MATCH EVENT LISTENERS */
-
-[matchList, noiChien].forEach(container => {
-
-    container.addEventListener("click", function (event) {
-
-        const knightsBox = event.target.closest(".knights-toggle");
-
-        if (knightsBox) {
-            toggleCivilWarRoster(knightsBox);
-            return;
-        }
-
-        const match = event.target.closest(".match");
-
-        if (!match) return;
-
-        toggleMatchDetail(match);
 
     });
 
