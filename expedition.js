@@ -52,7 +52,7 @@ function renderMatch(match, index) {
 
                 </div>
 
-                <div class="match-info">
+                <div class="match-info match-info-duo">
 
                     <div class="info-box knights-toggle" data-index="${index}">
                         <span class="info-label">⚔ KNIGHTS</span>

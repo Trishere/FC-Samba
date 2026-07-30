@@ -1560,6 +1560,16 @@ header {
         gap:10px;
     }
 
+    .match-info-duo{
+        flex-direction:row;
+        flex-wrap:wrap;
+    }
+
+    .match-info-duo .info-box{
+        width:auto;
+        flex:1 1 100px;
+    }
+
     .info-box{
         width:fit-content;
         min-width:110px;
