@@ -677,9 +677,9 @@ GOAL RANKING
 
 .goal-ranking-box{
 
-    width:100%;
+    width:fit-content;
 
-    margin:24px auto 0;
+    margin:0;
 
     padding:0;
 
@@ -688,6 +688,20 @@ GOAL RANKING
     border:none;
 
     box-shadow:none;
+
+}
+
+#hall-of-fame{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:16px;
+
+    margin-top:24px;
 
 }
 
