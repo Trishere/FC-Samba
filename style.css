@@ -769,6 +769,32 @@ a.goal-ranking-box{
 
 }
 
+.goal-ranking-box.active-period .goal-ranking-header{
+
+    box-shadow:
+        0 6px 16px rgba(0,0,0,.28),
+        0 0 16px 3px rgba(232,200,106,.55);
+
+    animation: goldPulse 2.4s ease-in-out infinite;
+
+}
+
+@keyframes goldPulse{
+
+    0%, 100%{
+        box-shadow:
+            0 6px 16px rgba(0,0,0,.28),
+            0 0 12px 2px rgba(232,200,106,.4);
+    }
+
+    50%{
+        box-shadow:
+            0 6px 16px rgba(0,0,0,.28),
+            0 0 22px 5px rgba(232,200,106,.8);
+    }
+
+}
+
 .goal-ranking-header h4{
 
     margin:0;
