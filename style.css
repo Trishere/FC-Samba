@@ -757,7 +757,7 @@ a.goal-ranking-box{
 
 .goal-ranking-header h4{
 
-    margin:0 0 10px;
+    margin:0;
 
 }
 
@@ -766,7 +766,7 @@ a.goal-ranking-box{
     width: 100%;
     height: 1px;
 
-    margin: 0 0 18px;
+    margin: 10px 0 18px;
 
     background: linear-gradient(
         to right,
@@ -779,7 +779,7 @@ a.goal-ranking-box{
 
 .goal-ranking-box h4{
 
-    margin:0 0 10px;
+    margin:0;
 
     text-align:center;
 

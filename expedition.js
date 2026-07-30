@@ -19,7 +19,7 @@ function getResult(match) {
 
 }
 
-function renderMatch(match) {
+function renderMatch(match, index) {
 
     const result = getResult(match);
 
@@ -52,9 +52,21 @@ function renderMatch(match) {
 
                 </div>
 
-                <div class="detail">
+                <div class="match-info">
 
-                    <span class="knights-label">⚔ KNIGHTS</span>
+                    <div class="info-box knights-toggle" data-index="${index}">
+                        <span class="info-label">⚔ KNIGHTS</span>
+                        <span class="info-value">${match.knights.length}</span>
+                    </div>
+
+                    <div class="info-box">
+                        <span class="info-label">MVP</span>
+                        <span class="info-value">${(match.mvp || []).join(", ") || "N/A"}</span>
+                    </div>
+
+                </div>
+
+                <div class="detail">
 
                     <div class="knights-list">
 
@@ -85,7 +97,7 @@ function renderAllMatches() {
 
     matchList.innerHTML =
         expeditionMatches
-            .map(renderMatch)
+            .map((match, index) => renderMatch(match, index))
             .join("");
 
 }
@@ -111,8 +123,11 @@ renderAllMatches();
 
 matchList.addEventListener("click", function (event) {
 
-    const match = event.target.closest(".match");
+    const knightsBox = event.target.closest(".knights-toggle");
 
+    if (!knightsBox) return;
+
+    const match = knightsBox.closest(".match");
     if (!match) return;
 
     toggleMatchDetail(match);
