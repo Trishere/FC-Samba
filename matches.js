@@ -145,7 +145,7 @@ const expeditionMatches = [
 
     {
         date: "02/07/2026",
-        opponent: "Giặc Lạ FC",
+        opponent: "Lạ FC",
         homeScore: 0,
         awayScore: 3,
         knights: [
