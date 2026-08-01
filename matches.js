@@ -176,9 +176,9 @@ const expeditionMatches = [
             "Nam Silun",
             "LuGiaHuy"
         ],
-        mpv: [],
-        goals: [ "Quân Burger","Quân Burger", "Đức Lee", "Đức Lee", "Đức Lee", "Nam Silun", "Quốc Huy", "Quân Burger", "Quân Burger"],
-        assists: ["Hiếu Saka", "Quốc Huy", "Quốc Huy", "Quốc Huy", "Nam Silun", "Anh Đạt", "Hiếu Saka"]
+        mvp: ["OnaThuan"],
+        goals: [ "Quân Burger","Quân Burger", "Đức Lee", "Đức Lee", "Đức Lee", "Nam Silun", "Quốc Huy", "Quân Burger", "Quân Burger"],
+        assists: ["Hiếu Saka", "Quốc Huy", "Quốc Huy", "Quốc Huy", "Nam Silun", "Anh Đạt", "Hiếu Saka"]
     },
     {
         date: "01/08/2026",
@@ -189,15 +189,15 @@ const expeditionMatches = [
             "Quân Burger",
             "Hiếu Saka",
             "Quốc Huy",
-            "Đức Lee",
+            "Tài Suy",
             "Vũ Lông Thủ",
-            "Anh Đạt",
-            "Đức Lee",
-            "OnaThuan",
             "Nam Silun",
-            "LuGiaHuy"
+            "LuGiaHuy",
+            "Hiếu Saka",
+            "Ronaldat",
+            "OnaThuan"
         ],
-        mpv: [],
+        mvp: ["OnaThuan"],
         goals: [ ],
         assists: []
     },
