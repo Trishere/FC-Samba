@@ -183,8 +183,8 @@ const expeditionMatches = [
     {
         date: "01/08/2026",
         opponent: "Lạ FC",
-        homeScore: null,
-        awayScore: null,
+        homeScore: 4,
+        awayScore: 10,
         knights: [
             "Quân Burger",
             "Hiếu Saka",
