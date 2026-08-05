@@ -201,6 +201,23 @@ const expeditionMatches = [
         goals: [ ],
         assists: []
     },
+    {
+        date: "04/08/2026",
+        opponent: "Lạ FC",
+        homeScore: 10,
+        awayScore: 0,
+        knights: [
+            "Quân Burger",
+            "Quốc Huy",
+            "Tài Suy",
+            "Ronaldat",
+            "Đức Lee",
+            "Phong Lâm"
+        ],
+        mvp: [],
+        goals: [ ],
+        assists: []
+    },
 
 
 
