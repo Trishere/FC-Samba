@@ -215,8 +215,8 @@ const expeditionMatches = [
             "Phong Lâm"
         ],
         mvp: [],
-        goals: [ ],
-        assists: []
+        goals: [ "Đức Lee x4", "Tài Suy x4", "Quân Burger x3", "Ronaldat", "Quốc Huy" ],
+        assists: ["Đức Lee x4", "Quốc Huy x2", "Ronaldat", "Quân Burger x2", "Tài Suy x1"]
     },
 
 
