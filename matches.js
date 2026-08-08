@@ -218,6 +218,24 @@ const expeditionMatches = [
         goals: [ "Đức Lee x4", "Tài Suy x4", "Quân Burger x3", "Ronaldat x2" ],
         assists: ["Đức Lee x4", "Quốc Huy x4", "Ronaldat", "Quân Burger x2", "Tài Suy x1"]
     },
+    {
+        date: "08/08/2026",
+        opponent: "XT FC",
+        homeScore: null,
+        awayScore: null,
+        knights: [
+            "Quân Burger",
+            "Quốc Huy",
+            "Tài Suy",
+            "Ronaldat",
+            "Đức Lee",
+            "Nam Silun",
+            "OnaThuan",
+        ],
+        mvp: [],
+        goals: [  ],
+        assists: []
+    },
 
 
 
